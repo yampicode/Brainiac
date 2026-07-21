@@ -21,7 +21,9 @@ const categoriasFiguras = [
     { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
     { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🍿', '🥓', '🍣', '🍩', '🍪', '🎂'] },
     { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚚'] },
- { nombre: "Banderas", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇪🇸', '🇨🇺', '🇨🇱', '🇪🇨', '🇮🇱', '🇯🇵', '🇻🇪'] }
+ { nombre: "Banderas", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇪🇸', '🇨🇺', '🇨🇱', '🇪🇨', '🇮🇱', '🇯🇵', '🇻🇪'] },
+{ nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '🚀', '⚓', '🔔'] },
+{ nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] }
 ];
 
 // Variable para guardar la categoría actual de la partida
@@ -44,7 +46,7 @@ displayInfo.style.cssText = `
 `;
 
 displayInfo.innerHTML = `
-    <div><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
+    <div class="separador"><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
     <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
     <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
     <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>

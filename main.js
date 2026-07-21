@@ -34,7 +34,7 @@ displayInfo.style.cssText = `
 displayInfo.innerHTML = `
     <div><div style="font-size: 1em; font-weight: 900; color: #001f54">Tiempo</div><strong id="cronometro">0s</strong></div>
     <div><div style="font-size: 1em; color: #001f54; font-weight: 900;">Récord</div><strong id="mejor-tiempo" style="color: #001f54;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-    <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Puntajes</div><strong id="puntos-partida">0</strong></div>
+    <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Puntos</div><strong id="puntos-partida">0</strong></div>
     <div><div style="font-size: 1em; font-weight: 900; color: #001f54">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
     <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;

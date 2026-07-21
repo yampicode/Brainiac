@@ -99,7 +99,7 @@ display: flex;
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
     color: #fff7e7;
     background-color: #25b7b6;
     border: 4px double #fff;
@@ -108,11 +108,8 @@ display: flex;
     font-size: 1rem;
     font-weight: 900;
     cursor: pointer;
-    margin-bottom: 20px;
-
-    @media (width >= 760px) {
-        display: block;
-    }
+width: auto;
+    margin: ;
 }
 
 .btn:hover {

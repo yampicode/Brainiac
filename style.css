@@ -19,7 +19,7 @@ body {
     align-items: center;
     font-size: 100%;
     font-family: "VAG Rounded Next Regular", sans-serif;
-    padding: 0 10px 0;
+    padding: 5px 10px;
     background-color: var(--color-claro);
 }
 

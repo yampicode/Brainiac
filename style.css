@@ -99,13 +99,13 @@ display: flex;
 }
 
 .btn {
-    display: inline-flex;
+    display: inline;
     color: #fff7e7;
     background-color: #25b7b6;
     border: 4px double #fff;
     border-radius: 8px;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 900;
     cursor: pointer;
 width: 200px;

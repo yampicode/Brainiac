@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-ve">
+<head>
+    <meta charset="UTF-8">
+    <title>BRAINIAC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fuentes.css" type="text/css" media="all" />
+<link rel="stylesheet" href="icofont.min.css" type="text/css" media="all" />
+<link rel="shortcut icon" href="brainiac.png" type="image/x-icon" />
+</head>
+<body>
+
+<img class="img" src="brainiac.svg" alt="Logotipo de MemoryLearn." />
+
+<!-- Botones en pantalla móvil-->
+
+<button class="historial" id="btn-borrar-historial"><span class="icofont-ui-delete"></span></button>
+
+<button id="reiniciar" class="reinicio" title="Reiniciar Tablero"><span class="icofont-refresh"></span></button>
+
+<button class="play" id="btn-iniciar"><span class="icofont-ui-play"></span></button>
+
+<!-- Botones en tamaño de PC -->
+<div class="btn__flex">
+ 
+ <button id="btn-play" class="btn" title="Iniciar el Juego">Iniciar Juego</button>   
+
+<button id="btn-reiniciar" class="btn" title="Reiniciar el Juego">Reiniciar Juego</button>
+
+<button id="btn-delete"class="btn" title="Reiniciar los Marcadores">Eliminar Marcadores</button>
+
+</div>
+
+<!-- Tablero -->
+
+<div id="tablero-juego" class="tablero">
+<!-- Generaremos las 20 cartas (10 pares) dinámicamente con JS -->
+</div>
+
+<footer class="footer">
+<p style="font-style= center;">
+Yampiero Mujica 2026 ©
+</p>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

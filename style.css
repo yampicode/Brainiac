@@ -25,14 +25,13 @@ body {
 
 
 .header {
-    height: ;
 padding: 10px;
     width: 100%;
 }
 
 .img {
     display: block;
-    width: 20%;
+    width: 50%;
     margin: 0 auto;
 
     @media (width >= 760px) {

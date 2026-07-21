@@ -33,8 +33,7 @@ body {
     top: 20px;
     left: 20px;
     width: 40%;
-    margin: ;
-
+    
     @media (width >= 760px) {
         width: 300px;
     }

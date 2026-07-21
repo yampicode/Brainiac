@@ -1,21 +1,32 @@
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
-
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
 let cartasVolteadas = [];
-let bloqueado = true; // El juego inicia bloqueado hasta presionar "Iniciar[span_3](start_span)"[span_3](end_span)
+let bloqueado = true;
 let puntuacionPartida = 0;
 
-// Recuperar datos desde localStorage[span_4](start_span)[span_4](end_span)
+// Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
 let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
 let cronometroInterval;
 
-// Crear contenedor de marcadores con 5 columnas[span_5](start_span)[span_5](end_span)
+// 1. Array anidado con diferentes categorías de figuras (usamos emojis)
+const categoriasFiguras = [
+    { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
+    { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
+    { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
+    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🍿', '🥓', '🍣', '🍩', '🍪', '🎂'] },
+    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚚'] }
+];
+
+// Variable para guardar la categoría actual de la partida
+let paresActuales = [];
+
+// Crear contenedor de marcadores con 5 columnas
 const displayInfo = document.createElement('div');
 displayInfo.style.cssText = `
     display: grid; 
@@ -32,13 +43,14 @@ displayInfo.style.cssText = `
 `;
 
 displayInfo.innerHTML = `
-    <div><div style="font-size: 1em; font-weight: 900; color: #001f54">Tiempo</div><strong id="cronometro">0s</strong></div>
-    <div><div style="font-size: 1em; color: #001f54; font-weight: 900;">Récord</div><strong id="mejor-tiempo" style="color: #001f54;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-    <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Puntos</div><strong id="puntos-partida">0</strong></div>
-    <div><div style="font-size: 1em; font-weight: 900; color: #001f54">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-    <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+    <div><div style="font-size: 0.6rem;">Tiempo</div><strong id="cronometro">0s</strong></div>
+    <div><div style="font-size: 0.6rem;">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
+    <div><div style="font-size: 0.6rem;">Puntos</div><strong id="puntos-partida">0</strong></div>
+    <div><div style="font-size: 0.6rem;">Total</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+    <div><div style="font-size: 0.6rem;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
+// Insertar la barra de información de forma segura antes del tablero
 tablero.parentNode.insertBefore(displayInfo, tablero);
 
 function actualizarUI() {
@@ -67,10 +79,14 @@ function crearTablero() {
     clearInterval(cronometroInterval);
     actualizarUI();
     
-    const pares = ['🚗', '🏍️', '💡', '👑', '✂️', '✏️', '🔔', '🔑', '🔒', '🚀'];
+    // 2. Seleccionar una categoría de forma aleatoria del array anidado
+    const categoriaAleatoria = categoriasFiguras[Math.floor(Math.random() * categoriasFiguras.length)];
+    const pares = categoriaAleatoria.items;
+    
+    // Duplicamos los elementos para crear las parejas
     let IDs = [...pares, ...pares];
     
-    // Algoritmo de Fisher-Yates para barajar[span_6](start_span)[span_6](end_span)
+    // Algoritmo de Fisher-Yates para barajar las cartas
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];

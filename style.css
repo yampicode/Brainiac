@@ -92,7 +92,7 @@ display: flex;
 
 .btn__flex {
     display: flex;
-flex-direction: row;
+flex-wrap:wrap;
     align-items: center;
 }
 

@@ -20,6 +20,7 @@ body {
     font-size: 100%;
     font-family: "VAG Rounded Next Regular", sans-serif;
     position: relative;
+    padding: 10px;
     background-color: var(--color-claro);
 }
 
@@ -27,12 +28,6 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.header {
-    display:;
-
-    width: 100%;
 }
 
 .historial,

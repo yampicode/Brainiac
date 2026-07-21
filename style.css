@@ -23,61 +23,7 @@ body {
     background-color: var(--color-claro);
 }
 
-.historial,
-.reinicio,
-.play {
-display: flex;
-    background: none;
-    position: ;
-    width: max-content;
-    border: none;
-}
 
-.historial {
-    top: ;
-    left: ;
-}
-
-.reinicio {
-    top: ;
-    left: ;
-}
-
-.play {
-    top: ;
-    left: ;
-}
-
-.icofont-refresh,
-.icofont-ui-delete,
-.icofont-ui-play {
-    color: #25b7b6;
-    display: block;
-    font-size: 1.8em;
-
-    text-shadow: 2px 1px #999;
-
-
-    @media (width >= 760px) {
-        display: none;
-    }
-}
-
-.icofont-ui-delete {
-    color: var(--color-secundary);
-}
-
-.icofont-ui-play {
-    color: var(--color-yellow);
-}
-
-.icofont-refresh:hover,
-.icofont-ui-delete:hover,
-.icofont-ui-play:hover {
-    transition: 0.5s ease;
-    color: #fff;
-    text-shadow: 5px 5px 20px #111;
-}
 
 .img {
     display: block;
@@ -95,11 +41,11 @@ display: flex;
 flex-wrap:wrap;
     align-items: center;
 text-aline; center;
-margin: 0 0 20px;
+margin: 0 0 20px 0;
 }
 
 .btn {
-    display: inline;
+    display:;
     color: #fff7e7;
     background-color: #25b7b6;
     border: 4px double #fff;
@@ -109,7 +55,6 @@ margin: 0 0 20px;
     font-weight: 900;
     cursor: pointer;
 width: 100px;
-    margin: ;
 }
 
 .btn:hover {

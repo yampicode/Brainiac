@@ -34,7 +34,7 @@ body {
     position: absolute;
     top: 0;
     left: 10px;
-    width: 40%;
+    width: 10%;
     
     @media (width >= 760px) {
         width: 300px;

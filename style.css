@@ -20,9 +20,13 @@ body {
     font-size: 100%;
     font-family: "VAG Rounded Next Regular", sans-serif;
     position: relative;
-    margin: 0;
-    padding: 10px;
     background-color: var(--color-claro);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .header {

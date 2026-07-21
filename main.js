@@ -79,19 +79,22 @@ function crearTablero() {
     clearInterval(cronometroInterval);
     actualizarUI();
     
-    // 2. Seleccionar una categoría de forma aleatoria del array anidado
+    // 1. Seleccionar una categoría aleatoria del array anidado
     const categoriaAleatoria = categoriasFiguras[Math.floor(Math.random() * categoriasFiguras.length)];
-    const pares = categoriaAleatoria.items;
+    const itemsCategoria = categoriaAleatoria.items; // Ej: 10 emojis disponibles
     
-    // Duplicamos los elementos para crear las parejas
-    let IDs = [...pares, ...pares];
+    // 2. Si quieres usar, por ejemplo, 10 pares (20 cartas en total) o menos:
+    // Asegurémonos de tomar los elementos y duplicarlos estrictamente
+    let pares = [...itemsCategoria]; // Tomamos todos los elementos de la categoría
+    let IDs = [...pares, ...pares]; // Los duplicamos para que cada uno tenga su pareja exacta
     
-    // Algoritmo de Fisher-Yates para barajar las cartas
+    // 3. Algoritmo de Fisher-Yates corregido para barajar el array completo de forma aleatoria
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];
     }
 
+    // 4. Crear los elementos en el DOM
     IDs.forEach(id => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -106,6 +109,7 @@ function crearTablero() {
         tablero.appendChild(card);
     });
 }
+
 
 function flipCard(cardElement) {
     if (bloqueado || cardElement.classList.contains('flipped')) return;

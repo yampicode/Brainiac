@@ -1,0 +1,194 @@
+/* Estilos Base (Mobile First) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-claro: #fff7e7;
+    --color-oscuro: #001f54;
+    --color-yellow: #ffc224;
+    --color-primary: #01bbbe;
+    --color-secundary: #ffa188;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 100%;
+    font-family: "VAG Rounded Next Regular", sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--color-claro);
+}
+
+.header {
+    display:;
+
+    width: 100%;
+}
+
+.historial,
+.reinicio,
+.play {
+    background: none;
+    position: absolute;
+    width: max-content;
+    border: none;
+}
+
+.historial {
+    top: 70px;
+    left: 10px;
+}
+
+.reinicio {
+    top: 20px;
+    left: 10px;
+}
+
+.play {
+    top: 120px;
+    left: 10px;
+}
+
+.icofont-refresh,
+.icofont-ui-delete,
+.icofont-ui-play {
+    color: #25b7b6;
+    display: block;
+    font-size: 1.8em;
+
+    text-shadow: 2px 1px #999;
+
+
+    @media (width >= 760px) {
+        display: none;
+    }
+}
+
+.icofont-ui-delete {
+    color: var(--color-secundary);
+}
+
+.icofont-ui-play {
+    color: var(--color-yellow);
+}
+
+.icofont-refresh:hover,
+.icofont-ui-delete:hover,
+.icofont-ui-play:hover {
+    transition: 0.5s ease;
+    color: #fff;
+    text-shadow: 5px 5px 20px #111;
+}
+
+.img {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    filter: drop-shadow(10px 0 8px rgba(225, 225, 225, 0.5));
+
+    @media (width >= 760px) {
+        width: 300px;
+    }
+}
+
+.btn__flex {
+    display: flex;
+}
+
+.btn {
+    display: none;
+    color: #fff7e7;
+    background-color: #25b7b6;
+    border: 4px double #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    @media (width >= 760px) {
+        display: block;
+    }
+}
+
+.btn:hover {
+    transition: 0.5s ease;
+    background-color: #fb8370;
+}
+
+/* El tablero se adapta al ancho disponible */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 8px;
+    width: 100%;
+
+    @media (width >= 760px) {
+        width: 500px;
+        /* Tamaño máximo en escritorio */
+        justify-content: center;
+        align-items: centet;
+    }
+}
+
+.card {
+    aspect-ratio: 3/4;
+    /* Mantiene la proporción de la carta */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: var(--color-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px double #fff;
+    background: #25b7b6;
+    border-radius: 8px;
+    /* Bordes redondeados modernos */
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--color-oscuro);
+    color: white;
+}
+
+/* Ajuste para pantallas más grandes (Desktop) */
+@media (min-width: 600px) {
+    .tablero {
+        grid-template-columns: repeat(5, 120px);
+        /* 5 columnas fijas en desktop */
+    }
+    .card {
+        height: 160px;
+        /* Altura fija para desktop */
+    }
+}

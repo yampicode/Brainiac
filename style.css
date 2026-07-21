@@ -99,7 +99,7 @@ display: flex;
 }
 
 .btn {
-    display: ;
+    display: inline-block;
     color: #fff7e7;
     background-color: #25b7b6;
     border: 4px double #fff;

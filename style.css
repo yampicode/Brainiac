@@ -40,7 +40,6 @@ body {
     display: flex;
 flex-wrap:wrap;
     align-items: center;
-text-aline; center;
 margin: 0 0 20px 0;
 }
 
@@ -51,6 +50,7 @@ margin: 0 0 20px 0;
     border: 4px double #fff;
     border-radius: 8px;
     padding: 10px 20px;
+text-aline; center;
     font-size: 0.7em;
     font-weight: 900;
     cursor: pointer;

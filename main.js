@@ -1,8 +1,6 @@
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
-const reiniciar = document.getElementById("reiniciar");
-const btnDelete = document.getElementById("btn-delete");
-const btnPlay = document.getElementById("btn-play");
+
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 

@@ -49,7 +49,7 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 }
-/*
+
 btnIniciar.onclick = () => {
     btnIniciar.disabled = true;
     bloqueado = false;
@@ -59,8 +59,8 @@ btnIniciar.onclick = () => {
         document.getElementById('cronometro').innerText = `${tiempo}s`;
     }, 1000);
 };
-*/
 
+/*
  btnPlay.onclick = () => {
     btnIniciar.disabled = true;
     bloqueado = false;
@@ -71,6 +71,7 @@ btnIniciar.onclick = () => {
     }, 1000);
 };
 
+*/
 
 function crearTablero() {
     tablero.innerHTML = '';
@@ -157,7 +158,7 @@ function resetearTurno() {
     cartasVolteadas = [];
     bloqueado = false;
 }
-/*
+
 btnBorrar.onclick = () => {
     if (confirm("¿Borrar todo el historial?")) {
         localStorage.clear();
@@ -167,7 +168,7 @@ btnBorrar.onclick = () => {
     }
 };
 
-*/
+/*
 btnDelete.onclick = () => {
     if (confirm("¿Borrar todo el historial?")) {
         localStorage.clear();
@@ -176,7 +177,7 @@ btnDelete.onclick = () => {
         actualizarUI();
     }
 };
-
+*/
 
 btnReiniciar.onclick = crearTablero;
 document.addEventListener("DOMContentLoaded", crearTablero);

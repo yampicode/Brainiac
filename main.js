@@ -60,19 +60,6 @@ btnIniciar.onclick = () => {
     }, 1000);
 };
 
-/*
- btnPlay.onclick = () => {
-    btnIniciar.disabled = true;
-    bloqueado = false;
-    tiempo = 0;
-    cronometroInterval = setInterval(() => {
-        tiempo++;
-        document.getElementById('cronometro').innerText = `${tiempo}s`;
-    }, 1000);
-};
-
-*/
-
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
@@ -168,19 +155,5 @@ btnBorrar.onclick = () => {
     }
 };
 
-/*
-btnDelete.onclick = () => {
-    if (confirm("¿Borrar todo el historial?")) {
-        localStorage.clear();
-        victorias = scoreTotal = 0;
-        mejorTiempo = null;
-        actualizarUI();
-    }
-};
-*/
-
 btnReiniciar.onclick = crearTablero;
 document.addEventListener("DOMContentLoaded", crearTablero);
-/*
-reiniciar.onclick = crearTablero;
-document.addEventListener(    "DOMContentLoaded", crearTablero); */

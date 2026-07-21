@@ -65,6 +65,12 @@ width: 100px;
     background-color: #fb8370;
 }
 
+.valores{
+    color: var(--color-oscuro);
+    font-size: 1em;
+    font-weight: 900;  
+}
+
 /* El tablero se adapta al ancho disponible */
 .tablero {
     display: grid;

@@ -30,6 +30,7 @@ display: flex;
 .historial,
 .reinicio,
 .play {
+display: flex;
     background: none;
     position: ;
     width: max-content;

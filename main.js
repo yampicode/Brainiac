@@ -38,7 +38,8 @@ displayInfo.innerHTML = `
     <div><div style="font-size: 1em; font-weight: 900; color: #001f54">Total</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
     <div><div style="font-size: 1em; font-weight: 900; color: #001f54;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
-document.body.insertBefore(displayInfo, btnIniciar);
+
+tablero.parentNode.insertBefore(displayInfo, tablero);
 
 function actualizarUI() {
     document.getElementById('puntos-partida').innerText = puntuacionPartida;

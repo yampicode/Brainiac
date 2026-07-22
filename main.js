@@ -42,12 +42,13 @@ displayInfo.style.cssText = `
 `;
 
 displayInfo.innerHTML = `
-    <div><div style="font-size: 0.6rem;">Tiempo</div><strong id="cronometro">0s</strong></div>
-    <div><div style="font-size: 0.6rem;">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-    <div><div style="font-size: 0.6rem;">Puntos</div><strong id="puntos-partida">0</strong></div>
-    <div><div style="font-size: 0.6rem;">Total</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-    <div><div style="font-size: 0.6rem;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+    <div class="separador"><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
+    <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
+    <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
+    <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+    <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
+
 
 tablero.parentNode.insertBefore(displayInfo, tablero);
 

@@ -223,8 +223,10 @@ function verificarVictoria() {
         if (mejorTiempo === null || tiempo < mejorTiempo) {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
+reproducirSonido('victoria');
             alert(`¡Nuevo Récord! Tiempo: ${tiempo}s`);
         } else {
+      reproducirSonido('victoria');
             alert(`¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`);
         }
         actualizarUI();

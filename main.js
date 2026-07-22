@@ -16,6 +16,33 @@ let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
 let cronometroInterval;
 
+// Funciones para reproducir efectos de sonido
+function reproducirSonido(tipo) {
+    let audioSrc = '';
+    
+    switch(tipo) {
+        case 'voltear':
+            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-29.mp3'; // Sonido corto de clic
+            break;
+        case 'acierto':
+            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-3.mp3'; // Sonido de éxito
+            break;
+        case 'error':
+            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-10.mp3'; // Sonido de error/fallo
+            break;
+        case 'victoria':
+            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-bachata-1.mp3'; // O un sonido de triunfo
+            break;
+    }
+
+    if (audioSrc) {
+        const audio = new Audio(audioSrc);
+        audio.volume = 0.3; // Volumen moderado para que no sea molesto
+        audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
+    }
+}
+
+
 // 1. Array anidado con diferentes categorías de figuras (usamos emojis)
 const categoriasFiguras = [
     { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },

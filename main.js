@@ -73,10 +73,10 @@ function reproducirSonido(tipo) {
             // Pequeña melodía ascendente para la victoria
             const now = audioCtx.currentTime;
             osc.frequency.setValueAtTime(400, now);
-            osc.frequency.setValueAtTime(600, now + 0.1);
-            osc.frequency.setValueAtTime(800, now + 0.2);
+            osc.frequency.setValueAtTime(600, now + 0.8);
+            osc.frequency.setValueAtTime(800, now + 0.9);
             osc.type = 'sine';
-            gain.gain.setValueAtTime(0.1, now);
+            gain.gain.setValueAtTime(0.8, now);
             gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
             osc.start(now);
             osc.stop(now + 0.4);

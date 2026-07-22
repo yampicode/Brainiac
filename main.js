@@ -38,7 +38,7 @@ let cronometroInterval;
 
     if (audioSrc) {
         const audio = new Audio(audioSrc);
-        audio.volume = 0.3; // Volumen moderado para que no sea molesto
+        audio.volume = 0.9; // Volumen moderado para que no sea molesto
         audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
     }
 }

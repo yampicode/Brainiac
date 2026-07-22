@@ -2,9 +2,11 @@ const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
+const btnPausar = document.getElementById("btn-pausar");
 
 let cartasVolteadas = [];
 let bloqueado = true;
+let juegoPausado = false;
 let puntuacionPartida = 0;
 
 // Recuperar datos desde localStorage
@@ -41,9 +43,6 @@ const categoriasFiguras = [
 { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] }
 ];
 
-// Variable para guardar la categoría actual de la partida
-let paresActuales = [];
-
 // Crear contenedor de marcadores con 5 columnas
 const displayInfo = document.createElement('div');
 displayInfo.style.cssText = `
@@ -68,7 +67,6 @@ displayInfo.innerHTML = `
     <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
-// Insertar la barra de información de forma segura antes del tablero
 tablero.parentNode.insertBefore(displayInfo, tablero);
 
 function actualizarUI() {
@@ -79,40 +77,64 @@ function actualizarUI() {
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 }
 
+// Iniciar Juego
 btnIniciar.onclick = () => {
     btnIniciar.disabled = true;
+    btnPausar.disabled = false;
     bloqueado = false;
-    tiempo = 0;
+    juegoPausado = false;
+    btnPausar.innerText = "Pausar";
+    
     cronometroInterval = setInterval(() => {
         tiempo++;
         document.getElementById('cronometro').innerText = `${tiempo}s`;
     }, 1000);
 };
 
+// Pausar / Reanudar Juego
+btnPausar.onclick = () => {
+    if (!juegoPausado) {
+        // Pausar
+        clearInterval(cronometroInterval);
+        juegoPausado = true;
+        bloqueado = true;
+        btnPausar.innerText = "Reanudar";
+        tablero.style.opacity = "0.5"; // Efecto visual de pausa
+    } else {
+        // Reanudar
+        cronometroInterval = setInterval(() => {
+            tiempo++;
+            document.getElementById('cronometro').innerText = `${tiempo}s`;
+        }, 1000);
+        juegoPausado = false;
+        bloqueado = false;
+        btnPausar.innerText = "Pausar";
+        tablero.style.opacity = "1";
+    }
+};
+
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
     bloqueado = true;
+    juegoPausado = false;
+    tiempo = 0;
     btnIniciar.disabled = false;
+    btnPausar.disabled = true;
+    btnPausar.innerText = "Pausar";
+    tablero.style.opacity = "1";
     clearInterval(cronometroInterval);
     actualizarUI();
     
-    // 1. Seleccionar una categoría aleatoria del array anidado
     const categoriaAleatoria = categoriasFiguras[Math.floor(Math.random() * categoriasFiguras.length)];
-    const itemsCategoria = categoriaAleatoria.items; // Ej: 10 emojis disponibles
+    const pares = categoriaAleatoria.items;
+    let IDs = [...pares, ...pares];
     
-    // 2. Si quieres usar, por ejemplo, 10 pares (20 cartas en total) o menos:
-    // Asegurémonos de tomar los elementos y duplicarlos estrictamente
-    let pares = [...itemsCategoria]; // Tomamos todos los elementos de la categoría
-    let IDs = [...pares, ...pares]; // Los duplicamos para que cada uno tenga su pareja exacta
-    
-    // 3. Algoritmo de Fisher-Yates corregido para barajar el array completo de forma aleatoria
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];
     }
 
-    // 4. Crear los elementos en el DOM
     IDs.forEach(id => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -128,9 +150,8 @@ function crearTablero() {
     });
 }
 
-
 function flipCard(cardElement) {
-    if (bloqueado || cardElement.classList.contains('flipped')) return;
+    if (bloqueado || juegoPausado || cardElement.classList.contains('flipped')) return;
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
 
@@ -163,6 +184,7 @@ function verificarVictoria() {
         clearInterval(cronometroInterval);
         victorias++;
         scoreTotal += puntuacionPartida;
+        btnPausar.disabled = true;
         
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);

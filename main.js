@@ -41,7 +41,8 @@ let cronometroInterval;
         audio.volume = 0.8; // Volumen moderado para que no sea molesto
         audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
     }
-}
+};
+
 
 // 1. Array anidado con diferentes categorías de figuras (usamos emojis)
 const categoriasFiguras = [

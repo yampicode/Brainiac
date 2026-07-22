@@ -237,6 +237,14 @@ function verificarVictoria() {
 
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
+// Confetis 
+if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
 
         if (mejorTiempo === null || tiempo < mejorTiempo) {
             mejorTiempo = tiempo;

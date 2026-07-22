@@ -181,7 +181,7 @@ function flipCard(cardElement) {
     if (bloqueado || juegoPausado || cardElement.classList.contains('flipped')) return;
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
-
+    reproducirSonido('voltear');
     if (cartasVolteadas.length === 2) {
         verificarCoincidencia();
     }

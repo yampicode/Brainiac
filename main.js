@@ -27,7 +27,11 @@ const categoriasFiguras = [
     { nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
     { nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
     { nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
-    { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] }
+    { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] },
+    { nombre: "Hobby", items: ['🥋', '⛳', '🛹', '🪃', '🥏', '🤿', '🪡', '🧶', '🧵', '🛼'] },
+    { nombre: "Cosas", items: ['💾', '💽', '🖨️', '🛒', '🔌', '🕯️', '💰', '⚖️', '🖥️', '💎'] },
+{ nombre: "Mamíferos", items: ['🦓', '🐖', '🐎', '🦒', '🐿️', '🐪', '🐒', '🦘', '🐂', '🐘'] },
+{ nombre: "Mar", items: ['🐠', '🫍', '🐬', '🦀', '🦑', '🐙', '🪼', '🦐', '🦈', '🦭'] }
 ];
 
 let indiceCategoriaActual = 0; // Controla el orden estricto de las categorías

@@ -163,7 +163,6 @@ function actualizarUI() {
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
-btnIniciar.onclick = () => {
     // <--- PONLO AQUÍ AL INICIO DE LA FUNCIÓN --->
     try {
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();

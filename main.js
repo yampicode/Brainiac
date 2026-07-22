@@ -5,29 +5,7 @@ const btnIniciar = document.getElementById("btn-iniciar");
 
 // Tus categorías ordenadas (puedes poner las que tengas)
 const listaCategorias = [
-    Animales, // Tu primer array/objeto de elementos
-    Frutas, // Tu segundo array/objeto
-    Deportes, // Tu tercer array/objeto
-    Comida,  // etc...
-    Vehículos,
-    Banderas,
-    Objetos,
-    Caritas,
-    Herramientas,
-    Naturaleza,
-    Flores,
-    Chucherías,
-    Bebidas,
-    Variedad,
-    Ropa,
-    Manos,
-    Profesión,
-    Insectos,
-    Aves,
-    Otros,
-    Instrumentos,
-    Artefactos,
-    Hogar
+    Animales, Frutas, Deportes, Comida, Vehículos, Banderas, Objetos, Caritas, Herramientas, Naturaleza, Flores, Chucherías, Bebidas, Variedad, Ropa, Manos, Profesión, Insectos, Aves, Otros, Instrumentos, Artefactos, Hogar
 ];
 
 let indiceCategoriaActual = 0; // Empieza en la primera categoría

@@ -2,10 +2,10 @@ const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
-const btnPausar = document.getElementById("btn-pausar");
 
 let cartasVolteadas = [];
 let bloqueado = true;
+let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
 
@@ -16,31 +16,13 @@ let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
 let cronometroInterval;
 
-// 1. Array anidado con diferentes categorías de figuras (usamos emojis)
+// Array anidado con categorías de figuras
 const categoriasFiguras = [
     { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
     { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
     { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
-    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🧀', '🥖', '🍗', '🥪', '🫓', '🎂'] },
-    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏍️', '🚓', '🚑', '🚒', '🚚'] },
- { nombre: "Banderas", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇪🇸', '🇭🇳', '🇨🇱', '🇪🇨', '🇮🇱', '🇯🇵', '🇻🇪'] },
-{ nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },
-{ nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
-{ nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
-{ nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
-{ nombre: "Flores", items: ['🌹', '🌻', '🍁', '🍄', '🍀', '🌵', '🌴', '🌲', '🌳', '🌼'] },
-{ nombre: "Chucherías", items: ['🍫', '🍬', '🍭', '🍦', '🍨', '🍩', '🍪', '🍧', '🍿', '🍰'] },
-{ nombre: "Bebidas", items: ['🧃', '☕', '🍾', '🍹', '🍸', '🍺', '🥛', '🫖', '🧉', '🍷'] },
-{ nombre: "Variedad", items: ['🎁', '🎈', '🎉', '🎀', '🎃', '🎄', '🎊', '🎯', '🪁', '🎲'] },
-{ nombre: "Ropa", items: ['🧦', '👗', '🩳', '👕', '👖', '🎽', '👚', '🎩', '👔', '🧢'] },
-{ nombre: "Manos", items: ['👍🏼', '🫶🏼', '💪🏼', '👊🏼', '🙌🏼', '🫰🏼', '🫵🏼', '🖐🏼', '✍🏼', '👌🏼'] },
-{ nombre: "Profesión", items: ['🧑🏼‍🚀', '👷🏼', '👮🏼', '🕵🏼', '🧑🏼‍🍳', '🧑🏼‍⚕️', '🧑🏼‍🚒', '🧑🏼‍🌾', '🧑🏼‍💻', '🧑🏼‍🏫'] },
-{ nombre: "Insectos", items: ['🐌', '🐞', '🐛', '🕷️', '🦋', '🐝', '🦂', '🐜', '🦗', '🪰'] },
-{ nombre: "Aves", items: ['🦅', '🦆', '🐧', '🐓', '🦚', '🦩', '🦉', '🦜', '🦢', '🕊️'] },
-{ nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
-{ nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
-{ nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
-{ nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] }
+    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🍿', '🥓', '🍣', '🍩', '🍪', '🎂'] },
+    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚚'] }
 ];
 
 // Crear contenedor de marcadores con 5 columnas
@@ -60,11 +42,11 @@ displayInfo.style.cssText = `
 `;
 
 displayInfo.innerHTML = `
-    <div class="separador"><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
-    <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-    <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
-    <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-    <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+    <div><div style="font-size: 0.6rem;">Tiempo</div><strong id="cronometro">0s</strong></div>
+    <div><div style="font-size: 0.6rem;">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
+    <div><div style="font-size: 0.6rem;">Puntos</div><strong id="puntos-partida">0</strong></div>
+    <div><div style="font-size: 0.6rem;">Total</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+    <div><div style="font-size: 0.6rem;">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
 tablero.parentNode.insertBefore(displayInfo, tablero);
@@ -77,38 +59,37 @@ function actualizarUI() {
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 }
 
-// Iniciar Juego
+// Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
-    btnIniciar.disabled = true;
-    btnPausar.disabled = false;
-    bloqueado = false;
-    juegoPausado = false;
-    btnPausar.innerText = "Pausar";
-    
-    cronometroInterval = setInterval(() => {
-        tiempo++;
-        document.getElementById('cronometro').innerText = `${tiempo}s`;
-    }, 1000);
-};
+    if (!juegoIniciado) {
+        // --- ACCIÓN 1: INICIAR ---
+        juegoIniciado = true;
+        juegoPausado = false;
+        bloqueado = false;
+        btnIniciar.innerText = "Pausar";
+        
+        cronometroInterval = setInterval(() => {
+            tiempo++;
+            document.getElementById('cronometro').innerText = `${tiempo}s`;
+        }, 1000);
 
-// Pausar / Reanudar Juego
-btnPausar.onclick = () => {
-    if (!juegoPausado) {
-        // Pausar
+    } else if (!juegoPausado) {
+        // --- ACCIÓN 2: PAUSAR ---
         clearInterval(cronometroInterval);
         juegoPausado = true;
         bloqueado = true;
-        btnPausar.innerText = "Reanudar";
-        tablero.style.opacity = "0.5"; // Efecto visual de pausa
+        btnIniciar.innerText = "Reanudar";
+        tablero.style.opacity = "0.5";
+
     } else {
-        // Reanudar
+        // --- ACCIÓN 3: REANUDAR ---
         cronometroInterval = setInterval(() => {
             tiempo++;
             document.getElementById('cronometro').innerText = `${tiempo}s`;
         }, 1000);
         juegoPausado = false;
         bloqueado = false;
-        btnPausar.innerText = "Pausar";
+        btnIniciar.innerText = "Pausar";
         tablero.style.opacity = "1";
     }
 };
@@ -117,11 +98,10 @@ function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
     bloqueado = true;
+    juegoIniciado = false;
     juegoPausado = false;
     tiempo = 0;
-    btnIniciar.disabled = false;
-    btnPausar.disabled = true;
-    btnPausar.innerText = "Pausar";
+    btnIniciar.innerText = "Iniciar Juego";
     tablero.style.opacity = "1";
     clearInterval(cronometroInterval);
     actualizarUI();
@@ -184,7 +164,9 @@ function verificarVictoria() {
         clearInterval(cronometroInterval);
         victorias++;
         scoreTotal += puntuacionPartida;
-        btnPausar.disabled = true;
+        juegoIniciado = true; // Bloquea para que no altere el botón tras ganar
+        btnIniciar.innerText = "¡Completado!";
+        btnIniciar.disabled = true;
         
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
@@ -214,5 +196,9 @@ btnBorrar.onclick = () => {
     }
 };
 
-btnReiniciar.onclick = crearTablero;
+btnReiniciar.onclick = () => {
+    btnIniciar.disabled = false;
+    crearTablero();
+};
+
 document.addEventListener("DOMContentLoaded", crearTablero);

@@ -22,16 +22,16 @@ let cronometroInterval;
     
     switch(tipo) {
         case 'voltear':
-            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-29.mp3'; // Sonido corto de clic
+            audioSrc = 'voltear.ogg'; // Sonido corto de clic
             break;
         case 'acierto':
-            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-3.mp3'; // Sonido de éxito
+            audioSrc = 'acierto.ogg'; // Sonido de éxito
             break;
         case 'error':
-            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-10.mp3'; // Sonido de error/fallo
+            audioSrc = 'error.ogg'; // Sonido de error/fallo
             break;
         case 'victoria':
-            audioSrc = 'https://www.soundjay.com/buttons/sounds/button-bachata-1.mp3'; // O un sonido de triunfo
+            audioSrc = 'victoria.ogg'; // O un sonido de triunfo
             break;
     }
 
@@ -42,60 +42,6 @@ let cronometroInterval;
     }
 }
 */
-
-// Sintetizador nativo para generar efectos de sonido
-
-function reproducirSonido(tipo) {
-    try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        let frecuencia = 600;
-        let duracion = 0.1;
-        let tipoOnda = 'sine';
-
-        if (tipo === 'voltear') {
-            frecuencia = 600;
-            duracion = 0.08;
-            tipoOnda = 'triangle';
-        } else if (tipo === 'acierto') {
-            frecuencia = 600;
-            duracion = 0.15;
-            tipoOnda = 'sine';
-        } else if (tipo === 'error') {
-            frecuencia = 500;
-            duracion = 0.2;
-            tipoOnda = 'sawtooth';
-        } else if (tipo === 'victoria') {
-            // Pequeña melodía ascendente para la victoria
-            const now = audioCtx.currentTime;
-            osc.frequency.setValueAtTime(400, now);
-            osc.frequency.setValueAtTime(600, now + 0.8);
-            osc.frequency.setValueAtTime(800, now + 0.9);
-            osc.type = 'sine';
-            gain.gain.setValueAtTime(0.9, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
-            osc.start(now);
-            osc.stop(now + 0.4);
-            return;
-        }
-
-        const now = audioCtx.currentTime;
-        osc.frequency.setValueAtTime(frecuencia, now);
-        osc.type = tipoOnda;
-        gain.gain.setValueAtTime(0.9, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + duracion);
-        osc.start(now);
-        osc.stop(now + duracion);
-    } catch (e) {
-        // Por si el navegador bloquea el contexto de audio antes de la primera interacción
-        console.log("Audio no disponible aún", e);
-    }
-}
 
 
 // 1. Array anidado con diferentes categorías de figuras (usamos emojis)
@@ -163,14 +109,7 @@ function actualizarUI() {
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
-    // <--- PONLO AQUÍ AL INICIO DE LA FUNCIÓN --->
-    try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-        }
-    } catch (e) {}
-    
+  
     if (!juegoIniciado) {
         // --- ACCIÓN 1: INICIAR ---
         juegoIniciado = true;

@@ -33,7 +33,8 @@ const categoriasFiguras = [
 { nombre: "Mamíferos", items: ['🦓', '🐖', '🐎', '🦒', '🐿️', '🐪', '🐒', '🦘', '🐂', '🐘'] },
 { nombre: "Mar", items: ['🐠', '🫍', '🐬', '🦀', '🦑', '🐙', '🪼', '🦐', '🦈', '🦭'] },
 { nombre: "Transporte", items: ['🚂', '✈️', '🏍️'🚁, '🚀', '⛵', '🛶', '🛸', '🛳️', '🚤', '🚠'] },
- { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] }
+ { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
+{ nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] }
 ];
 
 let indiceCategoriaActual = 0; // Controla el orden estricto de las categorías

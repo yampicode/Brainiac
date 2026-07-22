@@ -193,10 +193,12 @@ function verificarCoincidencia() {
     
     if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
+        reproducirSonido('acierto');
         actualizarUI();
         resetearTurno();
         verificarVictoria();
     } else {
+        reproducirSonido('error');
         setTimeout(() => {
             primera.classList.remove('flipped');
             segunda.classList.remove('flipped');

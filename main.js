@@ -3,13 +3,34 @@ const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
-// Tus categorías ordenadas (puedes poner las que tengas)
-const listaCategorias = [
-    Animales, Frutas, Deportes, Comida, Vehículos, Banderas, Objetos, Caritas, Herramientas, Naturaleza, Flores, Chucherías, Bebidas, Variedad, Ropa, Manos, Profesión, Insectos, Aves, Otros, Instrumentos, Artefactos, Hogar
+// 1. Array anidado con diferentes categorías de figuras (usamos emojis)
+const categoriasFiguras = [
+    { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
+    { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
+    { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
+    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🧀', '🥖', '🍗', '🥪', '🫓', '🎂'] },
+    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏍️', '🚓', '🚑', '🚒', '🚚'] },
+    { nombre: "Banderas", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇪🇸', '🇭🇳', '🇨🇱', '🇪🇨', '🇮🇱', '🇯🇵', '🇻🇪'] },
+    { nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },
+    { nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
+    { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
+    { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
+    { nombre: "Flores", items: ['🌹', '🌻', '🍁', '🍄', '🍀', '🌵', '🌴', '🌲', '🌳', '🌼'] },
+    { nombre: "Chucherías", items: ['🍫', '🍬', '🍭', '🍦', '🍨', '🍩', '🍪', '🍧', '🍿', '🍰'] },
+    { nombre: "Bebidas", items: ['🧃', '☕', '🍾', '🍹', '🍸', '🍺', '🥛', '🫖', '🧉', '🍷'] },
+    { nombre: "Variedad", items: ['🎁', '🎈', '🎉', '🎀', '🎃', '🎄', '🎊', '🎯', '🪁', '🎲'] },
+    { nombre: "Ropa", items: ['🧦', '👗', '🩳', '👕', '👖', '🎽', '👚', '🎩', '👔', '🧢'] },
+    { nombre: "Manos", items: ['👍🏼', '🫶🏼', '💪🏼', '👊🏼', '🙌🏼', '🫰🏼', '🫵🏼', '🖐🏼', '✍🏼', '👌🏼'] },
+    { nombre: "Profesión", items: ['🧑🏼‍🚀', '👷🏼', '👮🏼', '🕵🏼', '🧑🏼‍🍳', '🧑🏼‍⚕️', '🧑🏼‍🚒', '🧑🏼‍🌾', '🧑🏼‍💻', '🧑🏼‍🏫'] },
+    { nombre: "Insectos", items: ['🐌', '🐞', '🐛', '🕷️', '🦋', '🐝', '🦂', '🐜', '🦗', '🪰'] },
+    { nombre: "Aves", items: ['🦅', '🦆', '🐧', '🐓', '🦚', '🦩', '🦉', '🦜', '🦢', '🕊️'] },
+    { nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
+    { nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
+    { nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
+    { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] }
 ];
 
-let indiceCategoriaActual = 0; // Empieza en la primera categoría
-
+let indiceCategoriaActual = 0; // Controla el orden estricto de las categorías
 
 let cartasVolteadas = [];
 let bloqueado = true;
@@ -25,60 +46,30 @@ let tiempo = 0;
 let cronometroInterval;
 
 // Funciones para reproducir efectos de sonido
-
- function reproducirSonido(tipo) {
+function reproducirSonido(tipo) {
     let audioSrc = '';
-    
+
     switch(tipo) {
         case 'voltear':
-            audioSrc = 'voltear.ogg'; // Sonido corto de clic
+            audioSrc = 'voltear.ogg'; 
             break;
         case 'acierto':
-            audioSrc = 'acierto.ogg'; // Sonido de éxito
+            audioSrc = 'acierto.ogg'; 
             break;
         case 'error':
-            audioSrc = 'error.ogg'; // Sonido de error/fallo
+            audioSrc = 'error.ogg'; 
             break;
         case 'victoria':
-            audioSrc = 'victoria.ogg'; // O un sonido de triunfo
+            audioSrc = 'victoria.ogg'; 
             break;
     }
 
     if (audioSrc) {
         const audio = new Audio(audioSrc);
-        audio.volume = 0.8; // Volumen moderado para que no sea molesto
+        audio.volume = 0.8;
         audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
     }
-};
-
-
-// 1. Array anidado con diferentes categorías de figuras (usamos emojis)
-const categoriasFiguras = [
-    { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
-    { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
-    { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
-    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🧀', '🥖', '🍗', '🥪', '🫓', '🎂'] },
-    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🏍️', '🚓', '🚑', '🚒', '🚚'] },
- { nombre: "Banderas", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇪🇸', '🇭🇳', '🇨🇱', '🇪🇨', '🇮🇱', '🇯🇵', '🇻🇪'] },
-{ nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },
-{ nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
-{ nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
-{ nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
-{ nombre: "Flores", items: ['🌹', '🌻', '🍁', '🍄', '🍀', '🌵', '🌴', '🌲', '🌳', '🌼'] },
-{ nombre: "Chucherías", items: ['🍫', '🍬', '🍭', '🍦', '🍨', '🍩', '🍪', '🍧', '🍿', '🍰'] },
-{ nombre: "Bebidas", items: ['🧃', '☕', '🍾', '🍹', '🍸', '🍺', '🥛', '🫖', '🧉', '🍷'] },
-{ nombre: "Variedad", items: ['🎁', '🎈', '🎉', '🎀', '🎃', '🎄', '🎊', '🎯', '🪁', '🎲'] },
-{ nombre: "Ropa", items: ['🧦', '👗', '🩳', '👕', '👖', '🎽', '👚', '🎩', '👔', '🧢'] },
-{ nombre: "Manos", items: ['👍🏼', '🫶🏼', '💪🏼', '👊🏼', '🙌🏼', '🫰🏼', '🫵🏼', '🖐🏼', '✍🏼', '👌🏼'] },
-{ nombre: "Profesión", items: ['🧑🏼‍🚀', '👷🏼', '👮🏼', '🕵🏼', '🧑🏼‍🍳', '🧑🏼‍⚕️', '🧑🏼‍🚒', '🧑🏼‍🌾', '🧑🏼‍💻', '🧑🏼‍🏫'] },
-{ nombre: "Insectos", items: ['🐌', '🐞', '🐛', '🕷️', '🦋', '🐝', '🦂', '🐜', '🦗', '🪰'] },
-{ nombre: "Aves", items: ['🦅', '🦆', '🐧', '🐓', '🦚', '🦩', '🦉', '🦜', '🦢', '🕊️'] },
-{ nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
-{ nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
-{ nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
-{ nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] }
-];
-
+}
 
 // Crear contenedor de marcadores con 5 columnas
 const displayInfo = document.createElement('div');
@@ -104,7 +95,6 @@ displayInfo.innerHTML = `
     <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
-
 tablero.parentNode.insertBefore(displayInfo, tablero);
 
 function actualizarUI() {
@@ -117,14 +107,13 @@ function actualizarUI() {
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
-  
     if (!juegoIniciado) {
         // --- ACCIÓN 1: INICIAR ---
         juegoIniciado = true;
         juegoPausado = false;
         bloqueado = false;
         btnIniciar.innerText = "Pausar";
-        
+
         cronometroInterval = setInterval(() => {
             tiempo++;
             document.getElementById('cronometro').innerText = `${tiempo}s`;
@@ -159,14 +148,26 @@ function crearTablero() {
     juegoPausado = false;
     tiempo = 0;
     btnIniciar.innerText = "Iniciar Juego";
+    btnIniciar.disabled = false;
     tablero.style.opacity = "1";
     clearInterval(cronometroInterval);
     actualizarUI();
+
+    // 2. SELECCIÓN SECUENCIAL DE LA CATEGORÍA
+    const categoriaActual = categoriasFiguras[indiceCategoriaActual];
     
-    const categoriaAleatoria = categoriasFiguras[Math.floor(Math.random() * categoriasFiguras.length)];
-    const pares = categoriaAleatoria.items;
+    // Avanzar al siguiente índice para la próxima partida
+    indiceCategoriaActual++;
+    
+    // Si llega al final de la lista, vuelve a empezar la vuelta desde la primera
+    if (indiceCategoriaActual >= categoriasFiguras.length) {
+        indiceCategoriaActual = 0;
+    }
+
+    const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
-    
+
+    // Mezclar los ítems de forma aleatoria
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];
@@ -200,7 +201,7 @@ function flipCard(cardElement) {
 function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
-    
+
     if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
         reproducirSonido('acierto');
@@ -223,20 +224,20 @@ function verificarVictoria() {
         clearInterval(cronometroInterval);
         victorias++;
         scoreTotal += puntuacionPartida;
-        juegoIniciado = true; // Bloquea para que no altere el botón tras ganar
+        juegoIniciado = true; 
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
-        
+
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
-        
+
         if (mejorTiempo === null || tiempo < mejorTiempo) {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
-reproducirSonido('victoria');
+            reproducirSonido('victoria');
             alert(`¡Nuevo Récord! Tiempo: ${tiempo}s`);
         } else {
-      reproducirSonido('victoria');
+            reproducirSonido('victoria');
             alert(`¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`);
         }
         actualizarUI();
@@ -253,12 +254,12 @@ btnBorrar.onclick = () => {
         localStorage.clear();
         victorias = scoreTotal = 0;
         mejorTiempo = null;
+        indiceCategoriaActual = 0; // Reinicia también el orden de las categorías si se borra el historial
         actualizarUI();
     }
 };
 
 btnReiniciar.onclick = () => {
-    btnIniciar.disabled = false;
     crearTablero();
 };
 

@@ -78,7 +78,7 @@ width: 100px;
     grid-template-columns: repeat(4, 1fr); /* Fuerza exactamente 4 columnas */
     gap: 10px; /* Espacio entre las cartas */
     width: 100%;
-    margin: 0 auto;
+    
 
    @media (width >= 760px) {
         width: 500px;

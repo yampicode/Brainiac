@@ -17,7 +17,8 @@ let tiempo = 0;
 let cronometroInterval;
 
 // Funciones para reproducir efectos de sonido
-/* function reproducirSonido(tipo) {
+
+ function reproducirSonido(tipo) {
     let audioSrc = '';
     
     switch(tipo) {
@@ -41,7 +42,7 @@ let cronometroInterval;
         audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
     }
 }
-*/
+
 
 
 // 1. Array anidado con diferentes categorías de figuras (usamos emojis)

@@ -44,6 +44,7 @@ let cronometroInterval;
 */
 
 // Sintetizador nativo para generar efectos de sonido
+
 function reproducirSonido(tipo) {
     try {
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -53,12 +54,12 @@ function reproducirSonido(tipo) {
         osc.connect(gain);
         gain.connect(audioCtx.destination);
 
-        let frecuencia = 400;
+        let frecuencia = 600;
         let duracion = 0.1;
         let tipoOnda = 'sine';
 
         if (tipo === 'voltear') {
-            frecuencia = 300;
+            frecuencia = 600;
             duracion = 0.08;
             tipoOnda = 'triangle';
         } else if (tipo === 'acierto') {
@@ -66,7 +67,7 @@ function reproducirSonido(tipo) {
             duracion = 0.15;
             tipoOnda = 'sine';
         } else if (tipo === 'error') {
-            frecuencia = 150;
+            frecuencia = 500;
             duracion = 0.2;
             tipoOnda = 'sawtooth';
         } else if (tipo === 'victoria') {
@@ -76,7 +77,7 @@ function reproducirSonido(tipo) {
             osc.frequency.setValueAtTime(600, now + 0.8);
             osc.frequency.setValueAtTime(800, now + 0.9);
             osc.type = 'sine';
-            gain.gain.setValueAtTime(0.8, now);
+            gain.gain.setValueAtTime(0.9, now);
             gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
             osc.start(now);
             osc.stop(now + 0.4);
@@ -86,7 +87,7 @@ function reproducirSonido(tipo) {
         const now = audioCtx.currentTime;
         osc.frequency.setValueAtTime(frecuencia, now);
         osc.type = tipoOnda;
-        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.setValueAtTime(0.9, now);
         gain.gain.exponentialRampToValueAtTime(0.001, now + duracion);
         osc.start(now);
         osc.stop(now + duracion);
@@ -268,7 +269,7 @@ function verificarVictoria() {
         victorias++;
         scoreTotal += puntuacionPartida;
         juegoIniciado = true; // Bloquea para que no altere el botón tras ganar
-        btnIniciar.innerText = "¡Completado!";
+        btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
         
         localStorage.setItem('victorias', victorias);

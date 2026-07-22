@@ -72,19 +72,16 @@ width: 100px;
 }
 
 /* El tablero se adapta al ancho disponible */
+
 .tablero {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr); /* Fuerza exactamente 4 columnas */
+    gap: 10px; /* Espacio entre las cartas */
     width: 100%;
-
-    @media (width >= 760px) {
-        width: 500px;
-        /* Tamaño máximo en escritorio */
-        justify-content: center;
-        align-items: centet;
-    }
+    max-width: 400px; /* Ajusta según el ancho que prefieras para tu tablero */
+    margin: 0 auto;
 }
+
 
 .card {
     aspect-ratio: 3/4;

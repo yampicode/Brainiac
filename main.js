@@ -251,8 +251,8 @@ function verificarCoincidencia() {
         scoreTotal += 2; 
         scoreAcumuladoParaVida += 2;
 
-        if (scoreAcumuladoParaVida >= 500) {
-            scoreAcumuladoParaVida -= 500; 
+        if (scoreAcumuladoParaVida >= 100) {
+            scoreAcumuladoParaVida -= 100; 
             maxVidas++; 
             vidas = maxVidas; 
             animarVidaExtra(); 

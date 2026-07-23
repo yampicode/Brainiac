@@ -58,7 +58,41 @@ let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
 let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
-let cronometroInterval;
+let cronometroInterval; 
+
+function animarVidaExtra() {
+    const corazonAnimado = document.createElement('div');
+    corazonAnimado.innerHTML = '❤️+1';
+    corazonAnimado.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e74c3c;
+        z-index: 9999;
+        pointer-events: none;
+        transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        opacity: 1;
+    `;
+    document.body.appendChild(corazonAnimado);
+
+    // Forzar un reflow para que la transición CSS surta efecto al moverlo
+    setTimeout(() => {
+        // Coordenadas aproximadas de la esquina superior derecha (donde están las vidas flotantes)
+        corazonAnimado.style.top = '15px';
+        corazonAnimado.style.left = 'calc(100vw - 60px)';
+        corazonAnimado.style.fontSize = '1rem';
+        corazonAnimado.style.opacity = '0';
+    }, 50);
+
+    // Eliminar el elemento del DOM al terminar la animación
+    setTimeout(() => {
+        corazonAnimado.remove();
+    }, 1250);
+}
+
 
 // Funciones para reproducir efectos de sonido
 function reproducirSonido(tipo) {

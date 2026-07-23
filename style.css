@@ -44,6 +44,21 @@ body {
     backdrop-filter: blur(5px);
 }
 
+/* Estilo por defecto para Móviles: 3 columnas y 2 filas (3 arriba, 3 abajo) */
+.grid-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+/* En pantallas de PC (mayores a 768px): Todo en una sola fila de 6 columnas */
+@media (min-width: 768px) {
+    .grid-stats {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
 .img {
     display: block;
     width: 60%;

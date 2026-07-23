@@ -75,7 +75,7 @@ function reproducirSonido(tipo) {
 // 1. Crear contenedor de vidas flotante en la esquina superior derecha
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span>❤️</span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
+vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
 document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal con 5 columnas

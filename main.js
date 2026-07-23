@@ -36,7 +36,7 @@ const categoriasFiguras = [
     { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
     { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
-   { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '', '🛞', '🚦', '🗺️', '🧳', '🌐'] }
+   { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] }
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe

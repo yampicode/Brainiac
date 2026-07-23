@@ -174,6 +174,9 @@ function crearTablero() {
         indiceCategoriaActual = 0;
     }
 
+// Guardar el avance actual en la memoria del navegador
+    localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
+
     const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
 
@@ -274,6 +277,7 @@ btnBorrar.onclick = () => {
         mejorTiempo = null;
         indiceCategoriaActual = 0; // Reinicia también el orden de las categorías si se borra el historial
         actualizarUI();
+        crearTablero();
     }
 };
 

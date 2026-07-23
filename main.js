@@ -37,7 +37,9 @@ const categoriasFiguras = [
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] }
 ];
 
-let indiceCategoriaActual = 0; // Controla el orden estricto de las categorías
+// Recuperar el índice de la categoría actual o empezar en 0 si no existe
+let indiceCategoriaActual = parseInt(localStorage.getItem('indiceCategoriaActual')) || 0;
+
 
 let cartasVolteadas = [];
 let bloqueado = true;

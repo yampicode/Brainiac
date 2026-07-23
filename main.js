@@ -155,10 +155,8 @@ document.getElementById('derrotas').innerText = derrotas;
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     
-    // Actualizar corazones flotantes
-    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, 10 - vidas));
+      const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, maxVidas - vidas));
     document.getElementById('vidas').innerText = corazones;
-}
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {

@@ -66,6 +66,7 @@ function reproducirSonido(tipo) {
         case 'acierto': audioSrc = 'acierto.ogg'; break;
         case 'error': audioSrc = 'error.ogg'; break;
         case 'victoria': audioSrc = 'victoria.ogg'; break;
+        case 'derrota': audioSrc = 'derrota.ogg';
     }
 
     if (audioSrc) {
@@ -236,7 +237,10 @@ function verificarCoincidencia() {
             btnIniciar.innerText = "¡Game Over!";
             btnIniciar.disabled = true;
             tablero.style.opacity = "0.4";
-            bloqueado = true; 
+            bloqueado = true;
+
+ // --- REPRODUCIR SONIDO DE DERROTA ---
+            reproducirSonido('derrota');
             
 // --- SUMAR Y GUARDAR DERROTA ---
             derrotas++;

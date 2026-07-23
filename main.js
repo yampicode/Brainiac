@@ -238,7 +238,10 @@ function verificarCoincidencia() {
             tablero.style.opacity = "0.4";
             bloqueado = true; 
             
-            document.querySelectorAll('.card').forEach(card => {
+// --- SUMAR Y GUARDAR DERROTA ---
+            derrotas++;
+            localStorage.setItem('derrotas', derrotas);
+            actualizarUI(); document.querySelectorAll('.card').forEach(card => {
                 card.classList.add('flipped');
             });
 

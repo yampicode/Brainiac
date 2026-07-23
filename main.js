@@ -32,14 +32,13 @@ const categoriasFiguras = [
     { nombre: "Cosas", items: ['💾', '💽', '🖨️', '🛒', '🔌', '🕯️', '💰', '⚖️', '🖥️', '💎'] },
     { nombre: "Mamíferos", items: ['🦓', '🐖', '🐎', '🦒', '🐿️', '🐪', '🐒', '🦘', '🐂', '🐘'] },
     { nombre: "Mar", items: ['🐠', '🫍', '🐬', '🦀', '🦑', '🐙', '🪼', '🦐', '🦈', '🦭'] },
-    { nombre: "Transporte", items: ['🚂', '✈️', '🏍️', '🚁', '🚀', '⛵', '🛶', '🛸', '🛳️', '🚠'] },
+    { nombre: "Transporte", items: ['🚂', '✈️', '🏍️', '🚁', '🚀', '⛵', '🛶', '🛸', '🛳️', '🚤', '🚠'] },
     { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] }
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe
 let indiceCategoriaActual = parseInt(localStorage.getItem('indiceCategoriaActual')) || 0;
-
 
 let cartasVolteadas = [];
 let bloqueado = true;
@@ -163,19 +162,13 @@ function crearTablero() {
     clearInterval(cronometroInterval);
     actualizarUI();
 
-    // 2. SELECCIÓN SECUENCIAL DE LA CATEGORÍA
-    const categoriaActual = categoriasFiguras[indiceCategoriaActual];
-    
-    // Avanzar al siguiente índice para la próxima partida
-    indiceCategoriaActual++;
-    
-    // Si llega al final de la lista, vuelve a empezar la vuelta desde la primera
+    // Validar por seguridad que el índice esté dentro del rango
     if (indiceCategoriaActual >= categoriasFiguras.length) {
         indiceCategoriaActual = 0;
     }
 
-// Guardar el avance actual en la memoria del navegador
-    localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
+    // 2. CARGAR LA CATEGORÍA ACTUAL SIN AVANZAR EL ÍNDICE AQUÍ
+    const categoriaActual = categoriasFiguras[indiceCategoriaActual];
 
     const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
@@ -241,10 +234,18 @@ function verificarVictoria() {
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
 
+        // 3. AVANZAR Y GUARDAR LA SIGUIENTE CATEGORÍA ÚNICAMENTE AL GANAR
+        indiceCategoriaActual++;
+        if (indiceCategoriaActual >= categoriasFiguras.length) {
+            indiceCategoriaActual = 0;
+        }
+        localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
+
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
-// Confetis 
-if (typeof confetti === 'function') {
+
+        // Confetis 
+        if (typeof confetti === 'function') {
             confetti({
                 particleCount: 100,
                 spread: 70,
@@ -275,7 +276,7 @@ btnBorrar.onclick = () => {
         localStorage.clear();
         victorias = scoreTotal = 0;
         mejorTiempo = null;
-        indiceCategoriaActual = 0; // Reinicia también el orden de las categorías si se borra el historial
+        indiceCategoriaActual = 0; 
         actualizarUI();
         crearTablero();
     }

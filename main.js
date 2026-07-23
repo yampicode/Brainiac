@@ -51,6 +51,7 @@ let vidas = 5;
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
+let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
 let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;

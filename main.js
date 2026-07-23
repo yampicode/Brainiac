@@ -188,8 +188,8 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    maxVidas = 10;                // <--- REINICIA EL LÍMITE BASE A 10
-    vidas = maxVidas;             // <--- LAS VIDAS ACTUALES VUELVEN A 10
+    maxVidas = 7;                // <--- REINICIA EL LÍMITE BASE A 7
+    vidas = maxVidas;             // <--- LAS VIDAS ACTUALES VUELVEN A 7
     scoreAcumuladoParaVida = 0;   // <--- REINICIA EL CONTADOR PARA LOS 500 PUNTOS
     bloqueado = true;
     juegoIniciado = false;

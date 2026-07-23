@@ -152,7 +152,7 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    vidas = 5; 
+    vidas = 10; 
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;

@@ -36,7 +36,7 @@ const categoriasFiguras = [
     { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
     { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
-   { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] }
+    { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] }
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe
@@ -48,9 +48,8 @@ let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
 let vidas = 10;
-let scoreAcumuladoParaVida = 0; // Para llevar la cuenta de los 500 en 500
-let maxVidas = 10; // Tu límite base predeterminado actual (puedes ajustarlo si cambiaste de 5 a 10)
-
+let scoreAcumuladoParaVida = 0; 
+let maxVidas = 10; 
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
@@ -78,21 +77,17 @@ function animarVidaExtra() {
     `;
     document.body.appendChild(corazonAnimado);
 
-    // Forzar un reflow para que la transición CSS surta efecto al moverlo
     setTimeout(() => {
-        // Coordenadas aproximadas de la esquina superior derecha (donde están las vidas flotantes)
         corazonAnimado.style.top = '15px';
         corazonAnimado.style.left = 'calc(100vw - 60px)';
         corazonAnimado.style.fontSize = '1rem';
         corazonAnimado.style.opacity = '0';
     }, 50);
 
-    // Eliminar el elemento del DOM al terminar la animación
     setTimeout(() => {
         corazonAnimado.remove();
     }, 1250);
 }
-
 
 // Funciones para reproducir efectos de sonido
 function reproducirSonido(tipo) {
@@ -103,7 +98,7 @@ function reproducirSonido(tipo) {
         case 'acierto': audioSrc = 'acierto.ogg'; break;
         case 'error': audioSrc = 'error.ogg'; break;
         case 'victoria': audioSrc = 'victoria.ogg'; break;
-        case 'derrota': audioSrc = 'derrota.ogg';
+        case 'derrota': audioSrc = 'derrota.ogg'; break;
     }
 
     if (audioSrc) {
@@ -119,9 +114,9 @@ vidasFlotantes.className = 'vidas-flotantes';
 vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
 document.body.appendChild(vidasFlotantes);
 
-// 2. Crear contenedor de marcadores principal con 5 columnas
+// 2. Crear contenedor de marcadores principal
 const displayInfo = document.createElement('div');
-displayInfo.id = 'panel-estadisticas'; // Le asignamos un ID para controlarlo por CSS
+displayInfo.id = 'panel-estadisticas'; 
 displayInfo.style.cssText = `
     width: 100%; 
     max-width: 600px; 
@@ -150,13 +145,13 @@ function actualizarUI() {
     document.getElementById('puntos-partida').innerText = puntuacionPartida;
     document.getElementById('score-total').innerText = scoreTotal;
     document.getElementById('victorias').innerText = victorias;
-
-document.getElementById('derrotas').innerText = derrotas; 
+    document.getElementById('derrotas').innerText = derrotas; 
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     
-      const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, maxVidas - vidas));
+    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, maxVidas - vidas));
     document.getElementById('vidas').innerText = corazones;
+} // <--- FALTABA ESTA LLAVE DE CIERRE AQUÍ
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
@@ -193,12 +188,14 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    vidas = 10; 
+    maxVidas = 10;                // <--- REINICIA EL LÍMITE BASE A 10
+    vidas = maxVidas;             // <--- LAS VIDAS ACTUALES VUELVEN A 10
+    scoreAcumuladoParaVida = 0;   // <--- REINICIA EL CONTADOR PARA LOS 500 PUNTOS
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;
     tiempo = 0;
-    cartasVolteadas = []; // <--- LIMPIA LAS CARTAS VOLTEADAS AQUÍ
+    cartasVolteadas = []; 
     btnIniciar.innerText = "Iniciar Juego";
     btnIniciar.disabled = false;
     tablero.style.opacity = "1";
@@ -234,7 +231,6 @@ function crearTablero() {
 }
 
 function flipCard(cardElement) {
-    // <--- SE AGREGA "vidas <= 0" AQUÍ PARA BLOQUEAR CLICS SI HUBO GAME OVER
     if (bloqueado || juegoPausado || cardElement.classList.contains('flipped') || vidas <= 0) return;
     
     cardElement.classList.add('flipped');
@@ -249,20 +245,17 @@ function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
 
-           if (primera.dataset.id === segunda.dataset.id) {
+    if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
-        scoreTotal += 2; // Asegúrate de sumar también al score total aquí
+        scoreTotal += 2; 
         scoreAcumuladoParaVida += 2;
 
-        // --- RECOMPENSA CADA 500 PUNTOS ---
         if (scoreAcumuladoParaVida >= 500) {
-            scoreAcumuladoParaVida -= 500; // Reinicia el contador para los siguientes 500
-            maxVidas++; // Aumenta el límite base de vidas permanentemente en esta partida
-            vidas = maxVidas; // Le otorga la vida extra de inmediato
-            
-            animarVidaExtra(); // ¡Lanza la animación visual!
+            scoreAcumuladoParaVida -= 500; 
+            maxVidas++; 
+            vidas = maxVidas; 
+            animarVidaExtra(); 
         } else {
-            // Recuperar vida normal al acertar (si estabas por debajo del máximo)
             if (vidas < maxVidas) {
                 vidas++;
             }
@@ -285,13 +278,13 @@ function verificarCoincidencia() {
             tablero.style.opacity = "0.4";
             bloqueado = true;
 
- // --- REPRODUCIR SONIDO DE DERROTA ---
             reproducirSonido('derrota');
             
-// --- SUMAR Y GUARDAR DERROTA ---
             derrotas++;
             localStorage.setItem('derrotas', derrotas);
-            actualizarUI(); document.querySelectorAll('.card').forEach(card => {
+            actualizarUI(); 
+            
+            document.querySelectorAll('.card').forEach(card => {
                 card.classList.add('flipped');
             });
 

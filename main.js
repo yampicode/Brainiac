@@ -83,27 +83,27 @@ document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal con 5 columnas
 const displayInfo = document.createElement('div');
+displayInfo.id = 'panel-estadisticas'; // Le asignamos un ID para controlarlo por CSS
 displayInfo.style.cssText = `
-    display: grid; 
-    grid-template-columns: repeat(5, 1fr); 
-    align-items: center; 
     width: 100%; 
     max-width: 600px; 
     margin-bottom: 20px; 
     background-color: #fff; 
-    padding: 10px; 
+    padding: 12px; 
     border-radius: 8px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
     color: #333;
 `;
 
 displayInfo.innerHTML = `
-    <div><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
-    <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-    <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
-    <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-    <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+    <div class="grid-stats">
+        <div><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
+        <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
+        <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+        <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
+        <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+        <div><div class="valores">Derrotas</div><strong id="derrotas" style="color: #e74c3c;">${derrotas}</strong></div>
+    </div>
 `;
 
 tablero.parentNode.insertBefore(displayInfo, tablero);

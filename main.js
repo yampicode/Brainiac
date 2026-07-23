@@ -111,7 +111,7 @@ function reproducirSonido(tipo) {
 // 1. Crear contenedor de vidas flotante en la esquina superior derecha
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
+vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️ 7</strong>`;
 document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal
@@ -149,9 +149,10 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 
- // --- NUEVO DISEÑO DE VIDAS: Un solo corazón y el número ---
+    // --- NUEVO DISEÑO DE VIDAS: Un solo corazón y el número ---
     const iconoCorazon = vidas > 0 ? '❤️' : '🖤';
     document.getElementById('vidas').innerHTML = `${iconoCorazon} ${Math.max(0, vidas)}`;   
+} // <--- ¡AQUÍ ESTABA FALTANDO CERRAR LA LLAVE!
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
@@ -188,9 +189,9 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    maxVidas = 7;                // <--- REINICIA EL LÍMITE BASE A 7
-    vidas = maxVidas;             // <--- LAS VIDAS ACTUALES VUELVEN A 7
-    scoreAcumuladoParaVida = 0;   // <--- REINICIA EL CONTADOR PARA LOS 500 PUNTOS
+    maxVidas = 7;                
+    vidas = maxVidas;             
+    scoreAcumuladoParaVida = 0;   
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;

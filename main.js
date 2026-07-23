@@ -277,7 +277,7 @@ btnBorrar.onclick = () => {
         mejorTiempo = null;
         indiceCategoriaActual = 0; // Reinicia también el orden de las categorías si se borra el historial
         actualizarUI();
-        crearTablero();
+        
     }
 };
 

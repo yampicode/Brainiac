@@ -47,7 +47,10 @@ let bloqueado = true;
 let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
-let vidas = 5; 
+let vidas = 10;
+let scoreAcumuladoParaVida = 0; // Para llevar la cuenta de los 500 en 500
+let maxVidas = 10; // Tu límite base predeterminado actual (puedes ajustarlo si cambiaste de 5 a 10)
+
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;

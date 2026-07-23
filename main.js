@@ -75,7 +75,7 @@ function reproducirSonido(tipo) {
 // 1. Crear contenedor de vidas flotante en la esquina superior derecha
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
+vidasFlotantes.innerHTML = `<span>❤️</span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
 document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal con 5 columnas
@@ -113,7 +113,7 @@ function actualizarUI() {
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     
     // Actualizar corazones flotantes
-    const corazones = '❤️'.repeat(vidas) + '🖤'.repeat(5 - vidas);
+    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, 5 - vidas));
     document.getElementById('vidas').innerText = corazones;
 }
 
@@ -157,6 +157,7 @@ function crearTablero() {
     juegoIniciado = false;
     juegoPausado = false;
     tiempo = 0;
+    cartasVolteadas = []; // <--- LIMPIA LAS CARTAS VOLTEADAS AQUÍ
     btnIniciar.innerText = "Iniciar Juego";
     btnIniciar.disabled = false;
     tablero.style.opacity = "1";
@@ -192,7 +193,9 @@ function crearTablero() {
 }
 
 function flipCard(cardElement) {
-    if (bloqueado || juegoPausado || cardElement.classList.contains('flipped')) return;
+    // <--- SE AGREGA "vidas <= 0" AQUÍ PARA BLOQUEAR CLICS SI HUBO GAME OVER
+    if (bloqueado || juegoPausado || cardElement.classList.contains('flipped') || vidas <= 0) return;
+    
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
     reproducirSonido('voltear');
@@ -216,15 +219,14 @@ function verificarCoincidencia() {
         vidas--; 
         actualizarUI();
 
-             if (vidas <= 0) {
+        if (vidas <= 0) {
             clearInterval(cronometroInterval);
             juegoIniciado = true;
             btnIniciar.innerText = "¡Game Over!";
             btnIniciar.disabled = true;
             tablero.style.opacity = "0.4";
-            bloqueado = true; // Bloquea el tablero por completo
+            bloqueado = true; 
             
-            // --- VOLTEAR TODAS LAS CARTAS AUTOMÁTICAMENTE EN GAME OVER ---
             document.querySelectorAll('.card').forEach(card => {
                 card.classList.add('flipped');
             });
@@ -234,7 +236,6 @@ function verificarCoincidencia() {
             }, 300);
             return;
         }
-
 
         setTimeout(() => {
             primera.classList.remove('flipped');

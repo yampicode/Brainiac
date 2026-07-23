@@ -216,19 +216,25 @@ function verificarCoincidencia() {
         vidas--; 
         actualizarUI();
 
-        if (vidas <= 0) {
+             if (vidas <= 0) {
             clearInterval(cronometroInterval);
             juegoIniciado = true;
             btnIniciar.innerText = "¡Game Over!";
             btnIniciar.disabled = true;
             tablero.style.opacity = "0.4";
-            bloqueado = true;
+            bloqueado = true; // Bloquea el tablero por completo
             
+            // --- VOLTEAR TODAS LAS CARTAS AUTOMÁTICAMENTE EN GAME OVER ---
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.add('flipped');
+            });
+
             setTimeout(() => {
                 alert("¡Te has quedado sin vidas! Game Over. Inténtalo de nuevo.");
             }, 300);
             return;
         }
+
 
         setTimeout(() => {
             primera.classList.remove('flipped');

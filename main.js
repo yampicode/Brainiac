@@ -113,7 +113,7 @@ function actualizarUI() {
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     
     // Actualizar corazones flotantes
-    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, 5 - vidas));
+    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, 10 - vidas));
     document.getElementById('vidas').innerText = corazones;
 }
 

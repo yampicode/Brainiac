@@ -306,7 +306,7 @@ function resetearTurno() {
 btnBorrar.onclick = () => {
     if (confirm("¿Borrar todo el historial?")) {
         localStorage.clear();
-        victorias = scoreTotal = 0;
+        victorias = scoreTotal = derrotas = 0;
         mejorTiempo = null;
         indiceCategoriaActual = 0; 
         actualizarUI();

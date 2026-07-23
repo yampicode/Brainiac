@@ -208,8 +208,14 @@ function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
 
-    if (primera.dataset.id === segunda.dataset.id) {
+        if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
+        
+        // --- RECUPERAR 1 VIDA AL ACERTAR (Máximo 10) ---
+        if (vidas < 10) {
+            vidas++;
+        }
+
         reproducirSonido('acierto');
         actualizarUI();
         resetearTurno();

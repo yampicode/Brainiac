@@ -45,6 +45,7 @@ let bloqueado = true;
 let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
+let vidas = 5; // Vidas iniciales por partida
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
@@ -79,14 +80,14 @@ function reproducirSonido(tipo) {
     }
 }
 
-// Crear contenedor de marcadores con 5 columnas
+// Crear contenedor de marcadores con 6 columnas (ahora incluimos Vidas)
 const displayInfo = document.createElement('div');
 displayInfo.style.cssText = `
     display: grid; 
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(6, 1fr); 
     align-items: center; 
     width: 100%; 
-    max-width: 600px; 
+    max-width: 650px; 
     margin-bottom: 20px; 
     background-color: #fff; 
     padding: 10px; 
@@ -97,10 +98,11 @@ displayInfo.style.cssText = `
 `;
 
 displayInfo.innerHTML = `
-    <div class="separador"><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
+    <div><div class="valores">Tiempo</div><strong id="cronometro">0s</strong></div>
     <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
     <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
     <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+    <div><div class="valores">Vidas</div><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong></div>
     <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
@@ -112,6 +114,10 @@ function actualizarUI() {
     document.getElementById('victorias').innerText = victorias;
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
+    
+    // Generar corazones visuales según las vidas restantes
+    const corazones = '❤️'.repeat(vidas) + '🖤'.repeat(5 - vidas);
+    document.getElementById('vidas').innerText = corazones;
 }
 
 // Botón único para Iniciar, Pausar y Reanudar
@@ -152,6 +158,7 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
+    vidas = 5; // Restablecer a 5 vidas al iniciar nueva partida
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;
@@ -162,14 +169,11 @@ function crearTablero() {
     clearInterval(cronometroInterval);
     actualizarUI();
 
-    // Validar por seguridad que el índice esté dentro del rango
     if (indiceCategoriaActual >= categoriasFiguras.length) {
         indiceCategoriaActual = 0;
     }
 
-    // 2. CARGAR LA CATEGORÍA ACTUAL SIN AVANZAR EL ÍNDICE AQUÍ
     const categoriaActual = categoriasFiguras[indiceCategoriaActual];
-
     const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
 
@@ -216,6 +220,24 @@ function verificarCoincidencia() {
         verificarVictoria();
     } else {
         reproducirSonido('error');
+        vidas--; // Pierde una vida al fallar
+        actualizarUI();
+
+        if (vidas <= 0) {
+            // Game Over por quedarse sin vidas
+            clearInterval(cronometroInterval);
+            juegoIniciado = true;
+            btnIniciar.innerText = "¡Game Over!";
+            btnIniciar.disabled = true;
+            tablero.style.opacity = "0.4";
+            bloqueado = true;
+            
+            setTimeout(() => {
+                alert("¡Te has quedado sin vidas! Game Over. Inténtalo de nuevo.");
+            }, 300);
+            return;
+        }
+
         setTimeout(() => {
             primera.classList.remove('flipped');
             segunda.classList.remove('flipped');
@@ -234,13 +256,12 @@ function verificarVictoria() {
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
 
-        // 3. AVANZAR Y GUARDAR LA SIGUIENTE CATEGORÍA ÚNICAMENTE AL GANAR
+        // Avanzar y guardar la siguiente categoría al ganar
         indiceCategoriaActual++;
         if (indiceCategoriaActual >= categoriasFiguras.length) {
             indiceCategoriaActual = 0;
         }
         localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
-
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
 

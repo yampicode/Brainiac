@@ -251,12 +251,23 @@ function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
 
-        if (primera.dataset.id === segunda.dataset.id) {
+           if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
-        
-        // --- RECUPERAR 1 VIDA AL ACERTAR (Máximo 10) ---
-        if (vidas < 10) {
-            vidas++;
+        scoreTotal += 2; // Asegúrate de sumar también al score total aquí
+        scoreAcumuladoParaVida += 2;
+
+        // --- RECOMPENSA CADA 500 PUNTOS ---
+        if (scoreAcumuladoParaVida >= 500) {
+            scoreAcumuladoParaVida -= 500; // Reinicia el contador para los siguientes 500
+            maxVidas++; // Aumenta el límite base de vidas permanentemente en esta partida
+            vidas = maxVidas; // Le otorga la vida extra de inmediato
+            
+            animarVidaExtra(); // ¡Lanza la animación visual!
+        } else {
+            // Recuperar vida normal al acertar (si estabas por debajo del máximo)
+            if (vidas < maxVidas) {
+                vidas++;
+            }
         }
 
         reproducirSonido('acierto');

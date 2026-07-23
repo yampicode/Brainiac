@@ -45,7 +45,7 @@ let bloqueado = true;
 let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
-let vidas = 5; // Vidas iniciales por partida
+let vidas = 5; 
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
@@ -59,35 +59,33 @@ function reproducirSonido(tipo) {
     let audioSrc = '';
 
     switch(tipo) {
-        case 'voltear':
-            audioSrc = 'voltear.ogg'; 
-            break;
-        case 'acierto':
-            audioSrc = 'acierto.ogg'; 
-            break;
-        case 'error':
-            audioSrc = 'error.ogg'; 
-            break;
-        case 'victoria':
-            audioSrc = 'victoria.ogg'; 
-            break;
+        case 'voltear': audioSrc = 'voltear.ogg'; break;
+        case 'acierto': audioSrc = 'acierto.ogg'; break;
+        case 'error': audioSrc = 'error.ogg'; break;
+        case 'victoria': audioSrc = 'victoria.ogg'; break;
     }
 
     if (audioSrc) {
         const audio = new Audio(audioSrc);
         audio.volume = 0.8;
-        audio.play().catch(e => console.log("El navegador bloqueó el audio hasta que haya interacción:", e));
+        audio.play().catch(e => console.log("Audio bloqueado:", e));
     }
 }
 
-// Crear contenedor de marcadores con 6 columnas (ahora incluimos Vidas)
+// 1. Crear contenedor de vidas flotante en la esquina superior derecha
+const vidasFlotantes = document.createElement('div');
+vidasFlotantes.className = 'vidas-flotantes';
+vidasFlotantes.innerHTML = `<span>❤️</span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
+document.body.appendChild(vidasFlotantes);
+
+// 2. Crear contenedor de marcadores principal con 5 columnas
 const displayInfo = document.createElement('div');
 displayInfo.style.cssText = `
     display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
+    grid-template-columns: repeat(5, 1fr); 
     align-items: center; 
     width: 100%; 
-    max-width: 650px; 
+    max-width: 600px; 
     margin-bottom: 20px; 
     background-color: #fff; 
     padding: 10px; 
@@ -102,7 +100,6 @@ displayInfo.innerHTML = `
     <div><div class="valores">Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
     <div><div class="valores">Puntos</div><strong id="puntos-partida">0</strong></div>
     <div><div class="valores">Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-    <div><div class="valores">Vidas</div><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong></div>
     <div><div class="valores">Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
 `;
 
@@ -115,7 +112,7 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     
-    // Generar corazones visuales según las vidas restantes
+    // Actualizar corazones flotantes
     const corazones = '❤️'.repeat(vidas) + '🖤'.repeat(5 - vidas);
     document.getElementById('vidas').innerText = corazones;
 }
@@ -123,7 +120,6 @@ function actualizarUI() {
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
     if (!juegoIniciado) {
-        // --- ACCIÓN 1: INICIAR ---
         juegoIniciado = true;
         juegoPausado = false;
         bloqueado = false;
@@ -135,7 +131,6 @@ btnIniciar.onclick = () => {
         }, 1000);
 
     } else if (!juegoPausado) {
-        // --- ACCIÓN 2: PAUSAR ---
         clearInterval(cronometroInterval);
         juegoPausado = true;
         bloqueado = true;
@@ -143,7 +138,6 @@ btnIniciar.onclick = () => {
         tablero.style.opacity = "0.5";
 
     } else {
-        // --- ACCIÓN 3: REANUDAR ---
         cronometroInterval = setInterval(() => {
             tiempo++;
             document.getElementById('cronometro').innerText = `${tiempo}s`;
@@ -158,7 +152,7 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    vidas = 5; // Restablecer a 5 vidas al iniciar nueva partida
+    vidas = 5; 
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;
@@ -177,7 +171,6 @@ function crearTablero() {
     const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
 
-    // Mezclar los ítems de forma aleatoria
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];
@@ -220,11 +213,10 @@ function verificarCoincidencia() {
         verificarVictoria();
     } else {
         reproducirSonido('error');
-        vidas--; // Pierde una vida al fallar
+        vidas--; 
         actualizarUI();
 
         if (vidas <= 0) {
-            // Game Over por quedarse sin vidas
             clearInterval(cronometroInterval);
             juegoIniciado = true;
             btnIniciar.innerText = "¡Game Over!";
@@ -256,7 +248,6 @@ function verificarVictoria() {
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
 
-        // Avanzar y guardar la siguiente categoría al ganar
         indiceCategoriaActual++;
         if (indiceCategoriaActual >= categoriasFiguras.length) {
             indiceCategoriaActual = 0;
@@ -265,7 +256,6 @@ function verificarVictoria() {
         localStorage.setItem('victorias', victorias);
         localStorage.setItem('scoreTotal', scoreTotal);
 
-        // Confetis 
         if (typeof confetti === 'function') {
             confetti({
                 particleCount: 100,

@@ -47,9 +47,9 @@ let bloqueado = true;
 let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
-let vidas = 10;
+let vidas = 7;
 let scoreAcumuladoParaVida = 0; 
-let maxVidas = 10; 
+let maxVidas = 7; 
 
 // Recuperar datos desde localStorage
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
@@ -111,7 +111,7 @@ function reproducirSonido(tipo) {
 // 1. Crear contenedor de vidas flotante en la esquina superior derecha
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️</strong>`;
+vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️❤️❤️❤️❤️❤️❤️</strong>`;
 document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal

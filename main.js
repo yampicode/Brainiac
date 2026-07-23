@@ -148,10 +148,10 @@ function actualizarUI() {
     document.getElementById('derrotas').innerText = derrotas; 
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
-    
-    const corazones = '❤️'.repeat(Math.max(0, vidas)) + '🖤'.repeat(Math.max(0, maxVidas - vidas));
-    document.getElementById('vidas').innerText = corazones;
-} // <--- FALTABA ESTA LLAVE DE CIERRE AQUÍ
+
+ // --- NUEVO DISEÑO DE VIDAS: Un solo corazón y el número ---
+    const iconoCorazon = vidas > 0 ? '❤️' : '🖤';
+    document.getElementById('vidas').innerHTML = `${iconoCorazon} ${Math.max(0, vidas)}`;   
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {

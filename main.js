@@ -112,6 +112,8 @@ function actualizarUI() {
     document.getElementById('puntos-partida').innerText = puntuacionPartida;
     document.getElementById('score-total').innerText = scoreTotal;
     document.getElementById('victorias').innerText = victorias;
+
+document.getElementById('derrotas').innerText = derrotas; 
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
     

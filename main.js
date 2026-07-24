@@ -98,7 +98,7 @@ const categoriasFiguras = [
 
     { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-shell', 'icofont-brand-general-electric', 'icofont-brand-nasa'] },
 
- { nombre: "Brand", items: ['icofont-brand-amazon', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-warnerbros', 'icofont-brand-motorola'] },
+ { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
 
 { nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-mercedes', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-volkswagen'] },
 

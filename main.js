@@ -62,7 +62,7 @@ let cronometroInterval;
 
 function animarVidaExtra() {
     const corazonAnimado = document.createElement('div');
-    corazonAnimado.innerHTML = '❤️ +1';
+    corazonAnimado.innerHTML = '<i class="icofont-heart"></i>+1';
     corazonAnimado.style.cssText = `
         position: fixed;
         top: 50%;

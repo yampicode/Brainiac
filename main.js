@@ -20,7 +20,12 @@ const categoriasFiguras = [
 
  { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-simple-smile', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
 
-    { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
+    { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-building-alt', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-bull-dozer', 'icofont-danger-zone'] },
+
+  { nombre: "Construction", items: ['icofont-concrete-mixer', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
+
+{ nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-fire-extinguisher', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
+
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
     { nombre: "Flores", items: ['🌹', '🌻', '🌸', '🌺', '🪷', '🏵️', '🪻', '🌼', '🌷', '💮'] },
     { nombre: "Chucherías", items: ['🍫', '🍬', '🍭', '🍦', '🍨', '🍩', '🍪', '🍧', '🍿', '🍰'] },

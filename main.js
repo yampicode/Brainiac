@@ -104,7 +104,10 @@ const categoriasFiguras = [
 
 { nombre: "Marca de comida", items: ['icofont-brand-nescafe', 'icofont-brand-redbull', 'icofont-brand-mcdonals', 'icofont-brand-cocal-cola', 'icofont-brand-nestle', 'icofont-brand-burger-king', 'icofont-brand-pizza-hut', 'icofont-brand-eleven', 'icofont-brand-pepsi', 'icofont-brand-starbucks'] },
 
- { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-brand-youtube', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp', 'icofont-skype', 'icofont-snapchat'] }
+ { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-youtube', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp'] },
+
+{ nombre: "RRSS 2", items: ['icofont-facebook-messenger', 'icofont-spotify', 'icofont-twitch', 'icofont-x', 'icofont-soundcloud', 'icofont-reddit', 'icofont-rss', 'icofont-discord', 'icofont-bbm-messenger', 'icofont-blogger'] }
+
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe

@@ -170,7 +170,7 @@ width: 100px;
     border: 4px double var(--color-oscuro);
     color: var(--color-oscuro);
     font-size: 2em;
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .card-back i {

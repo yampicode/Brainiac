@@ -14,6 +14,8 @@ const categoriasFiguras = [
   { nombre: "Monedas", items: ['icofont-won', 'icofont-yen', 'icofont-turkish-lira', 'icofont-taka', 'icofont-rupee', 'icofont-rouble', 'icofont-pound', 'icofont-riyal', 'icofont-renminbi', 'icofont-peso'] },
     { nombre: "Pagos", items: ['icofont-western-union', 'icofont-visa-electron', 'icofont-jcb', 'icofont-eway', 'icofont-discover', 'icofont-cash-on-delivery', 'icofont-braintree', 'icofont-bank-transfer', 'icofont-amazon-alt', 'icofont-2checkout'] },
 
+    { nombre: "Payment", items: ['icofont-apple-pay', 'icofont-visa', 'icofont-diners-club', 'icofont-stripe', 'icofont-mastercard', 'icofont-paypal', 'icofont-maestro', 'icofont-payoneer', 'icofont-google-wallet', 'icofont-sage'] },
+
     { nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
     { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },

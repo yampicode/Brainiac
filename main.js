@@ -36,7 +36,8 @@ const categoriasFiguras = [
     { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
     { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
-    { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] }
+    { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] },
+    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-disney', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-cocal-cola', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola']
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe
@@ -149,10 +150,11 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 
-    // --- NUEVO DISEÑO DE VIDAS: Un solo corazón y el número ---
-    const iconoCorazon = vidas > 0 ? '❤️' : '🖤';
-    document.getElementById('vidas').innerHTML = `${iconoCorazon} ${Math.max(0, vidas)}`;   
-} // <--- ¡AQUÍ ESTABA FALTANDO CERRAR LA LLAVE!
+ // Usando un icono de Icofont para la vida (Ej: icofont-heart)
+    const claseIcono = vidas > 0 ? 'icofont-heart' : 'icofont-heart-alt';
+    const colorIcono = vidas > 0 ? '#e74c3c' : '#333';
+    
+    document.getElementById('vidas').innerHTML = `<i class="${claseIcono}" style="color: ${colorIcono};"></i> ${Math.max(0, vidas)}`;
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
@@ -223,7 +225,7 @@ function crearTablero() {
         card.innerHTML = `
             <div class="card-inner">
                 <div class="card-front">?</div>
-                <div class="card-back">${id}</div>
+                <div class="card-back"><i class="${id}"></i></div>
             </div>
         `;
         card.onclick = () => flipCard(card);

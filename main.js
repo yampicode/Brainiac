@@ -60,19 +60,24 @@ const categoriasFiguras = [
 
     { nombre: "Buscar", items: ['icofont-search-job', 'icofont-search-folder', 'icofont-search-document', 'icofont-search-property', 'icofont-search-restaurant', 'icofont-search-stock', 'icofont-search-user', 'icofont-search-map', 'icofont-search-2', 'icofont-search-1'] },
 
-    { nombre: "Manos", items: ['👍🏼', '🫶🏼', '💪🏼', '👊🏼', '🙌🏼', '🫰🏼', '🫵🏼', '🖐🏼', '✍🏼', '👌🏼'] },
+    { nombre: "Viajar", items: ['icofont-air-ticket', 'icofont-direction-sign', 'icofont-island-alt', 'icofont-beach', 'icofont-5-star-hotel', 'icofont-camping-vest', 'icofont-hotel', 'icofont-island', 'icofont-sandals-female', 'icofont-sandals-male'] },
 
-    { nombre: "Profesión", items: ['🧑🏼‍🚀', '👷🏼', '👮🏼', '🕵🏼', '🧑🏼‍🍳', '🧑🏼‍⚕️', '🧑🏼‍🚒', '🧑🏼‍🌾', '🧑🏼‍💻', '🧑🏼‍🏫'] },
+    { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-cycling'] },
 
-    { nombre: "Insectos", items: ['icofont-snail-1', '🐞', '🐛', '🕷️', 'icofont-butterfly-alt', '🐝', '🦂', '🐜', '🦗', '🪰'] },
+    { nombre: "Chart", items: ['icofont-snail-1', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-butterfly-alt', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
 
     { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-toy-duck', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
 
     { nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
+
     { nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
+
     { nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
+
     { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] },
+
     { nombre: "Hobby", items: ['🥋', '⛳', '🛹', '🪃', '🥏', '🤿', '🪡', '🧶', '🧵', '🛼'] },
+
     { nombre: "Cosas", items: ['💾', '💽', '🖨️', '🛒', '🔌', '🕯️', '💰', '⚖️', '🖥️', '💎'] },
 
     { nombre: "Mamíferos", items: ['icofont-zebra', 'icofont-gorilla', 'icofont-horse-head-2', 'icofont-giraffe', 'icofont-squirrel', 'icofont-camel', 'icofont-monkey-3', 'icofont-kangaroo', 'icofont-bull', 'icofont-elephant-head'] },
@@ -80,11 +85,17 @@ const categoriasFiguras = [
     { nombre: "Acuaticos", items: ['icofont-fish', 'icofont-crocodile', 'icofont-dolphin', 'icofont-crab', 'icofont-turtle', 'icofont-octopus', 'icofont-seahorse', 'icofont-shrimp-alt', 'icofont-whale', 'icofont-seal'] },
 
     { nombre: "Transporte", items: ['🚂', '✈️', '🏍️', '🚁', '🚀', '⛵', '🛶', '🛸', '🛳️', '🚠'] },
-    { nombre: "Vegetables", items: ['🍆', '🫑', '🥦', '🧄', '🫚', '🧅', '🥔', '🥕', '🌶️', '🍅'] },
-    { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
-    { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
-    { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] },
+
+    { nombre: "Vegetables", items: ['icofont-egg-plant', 'icofont-bell-pepper-capsicum', 'icofont-broccoli', 'icofont-pumpkin', 'icofont-mushroom', 'icofont-onion', 'icofont-potato', 'icofont-carrot', 'icofont-pepper', 'icofont-tomato'] },
+
+    { nombre: "Profesión", items: ['icofont-farmer-alt', 'icofont-police', 'icofont-lawyer', 'icofont-legal', 'icofont-nurse-alt', 'icofont-doctor', 'icofont-labour', 'icofont-military', 'icofont-investigator', 'icofont-burglar'] },
+
+    { nombre: "Ley", items: ['icofont-law-order', 'icofont-handcuff', 'icofont-law-alt-1', 'icofont-pistol', 'icofont-thief-alt', 'icofont-jail', 'icofont-cop-badge', 'icofont-lawyer-alt-2', 'icofont-law-scales', 'icofont-law-document'] },
+
+    { nombre: "Persona", items: ['icofont-boy', 'icofont-business-man', 'icofont-girl-alt', 'icofont-kid', 'icofont-woman-in-glasses', 'icofont-hotel-boy-alt', 'icofont-funky-man', 'icofont-girl', 'icofont-man-in-glasses', 'icofont-waiter'] },
+
     { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-pepsi', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola'] },
+
  { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-twitter', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp', 'icofont-skype', 'icofont-snapchat'] }
 ];
 

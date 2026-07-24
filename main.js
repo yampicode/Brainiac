@@ -64,13 +64,13 @@ const categoriasFiguras = [
 
     { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-muscle'] },
 
-    { nombre: "Chart", items: ['icofont-snail-1', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-butterfly-alt', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
+    { nombre: "Chart", items: ['icofont-chart-flow-2', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-chart-flow', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
 
     { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-toy-duck', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
 
-    { nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
+    { nombre: "Education", items: ['icofont-abc', 'icofont-book-alt', 'icofont-globe-alt', 'icofont-instrument', 'icofont-pencil-alt-5', 'icofont-test-tube-alt', 'icofont-microscope-alt', 'icofont-certificate-alt-1', 'icofont-hat', 'icofont-paper'] },
 
-    { nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },
+    { nombre: "Educación", items: ['icofont-medal', 'icofont-lamp-light', 'icofont-school-bag', 'icofont-read-book', 'icofont-test-bulb', 'icofont-university', 'icofont-brainstorming', 'icofont-certificate-alt-2', 'icofont-black-board', 'icofont-graduate-alt'] },
 
     { nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
 

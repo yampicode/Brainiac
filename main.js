@@ -14,9 +14,9 @@ const categoriasFiguras = [
 
  { nombre: "Fruts", items: ['icofont-avocado', 'icofont-coconut', 'icofont-corn', 'icofont-fruits', 'icofont-wheat', 'icofont-lemon', 'icofont-honey', 'icofont-cucumber', 'icofont-pear', 'icofont-orange'] },
 
-    { nombre: "Deportes", items: ['icofont-football', 'icofont-basketball', 'icofont-football-american', 'icofont-golf-alt', 'icofont-table-tennis', 'icofont-volleyball', 'icofont-bowling', 'icofont-bowling', 'icofont-rugby', 'icofont-tennis'] },
+    { nombre: "Deportes", items: ['icofont-football', 'icofont-basketball', 'icofont-football-american', 'icofont-golf-alt', 'icofont-table-tennis', 'icofont-volleyball', 'icofont-bowling', 'icofont-steering', 'icofont-rugby', 'icofont-tennis'] },
 
-{ nombre: "Sport", items: ['icofont-swimmer', 'icofont-steering', 'icofont-padding', 'icofont-hockey', 'icofont-baseballer', 'icofont-racer', 'icofont-skiing-man', 'icofont-runner-alt-1', 'icofont-tracking', 'icofont-climbing'] },
+{ nombre: "Sport", items: ['icofont-swimmer', 'icofont-ice-skate', 'icofont-padding', 'icofont-hockey', 'icofont-baseballer', 'icofont-racer', 'icofont-skiing-man', 'icofont-runner-alt-1', 'icofont-tracking', 'icofont-climbing'] },
 
     { nombre: "Comida", items: ['icofont-pizza-slice', 'icofont-burger', 'icofont-french-fries', 'icofont-hot-dog', 'icofont-cheese', 'icofont-bread', 'icofont-chicken-fry', 'icofont-sandwich', 'icofont-taco', 'icofont-croissant'] },
 

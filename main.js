@@ -8,7 +8,7 @@ const categoriasFiguras = [
     { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
     { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
     { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
-    { nombre: "Comida", items: ['🍕', '🍔', '🍟', '🌭', '🧀', '🥖', '🍗', '🥪', '🫓', '🎂'] },
+    { nombre: "Comida", items: ['icofont-pizza-slice', 'icofont-burger', 'icofont-french-fries', 'icofont-hot-dog', 'icofont-cheese', 'icofont-bread', 'icofont-chicken-fry', 'icofont-sandwich', 'icofont-taco', 'icofont-croissant'] },
     { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🛻', '🚓', '🚑', '🚒', '🚚'] },
     { nombre: "Banderas de América del Sur", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇺🇾', '🇵🇪', '🇨🇱', '🇪🇨', '🇧🇴', '🇵🇾', '🇻🇪', '🇸🇷', '🇬🇾'] },
     { nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },

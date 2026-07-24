@@ -28,6 +28,12 @@ body {
     width: 100%;
 }
 
+/* Forzar a que los iconos de icofont tengan espacio y no se oculten */
+.vidas-flotantes i, #vidas i {
+    display: inline-block !important;
+    font-style: normal !important;
+}
+
 .vidas-flotantes {
     position: fixed;
     top: 15px;

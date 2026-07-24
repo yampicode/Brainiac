@@ -150,12 +150,12 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 
-    // Usando un icono de Icofont para la vida
+    // Aseguramos que pinte el icono y luego el número de vidas
     const claseIcono = vidas > 0 ? 'icofont-heart' : 'icofont-heart-alt';
     const colorIcono = vidas > 0 ? '#e74c3c' : '#333';
     
     document.getElementById('vidas').innerHTML = `<i class="${claseIcono}" style="color: ${colorIcono};"></i> ${Math.max(0, vidas)}`;
-} // <--- LLAVE DE CIERRE DE actualizarUI() AÑADIDA CORRECTAMENTE
+}
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {

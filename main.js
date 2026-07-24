@@ -46,17 +46,25 @@ const categoriasFiguras = [
 
  { nombre: "Clima", items: ['icofont-sunny-day-temp', 'icofont-wind', 'icofont-sunny', 'icofont-rainy', 'icofont-celsius', 'icofont-fahrenheit', 'icofont-breakdown', 'icofont-rainy-thunder', 'icofont-sun-set', 'icofont-umbrella'] },
 
-    { nombre: "Flores", items: ['🌹', '🌻', '🌸', '🌺', '🪷', '🏵️', '🪻', '🌼', '🌷', '💮'] },
-    { nombre: "Chucherías", items: ['🍫', '🍬', '🍭', '🍦', '🍨', '🍩', '🍪', '🍧', '🍿', '🍰'] },
-    { nombre: "Bebidas", items: ['🧃', '☕', '🍾', '🍹', '🍸', '🍺', '🥛', '🫖', '🧉', '🍷'] },
-    { nombre: "Variedad", items: ['🎁', '🎈', '🎉', '🎀', '🎃', '🎄', '🎊', '🎯', '🪁', '🎲'] },
-    { nombre: "Ropa", items: ['🧦', '👗', '🩳', '👕', '👖', '🎽', '👚', '🎩', '👔', '🧢'] },
+    { nombre: "Negocio", items: ['icofont-bank', 'icofont-barcode', 'icofont-briefcase-1', 'icofont-bill-alt', 'icofont-coins', 'icofont-stamp', 'icofont-files-stack', 'icofont-handshake-deal', 'icofont-money-bag', 'icofont-presentation'] },
+
+    { nombre: "Kids", items: ['icofont-baby-milk-bottle', 'icofont-candy', 'icofont-baby', 'icofont-baby-cloth', 'icofont-baby-trolley', 'icofont-toy-horse', 'icofont-toy-lattu', 'icofont-safety-pin', 'icofont-toy-hand', 'icofont-baby-backpack'] },
+
+    { nombre: "Bebidas", items: ['icofont-soft-drinks', 'icofont-coffee-mug', 'icofont-cola', 'icofont-juice', 'icofont-cocktail', 'icofont-beer', 'icofont-milk', 'icofont-tea-pot', 'icofont-coconut-water', 'icofont-coffee-alt'] },
+
+    { nombre: "Interfaz", items: ['icofont-ui-bluetooth', 'icofont-ui-alarm', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-clip', 'icofont-ui-video-play', 'icofont-ui-password', 'icofont-ui-music', 'icofont-ui-network', 'icofont-ui-dial-phone'] },
+
+{ nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-ui-volume', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
+
+    { nombre: "Buscar", items: ['icofont-search-job', 'icofont-search-folder', 'icofont-search-document', 'icofont-search-property', 'icofont-search-restaurant', 'icofont-search-stock', 'icofont-search-user', 'icofont-search-map', 'icofont-search-2', 'icofont-search-1'] },
+
     { nombre: "Manos", items: ['👍🏼', '🫶🏼', '💪🏼', '👊🏼', '🙌🏼', '🫰🏼', '🫵🏼', '🖐🏼', '✍🏼', '👌🏼'] },
+
     { nombre: "Profesión", items: ['🧑🏼‍🚀', '👷🏼', '👮🏼', '🕵🏼', '🧑🏼‍🍳', '🧑🏼‍⚕️', '🧑🏼‍🚒', '🧑🏼‍🌾', '🧑🏼‍💻', '🧑🏼‍🏫'] },
 
     { nombre: "Insectos", items: ['icofont-snail-1', '🐞', '🐛', '🕷️', 'icofont-butterfly-alt', '🐝', '🦂', '🐜', '🦗', '🪰'] },
 
-    { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-duck-tracks', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
+    { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-toy-duck', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
 
     { nombre: "Otros", items: ['🎮', '🎳', '♟️', '🧩', '🪀', '🕹️', '🎨', '🃏', '📷', '🏹'] },
     { nombre: "Instrumentos", items: ['🎹', '🎷', '🎺', '🪊', '🎸', '🎻', '🪉', '🪇', '🥁', '🪗'] },

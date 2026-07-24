@@ -94,7 +94,15 @@ const categoriasFiguras = [
 
     { nombre: "Persona", items: ['icofont-boy', 'icofont-business-man', 'icofont-girl-alt', 'icofont-kid', 'icofont-woman-in-glasses', 'icofont-hotel-boy-alt', 'icofont-funky-man', 'icofont-girl', 'icofont-man-in-glasses', 'icofont-waiter'] },
 
-    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-pepsi', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola'] },
+{ nombre: "Person", items: ['icofont-support', 'icofont-user-alt-5', 'icofont-user-female', 'icofont-user-suited', 'icofont-users-alt-4', 'icofont-users-alt-6', 'icofont-users-social', 'icofont-users-alt-2', 'icofont-users-alt-5', 'icofont-users-social'] },
+
+    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-shell', 'icofont-brand-general-electric', 'icofont-brand-nasa'] },
+
+ { nombre: "Brand", items: ['icofont-brand-amazon', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-warnerbros', 'icofont-brand-motorola'] },
+
+{ nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-mercedes', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-volkswagen'] },
+
+{ nombre: "Marca de comida", items: ['icofont-brand-pizza-hut', 'icofont-brand-redbull', 'icofont-brand-mcdonals', 'icofont-brand-cocal-cola', 'icofont-brand-nestle', 'icofont-brand-burger-king', 'icofont-brand-pizza-hut', 'icofont-brand-eleven', 'icofont-brand-pepsi', 'icofont-brand-starbucks'] },
 
  { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-twitter', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp', 'icofont-skype', 'icofont-snapchat'] }
 ];

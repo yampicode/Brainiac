@@ -37,7 +37,8 @@ const categoriasFiguras = [
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
     { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
     { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] },
-    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-cocal-cola', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola'] }
+    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-pepsi', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola'] },
+ { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-twitter', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp', 'icofont-skype', 'icofont-snapchat'] }
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe

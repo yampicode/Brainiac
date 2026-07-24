@@ -72,19 +72,19 @@ const categoriasFiguras = [
 
     { nombre: "Educación", items: ['icofont-medal', 'icofont-lamp-light', 'icofont-school-bag', 'icofont-read-book', 'icofont-test-bulb', 'icofont-university', 'icofont-brainstorming', 'icofont-certificate-alt-2', 'icofont-black-board', 'icofont-graduate-alt'] },
 
-    { nombre: "Artefactos", items: ['🎤', '🎧', '🎚️', '🎙️', '📻', '📺', '🎬', '📼', '🔦', '📽️'] },
+    { nombre: "Multimedia", items: ['icofont-music-disk', 'icofont-volume-up', 'icofont-multimedia', 'icofont-record', 'icofont-cassette-playe', 'icofont-video-alt', 'icofont-video-clapper', 'icofont-cassette', 'icofont-volume-mute', 'icofont-video-cam'] },
 
-    { nombre: "Hogar", items: ['🛏️', '🪑', '🚪', '🛋️', '🚿', '🚽', '🛁', '🪞', '🧹', '🧻'] },
+    { nombre: "Thing", items: ['icofont-anchor', 'icofont-binoculars', 'icofont-bomb', 'icofont-box', 'icofont-bucket', 'icofont-bullseye', 'icofont-cart-alt', 'icofont-code', 'icofont-dice', 'icofont-diskette'] },
 
-    { nombre: "Hobby", items: ['🥋', '⛳', '🛹', '🪃', '🥏', '🤿', '🪡', '🧶', '🧵', '🛼'] },
+    { nombre: "Others", items: ['icofont-home', 'icofont-hour-glass', 'icofont-karate', 'icofont-jewlery', 'icofont-letter', 'icofont-life-buoy', 'icofont-lighter', 'icofont-megaphone', 'icofont-mop', 'icofont-print'] },
 
-    { nombre: "Cosas", items: ['💾', '💽', '🖨️', '🛒', '🔌', '🕯️', '💰', '⚖️', '🖥️', '💎'] },
+    { nombre: "Cosas", items: ['icofont-news', 'icofont-newspaper', 'icofont-telescope', 'icofont-space', 'icofont-paint', 'icofont-plugin', 'icofont-puzzle', 'icofont-usb-drive', 'icofont-royal', 'icofont-recycle'] },
 
     { nombre: "Mamíferos", items: ['icofont-zebra', 'icofont-gorilla', 'icofont-horse-head-2', 'icofont-giraffe', 'icofont-squirrel', 'icofont-camel', 'icofont-monkey-3', 'icofont-kangaroo', 'icofont-bull', 'icofont-elephant-head'] },
 
     { nombre: "Acuaticos", items: ['icofont-fish', 'icofont-crocodile', 'icofont-dolphin', 'icofont-crab', 'icofont-turtle', 'icofont-octopus', 'icofont-seahorse', 'icofont-shrimp-alt', 'icofont-whale', 'icofont-seal'] },
 
-    { nombre: "Transporte", items: ['🚂', '✈️', '🏍️', '🚁', '🚀', '⛵', '🛶', '🛸', '🛳️', '🚠'] },
+    { nombre: "Transporte", items: ['icofont-air-balloon', 'icofont-airplane-alt', 'icofont-bicycle', 'icofont-helicopter', 'icofont-rocket-alt-2', 'icofont-motor-biker', 'icofont-sail-boat', 'icofont-train-steam', 'icofont-ship-alt', 'icofont-cable-car'] },
 
     { nombre: "Vegetables", items: ['icofont-egg-plant', 'icofont-bell-pepper-capsicum', 'icofont-broccoli', 'icofont-pumpkin', 'icofont-mushroom', 'icofont-onion', 'icofont-potato', 'icofont-carrot', 'icofont-pepper', 'icofont-tomato'] },
 

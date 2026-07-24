@@ -166,8 +166,9 @@ width: 100px;
 
 .card-back {
     transform: rotateY(180deg);
-    background: var(--color-oscuro);
-    color: white;
+    background: var(--color-claro);
+    color: var(--color-oscuro);
+    font-size: 1.5em;
 }
 
 /* Ajuste para pantallas más grandes (Desktop) */

@@ -18,7 +18,7 @@ const categoriasFiguras = [
 
     { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-confounded', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
 
- { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-simple-smile', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', icofont-wink-smile'] },
+ { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-simple-smile', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
 
     { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },

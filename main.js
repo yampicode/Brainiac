@@ -16,7 +16,10 @@ const categoriasFiguras = [
 
     { nombre: "Payment", items: ['icofont-apple-pay', 'icofont-visa', 'icofont-diners-club', 'icofont-stripe', 'icofont-mastercard', 'icofont-paypal', 'icofont-maestro', 'icofont-payoneer', 'icofont-google-wallet', 'icofont-sage'] },
 
-    { nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
+    { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-confounded', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
+
+ { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-simple-smile', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', icofont-wink-smile'] },
+
     { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
     { nombre: "Flores", items: ['🌹', '🌻', '🌸', '🌺', '🪷', '🏵️', '🪻', '🌼', '🌷', '💮'] },

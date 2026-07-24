@@ -9,7 +9,7 @@ const categoriasFiguras = [
     { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
     { nombre: "Deportes", items: ['⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🥊'] },
     { nombre: "Comida", items: ['icofont-pizza-slice', 'icofont-burger', 'icofont-french-fries', 'icofont-hot-dog', 'icofont-cheese', 'icofont-bread', 'icofont-chicken-fry', 'icofont-sandwich', 'icofont-taco', 'icofont-croissant'] },
-    { nombre: "Vehículos", items: ['🚗', '🚕', '🚙', '🚌', '🚎', '🛻', '🚓', '🚑', '🚒', '🚚'] },
+    { nombre: "Vehículos", items: ['icofont-car', 'icofont-car-alt-3', 'icofont-auto-rickshaw', 'icofont-bus-alt-1', 'icofont-truck-alt', 'icofont-truck', 'icofont-taxi', 'icofont-fast-delivery', 'icofont-fire-truck', 'icofont-tractor'] },
     { nombre: "Banderas de América del Sur", items: ['🇦🇷', '🇧🇷', '🇨🇴', '🇺🇾', '🇵🇪', '🇨🇱', '🇪🇨', '🇧🇴', '🇵🇾', '🇻🇪', '🇸🇷', '🇬🇾'] },
     { nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },
     { nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },

@@ -62,7 +62,7 @@ const categoriasFiguras = [
 
     { nombre: "Viajar", items: ['icofont-air-ticket', 'icofont-direction-sign', 'icofont-island-alt', 'icofont-beach', 'icofont-5-star-hotel', 'icofont-camping-vest', 'icofont-hotel', 'icofont-island', 'icofont-sandals-female', 'icofont-sandals-male'] },
 
-    { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-cycling'] },
+    { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-muscle'] },
 
     { nombre: "Chart", items: ['icofont-snail-1', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-butterfly-alt', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
 

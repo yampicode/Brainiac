@@ -3,7 +3,7 @@ const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
-// 1. Array anidado con diferentes categorías de figuras (usamos emojis)
+// 1. Array anidado con diferentes categorías de figuras (emojis e icofont)
 const categoriasFiguras = [
     { nombre: "Animales", items: ['🐶', '🐱', '🐰', '🦊', '🐻', '🐼', '🐨', '🦁', '🐯', '🐮'] },
     { nombre: "Frutas", items: ['🍎', '🍌', '🍉', '🍇', '🍓', '🍍', '🥝', '🍑', '🍒', '🍋'] },
@@ -37,7 +37,7 @@ const categoriasFiguras = [
     { nombre: "Bonus", items: ['📢', '🔍', '🛡️', '⚔️', '📜', '🪤', '⏳', '⏰', '📰', '📦'] },
     { nombre: "Arbustos", items: ['🍄', '🌵', '🌴', '🪴', '🍀', '🌾', '🌳', '🌲', '🍁', '🍂', '🪾', '🌿'] },
     { nombre: "Elementos", items: ['🚨', '🚧', '⛽', '🛢️', '🧭', '🛟', '♻️', '🛞', '🚦', '🗺️', '🧳', '🌐'] },
-    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-disney', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-cocal-cola', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warnerbros', 'icofont-brand-motorola']}
+    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-disney', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-coca-cola', 'icofont-brand-general-electric', 'icofont-brand-nasa', 'icofont-warner-bros', 'icofont-brand-motorola'] }
 ];
 
 // Recuperar el índice de la categoría actual o empezar en 0 si no existe
@@ -112,7 +112,7 @@ function reproducirSonido(tipo) {
 // 1. Crear contenedor de vidas flotante en la esquina superior derecha
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;">❤️ 7</strong>`;
+vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;"><i class="icofont-heart" style="color: #e74c3c;"></i> 7</strong>`;
 document.body.appendChild(vidasFlotantes);
 
 // 2. Crear contenedor de marcadores principal
@@ -150,11 +150,12 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 
- // Usando un icono de Icofont para la vida (Ej: icofont-heart)
+    // Usando un icono de Icofont para la vida
     const claseIcono = vidas > 0 ? 'icofont-heart' : 'icofont-heart-alt';
     const colorIcono = vidas > 0 ? '#e74c3c' : '#333';
     
     document.getElementById('vidas').innerHTML = `<i class="${claseIcono}" style="color: ${colorIcono};"></i> ${Math.max(0, vidas)}`;
+} // <--- LLAVE DE CIERRE DE actualizarUI() AÑADIDA CORRECTAMENTE
 
 // Botón único para Iniciar, Pausar y Reanudar
 btnIniciar.onclick = () => {
@@ -186,7 +187,7 @@ btnIniciar.onclick = () => {
         btnIniciar.innerText = "Pausar";
         tablero.style.opacity = "1";
     }
-};
+}; // <--- LLAVE DE CIERRE DE btnIniciar.onclick AÑADIDA CORRECTAMENTE
 
 function crearTablero() {
     tablero.innerHTML = '';
@@ -222,10 +223,14 @@ function crearTablero() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.id = id;
+        
+        // Soporte tanto para Emojis como para clases de Icofont automáticamente
+        const contenidoCarta = id.startsWith('icofont-') ? `<i class="${id}"></i>` : id;
+
         card.innerHTML = `
             <div class="card-inner">
                 <div class="card-front">?</div>
-                <div class="card-back"><i class="${id}"></i></div>
+                <div class="card-back">${contenidoCarta}</div>
             </div>
         `;
         card.onclick = () => flipCard(card);

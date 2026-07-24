@@ -12,7 +12,7 @@ const categoriasFiguras = [
     { nombre: "Vehículos", items: ['icofont-car', 'icofont-car-alt-3', 'icofont-auto-rickshaw', 'icofont-bus-alt-1', 'icofont-truck-alt', 'icofont-truck', 'icofont-taxi', 'icofont-fast-delivery', 'icofont-fire-truck', 'icofont-tractor'] },
     { nombre: "Divisas", items: ['icofont-dollar', 'icofont-euro', 'icofont-peseta', 'icofont-lira', 'icofont-hryvnia', 'icofont-frank', 'icofont-dong', 'icofont-bitcoin', 'icofont-afghani', 'Bs.'] },
   { nombre: "Monedas", items: ['icofont-won', 'icofont-yen', 'icofont-turkish-lira', 'icofont-taka', 'icofont-rupee', 'icofont-rouble', 'icofont-pound', 'icofont-riyal', 'icofont-renminbi', 'icofont-peso'] },
-    { nombre: "Objetos", items: ['🔒', '✂️', '👑', '💡', '✏️', '☎️', '🔑', '💻', '⚓', '🔔'] },
+    { nombre: "Payment", items: ['icofont-mastercard', 'icofont-maestro', 'icofont-paypal', 'icofont-google-wallet-alt-3', 'icofont-diners-club', 'icofont-apple-pay', 'icofont-sage', 'icofont-stripe', 'icofont-visa', 'icofont-american-express'] },
     { nombre: "Caritas", items: ['😀', '😅', '😂', '🥳', '🤓', '🥹', '😋', '😍', '😱', '😎'] },
     { nombre: "Herramientas", items: ['🪏', '⛏️', '🪛', '🔧', '🪚', '🔨', '🪓', '🪜', '🧯', '🔩'] },
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },

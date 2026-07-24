@@ -229,7 +229,7 @@ function crearTablero() {
 
         card.innerHTML = `
             <div class="card-inner">
-                <div class="card-front">?</div>
+                <div class="card-front"><i class='icofont-star'></i></div>
                 <div class="card-back">${contenidoCarta}</div>
             </div>
         `;

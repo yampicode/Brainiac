@@ -56,7 +56,7 @@ const categoriasFiguras = [
 
     { nombre: "Interfaz", items: ['icofont-ui-bluetooth', 'icofont-ui-alarm', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-clip', 'icofont-ui-video-play', 'icofont-ui-password', 'icofont-ui-music', 'icofont-ui-network', 'icofont-ui-dial-phone'] },
 
-{ nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-ui-volume', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
+{ nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-eraser', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
 
     { nombre: "Buscar", items: ['icofont-search-job', 'icofont-search-folder', 'icofont-search-document', 'icofont-search-property', 'icofont-search-restaurant', 'icofont-search-stock', 'icofont-search-user', 'icofont-search-map', 'icofont-search-2', 'icofont-search-1'] },
 

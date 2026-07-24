@@ -16,9 +16,9 @@ const categoriasFiguras = [
 
     { nombre: "Payment", items: ['icofont-apple-pay', 'icofont-visa', 'icofont-diners-club', 'icofont-stripe', 'icofont-mastercard', 'icofont-paypal', 'icofont-maestro', 'icofont-payoneer', 'icofont-google-wallet', 'icofont-sage'] },
 
-    { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-confounded', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
+    { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-simple-smile', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
 
- { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-simple-smile', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
+ { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-confounded', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
 
     { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-building-alt', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-bull-dozer', 'icofont-danger-zone'] },
 

@@ -167,9 +167,10 @@ width: 100px;
 .card-back {
     transform: rotateY(180deg);
     background: #fff;
-    border: var(--color-oscuro);
+    border: 4px double var(--color-oscuro);
     color: var(--color-oscuro);
     font-size: 2em;
+    font-weight: 900;
 }
 
 /* Ajuste para pantallas más grandes (Desktop) */

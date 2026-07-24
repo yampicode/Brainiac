@@ -10,7 +10,9 @@ const categoriasFiguras = [
 
 { nombre: "Animals", items: ['icofont-rat', 'icofont-snake', 'icofont-pig', 'icofont-panther', 'icofont-lemur', 'icofont-frog', 'icofont-bat', 'icofont-deer-head', 'icofont-elk', 'icofont-giraffe-head-2'] },
 
-    { nombre: "Frutas", items: ['icofont-apple', 'icofont-banana', 'icofont-watermelon', 'icofont-grapes', 'icofont-strawberry', 'icofont-pineapple', 'icofont-kiwi', 'icofont-mango', 'icofont-cherry', 'icofont-lemon-alt', 'icofont-pear', 'icofont-orange'] },
+    { nombre: "Frutas", items: ['icofont-apple', 'icofont-banana', 'icofont-watermelon', 'icofont-grapes', 'icofont-strawberry', 'icofont-pineapple', 'icofont-kiwi', 'icofont-mango', 'icofont-cherry', 'icofont-lemon-alt'] },
+
+ { nombre: "Fruts", items: ['icofont-avocado', 'icofont-coconut', 'icofont-corn', 'icofont-fruits', 'icofont-wheat', 'icofont-lemon', 'icofont-honey', 'icofont-cucumber', 'icofont-pear', 'icofont-orange'] },
 
     { nombre: "Deportes", items: ['icofont-football', 'icofont-basketball', 'icofont-football-american', 'icofont-golf-alt', 'icofont-table-tennis', 'icofont-volleyball', 'icofont-bowling', 'icofont-bowling', 'icofont-rugby', 'icofont-tennis'] },
 

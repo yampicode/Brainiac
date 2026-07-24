@@ -173,6 +173,12 @@ width: 100px;
     font-weight: 900;
 }
 
+.card-back i {
+    color: var(--color-oscuro);
+    font-size: 2em;
+    font-weight: 900;
+}
+
 /* Ajuste para pantallas más grandes (Desktop) */
 @media (min-width: 600px) {
     .tablero {

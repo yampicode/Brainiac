@@ -20,11 +20,17 @@ const categoriasFiguras = [
 
  { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-confounded', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
 
-    { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-building-alt', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-bull-dozer', 'icofont-danger-zone'] },
+    { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-worker', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-workers-group', 'icofont-danger-zone'] },
 
-  { nombre: "Construction", items: ['icofont-concrete-mixer', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
+  { nombre: "Construction", items: ['icofont-help-robot', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
 
-{ nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-fire-extinguisher', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
+{ nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-calculations', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
+
+{ nombre: "Herramientas", items: ['icofont-fire-extinguisher-alt', 'icofont-glue-oil', 'icofont-power-zone', 'icofont-recycle-alt', 'icofont-recycling-man', 'icofont-safety-hat-light', 'icofont-tools-1', 'icofont-tools-bag', 'icofont-under-construction-alt', 'icofont-labour'] },
+
+{ nombre: "Industria", items: ['icofont-mining', 'icofont-pollution', 'icofont-industries', 'icofont-industries-3', 'icofont-industries-1', 'icofont-industries-2', 'icofont-industries-4', 'icofont-industries-5', 'icofont-industries', 'icofont-building-alt'] },
+
+{ nombre: "Maquinaria", items: ['icofont-vehicle-wrecking', 'icofont-vehicle-trucktor', 'icofont-vehicle-excavator', 'icofont-vehicle-dozer', 'icofont-vehicle-delivery-van', 'icofont-vehicle-crane', 'icofont-vehicle-cement', 'icofont-tow-truck', 'icofont-concrete-mixer', 'icofont-fork-lift'] },
 
     { nombre: "Naturaleza", items: ['⭐', '🔥', '🌛', '🌞', '⚡', '❄️', '🌎', '☁️', '🌪️', '🌈'] },
     { nombre: "Flores", items: ['🌹', '🌻', '🌸', '🌺', '🪷', '🏵️', '🪻', '🌼', '🌷', '💮'] },

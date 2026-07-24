@@ -31,17 +31,17 @@ body {
 .vidas-flotantes {
     position: fixed;
     top: 15px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 6px 12px;
+    right: 15px;
+    background-color: #ffffff;
+    padding: 8px 15px;
     border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    font-weight: bold;
     z-index: 1000;
     display: flex;
     align-items: center;
     gap: 5px;
-    backdrop-filter: blur(5px);
 }
 
 /* Estilo por defecto para Móviles: 3 columnas y 2 filas (3 arriba, 3 abajo) */

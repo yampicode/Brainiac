@@ -166,7 +166,7 @@ width: 100px;
 
 .card-back {
     transform: rotateY(180deg);
-    background: #ff;
+    background: #fff;
     border: var(--color-oscuro);
     color: var(--color-oscuro);
     font-size: 2em;

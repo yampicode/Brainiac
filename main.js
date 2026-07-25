@@ -232,10 +232,15 @@ function verificarCoincidencia() {
     const [primera, segunda] = cartasVolteadas;
 
     if (primera.dataset.id === segunda.dataset.id) {
+        // Sumamos los 2 puntos y la vida extra por acierto
         puntuacionPartida += 2;
         scoreTotal += 2;
+        vidas++; 
+        
         reproducirSonido('acierto');
         guardarDatosLocales();
+        actualizarUI(); // Refresca los contadores en pantalla inmediatamente
+        
         resetearTurno();
         verificarVictoria();
     } else {
@@ -271,6 +276,7 @@ function verificarCoincidencia() {
         }, 1000);
     }
 }
+
 
 function verificarVictoria() {
     const todasLasCartas = document.querySelectorAll('.card');

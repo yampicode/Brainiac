@@ -77,7 +77,11 @@ export const categoriasFiguras = [
 
         { nombre: "Directional", items: ['icofont-arrow-up', 'icofont-arrow-right', 'icofont-arrow-down', 'icofont-arrow-left', 'icofont-caret-up', 'icofont-caret-right', 'icofont-caret-down', 'icofont-caret-left', 'icofont-rounded-up', 'icofont-rounded-right'] },
     { nombre: "Directional 2", items: ['icofont-rounded-down', 'icofont-rounded-left', 'icofont-hand-drawn-up', 'icofont-hand-drawn-right', 'icofont-hand-drawn-down', 'icofont-hand-drawn-left', 'icofont-long-arrow-up', 'icofont-long-arrow-right', 'icofont-long-arrow-down', 'icofont-long-arrow-left'] },
-    { nombre: "Directional 3", items: ['icofont-ewall-up', 'icofont-wall-right', 'icofont-wall-down', 'icofont-wall-left', 'icofont-swoosh-up', 'icofont-swoosh-right', 'icofont-swoosh-down', 'icofont-swoosh-left', 'icofont-line-block-up', 'icofont-line-block-down'] },
+
+    { nombre: "Directional 3", items: ['icofont-block-right', 'icofont-block-left', 'icofont-cursor-drag', 'icofont-hand-grippers', 'icofont-swoosh-up', 'icofont-swoosh-right', 'icofont-swoosh-down', 'icofont-swoosh-left', 'icofont-block-up', 'icofont-block-down'] },
+
+ { nombre: "Directional 4", items: ['icofont-circled-left', 'icofont-circled-right', 'icofont-dotted-down', 'icofont-dotted-up', 'icofont-dotted-left', 'icofont-dotted-right', 'icofont-circled-down', 'icofont-circled-up', 'icofont-expand-alt', 'icofont-collapse'] },
+
         { nombre: "Archivos", items: ['icofont-file-code', 'icofont-file-css', 'icofont-file-document', 'icofont-file-excel', 'icofont-file-exe', 'icofont-file-file', 'icofont-file-flash', 'icofont-file-graph', 'icofont-file-html5', 'icofont-file-image'] },
     { nombre: "Archivos 2", items: ['icofont-file-java', 'icofont-file-javascript', 'icofont-file-music', 'icofont-file-pdf', 'icofont-file-photoshop', 'icofont-file-php', 'icofont-file-powerpoint', 'icofont-file-presentation', 'icofont-file-psd', 'icofont-file-python'] },
     { nombre: "Archivos 3", items: ['icofont-file-ruby', 'icofont-file-spreadsheet', 'icofont-file-sql', 'icofont-file-text', 'icofont-file-vector', 'icofont-file-video', 'icofont-file-word', 'icofont-file-zip', 'icofont-files', 'icofont-folder'] },

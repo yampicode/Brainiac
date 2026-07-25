@@ -87,13 +87,22 @@ export const categoriasFiguras = [
 
 { nombre: "Directional 6", items: ['icofont-simple-left-down', 'icofont-simple-left-up', 'icofont-simple-right-down', 'icofont-simple-right-up', 'icofont-stylish-down', 'icofont-stylish-left', 'icofont-stylish-right', 'icofont-stylish-up', 'icofont-hand-drag', 'icofont-thin-up'] },
 
-        { nombre: "Archivos", items: ['icofont-file-code', 'icofont-file-css', 'icofont-file-document', 'icofont-file-excel', 'icofont-file-exe', 'icofont-file-file', 'icofont-file-flash', 'icofont-file-graph', 'icofont-file-html5', 'icofont-file-image'] },
-    { nombre: "Archivos 2", items: ['icofont-file-java', 'icofont-file-javascript', 'icofont-file-music', 'icofont-file-pdf', 'icofont-file-photoshop', 'icofont-file-php', 'icofont-file-powerpoint', 'icofont-file-presentation', 'icofont-file-psd', 'icofont-file-python'] },
-    { nombre: "Archivos 3", items: ['icofont-file-ruby', 'icofont-file-spreadsheet', 'icofont-file-sql', 'icofont-file-text', 'icofont-file-vector', 'icofont-file-video', 'icofont-file-word', 'icofont-file-zip', 'icofont-files', 'icofont-folder'] },
-        { nombre: "Matemáticas", items: ['icofont-plus', 'icofont-minus', 'icofont-divide', 'icofont-multiply', 'icofont-calculator', 'icofont-abacus', 'icofont-pi', 'icofont-sigma', 'icofont-function', 'icofont-math'] },
-    { nombre: "Matemáticas 2", items: ['icofont-percentage', 'icofont-infinity', 'icofont-ruler', 'icofont-compass-alt', 'icofont-ruler-pencil', 'icofont-chart-pie', 'icofont-chart-bar-graph', 'icofont-chart-line', 'icofont-square-root', 'icofont-subscript'] },
+        { nombre: "Archivos", items: ['icofont-file-code', 'icofont-file-css', 'icofont-file-python', 'icofont-file-ruby', 'icofont-file-sql', 'icofont-file-java', 'icofont-file-php', 'icofont-file-javascript', 'icofont-file-html5', 'icofont-file-iso'] },
+
+    { nombre: "Archivos 2", items: ['icofont-file-word', 'icofont-file-text', 'icofont-file-spreadsheet', 'icofont-file-pdf', 'icofont-file-presentation', 'icofont-file-gif', 'icofont-file-jpg', 'icofont-file-zip', 'icofont-file-midi', 'icofont-file-video'] },
+
+    { nombre: "Archivos 3", items: ['icofont-file-wave', 'icofont-file-tiff', 'icofont-file-psd', 'icofont-file-png', 'icofont-file-powerpoint', 'icofont-file-mov', 'icofont-file-exe', 'icofont-file-excel', 'icofont-file-bmp', 'icofont-file-document'] },
+
+ { nombre: "Archivos 4", items: ['icofont-file-alt', 'icofont-file-audio', 'icofont-file-avi-mp4', 'icofont-file-flv', 'icofont-file-image', 'icofont-file-file', 'icofont-file-mp3', 'icofont-file-psb', 'icofont-file-svg', 'icofont-file-eps'] },
+
+        { nombre: "Matemáticas", items: ['icofont-angle-180', 'icofont-square-root', 'icofont-abacus', 'icofont-angle-45', 'icofont-ui-calculator', 'icofont-angle-90', 'icofont-angle', 'icofont-calculator-alt-1', 'icofont-circle-ruler-alt', 'icofont-circle-ruler'] },
+
+    { nombre: "Matemáticas 2", items: ['icofont-compass-alt-1', 'icofont-golden-ratio', 'icofont-marker-alt-1', 'icofont-math', 'icofont-mathematical-alt-1', 'icofont-mathematical-alt-2', 'icofont-mathematical', 'icofont-pen-alt-2', 'icofont-ruler-alt-1', 'icofont-pen-holder'] },
+
     { nombre: "Matemáticas 3", items: ['icofont-superscript', 'icofont-number-exact', 'icofont-numbers', 'icofont-axis', 'icofont-geometry', 'icofont-compass', 'icofont-protractor', 'icofont-ruler-alt-1', 'icofont-ruler-alt-2', 'icofont-pie-chart'] },
-        { nombre: "Editor de texto", items: ['icofont-bold', 'icofont-italic', 'icofont-underline', 'icofont-strikethrough', 'icofont-text-height', 'icofont-text-width', 'icofont-font', 'icofont-subscript', 'icofont-superscript', 'icofont-eraser'] },
+
+        { nombre: "Editor de texto", items: ['icofont-pen-holder-alt-1', 'icofont-pencil-alt-3', 'icofont-ruler-alt-2', 'icofont-ruler-compass-alt', 'icofont-ruler-compass', 'icofont-ruler-pencil-alt-1', 'icofont-ruler-pencil-alt-2', 'icofont-ruler-pencil', 'icofont-ruler', 'icofont-rulers-alt'] },
+
     { nombre: "Editor de texto 2", items: ['icofont-align-left', 'icofont-align-center', 'icofont-align-right', 'icofont-align-justify', 'icofont-list', 'icofont-numbered-list', 'icofont-outdent', 'icofont-indent', 'icofont-heading', 'icofont-paragraph'] },
     { nombre: "Editor de texto 3", items: ['icofont-link', 'icofont-unlink', 'icofont-cut', 'icofont-copy', 'icofont-paste', 'icofont-save', 'icofont-print', 'icofont-undo', 'icofont-redo', 'icofont-paper-clip'] },
         { nombre: "Aplicación", items: ['icofont-application-alt', 'icofont-ui-calculator', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-cart', 'icofont-ui-chat', 'icofont-ui-check', 'icofont-ui-clip', 'icofont-ui-cloud', 'icofont-ui-email'] },

@@ -132,6 +132,18 @@ let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
 let cronometroInterval; 
 
+// Cargar datos guardados o usar valores por defecto
+
+let maxVidas = parseInt(localStorage.getItem('maxVidas')) || 7;
+let vidas = parseInt(localStorage.getItem('vidas')) !== NaN ? parseInt(localStorage.getItem('vidas')) : maxVidas;
+
+function guardarDatosLocales() {
+    localStorage.setItem('scoreTotal', scoreTotal);
+    localStorage.setItem('maxVidas', maxVidas);
+    localStorage.setItem('vidas', vidas);
+}
+
+
 function animarVidaExtra() {
     const corazonAnimado = document.createElement('div');
     corazonAnimado.innerHTML = '<i class="icofont-heart"></i>+1';
@@ -348,6 +360,7 @@ if (vidasEsperadasPorScore > maxVidas) {
         }
 
         reproducirSonido('acierto');
+guardarDatosLocales();
         actualizarUI();
         resetearTurno();
         verificarVictoria();

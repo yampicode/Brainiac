@@ -76,11 +76,16 @@ export const categoriasFiguras = [
 { nombre: "Abstract 4", items: ['icofont-star-shape', 'icofont-swirl', 'icofont-tattoo-wing', 'icofont-throne', 'icofont-tree-alt', 'icofont-triangle', 'icofont-unity-hand', 'icofont-woman-bird', 'icofont-weed', 'icofont-skull-face'] },
 
         { nombre: "Directional", items: ['icofont-arrow-up', 'icofont-arrow-right', 'icofont-arrow-down', 'icofont-arrow-left', 'icofont-caret-up', 'icofont-caret-right', 'icofont-caret-down', 'icofont-caret-left', 'icofont-rounded-up', 'icofont-rounded-right'] },
+
     { nombre: "Directional 2", items: ['icofont-rounded-down', 'icofont-rounded-left', 'icofont-hand-drawn-up', 'icofont-hand-drawn-right', 'icofont-hand-drawn-down', 'icofont-hand-drawn-left', 'icofont-long-arrow-up', 'icofont-long-arrow-right', 'icofont-long-arrow-down', 'icofont-long-arrow-left'] },
 
     { nombre: "Directional 3", items: ['icofont-block-right', 'icofont-block-left', 'icofont-cursor-drag', 'icofont-hand-grippers', 'icofont-swoosh-up', 'icofont-swoosh-right', 'icofont-swoosh-down', 'icofont-swoosh-left', 'icofont-block-up', 'icofont-block-down'] },
 
  { nombre: "Directional 4", items: ['icofont-circled-left', 'icofont-circled-right', 'icofont-dotted-down', 'icofont-dotted-up', 'icofont-dotted-left', 'icofont-dotted-right', 'icofont-circled-down', 'icofont-circled-up', 'icofont-expand-alt', 'icofont-collapse'] },
+
+{ nombre: "Directional 5", items: ['icofont-bubble-down', 'icofont-bubble-right', 'icofont-bubble-up', 'icofont-bubble-left', 'icofont-hand-down', 'icofont-hand-up', 'icofont-hand-right', 'icofont-hand-left', 'icofont-hand-drag1', 'icofont-hand-drag2'] },
+
+{ nombre: "Directional 6", items: ['icofont-simple-left-down', 'icofont-simple-left-up', 'icofont-simple-right-down', 'icofont-simple-right-up', 'icofont-stylish-down', 'icofont-stylish-left', 'icofont-stylish-right', 'icofont-stylish-up', 'icofont-hand-drag', 'icofont-thin-up'] },
 
         { nombre: "Archivos", items: ['icofont-file-code', 'icofont-file-css', 'icofont-file-document', 'icofont-file-excel', 'icofont-file-exe', 'icofont-file-file', 'icofont-file-flash', 'icofont-file-graph', 'icofont-file-html5', 'icofont-file-image'] },
     { nombre: "Archivos 2", items: ['icofont-file-java', 'icofont-file-javascript', 'icofont-file-music', 'icofont-file-pdf', 'icofont-file-photoshop', 'icofont-file-php', 'icofont-file-powerpoint', 'icofont-file-presentation', 'icofont-file-psd', 'icofont-file-python'] },

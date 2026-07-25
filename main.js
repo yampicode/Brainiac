@@ -3,116 +3,71 @@ const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
-// 1. Array anidado con diferentes categorías de figuras (emojis e icofont)
+// 1. Array anidado con diferentes categorías de figuras
 const categoriasFiguras = [
-
     { nombre: "Animales", items: ['icofont-dog-alt', 'icofont-cat-alt-2', 'icofont-rabbit', 'icofont-fox', 'icofont-bear-face', 'icofont-panda', 'icofont-rhino-head', 'icofont-lion-head', 'icofont-tiger-face', 'icofont-cow-head'] },
-
-{ nombre: "Animals", items: ['icofont-rat', 'icofont-snake', 'icofont-pig', 'icofont-panther', 'icofont-lemur', 'icofont-frog', 'icofont-bat', 'icofont-deer-head', 'icofont-elk', 'icofont-giraffe-head-2'] },
-
+    { nombre: "Animals", items: ['icofont-rat', 'icofont-snake', 'icofont-pig', 'icofont-panther', 'icofont-lemur', 'icofont-frog', 'icofont-bat', 'icofont-deer-head', 'icofont-elk', 'icofont-giraffe-head-2'] },
     { nombre: "Frutas", items: ['icofont-apple', 'icofont-banana', 'icofont-watermelon', 'icofont-grapes', 'icofont-strawberry', 'icofont-pineapple', 'icofont-kiwi', 'icofont-mango', 'icofont-cherry', 'icofont-lemon-alt'] },
-
- { nombre: "Fruts", items: ['icofont-avocado', 'icofont-coconut', 'icofont-corn', 'icofont-fruits', 'icofont-wheat', 'icofont-lemon', 'icofont-honey', 'icofont-cucumber', 'icofont-pear', 'icofont-orange'] },
-
+    { nombre: "Fruts", items: ['icofont-avocado', 'icofont-coconut', 'icofont-corn', 'icofont-fruits', 'icofont-wheat', 'icofont-lemon', 'icofont-honey', 'icofont-cucumber', 'icofont-pear', 'icofont-orange'] },
     { nombre: "Deportes", items: ['icofont-football', 'icofont-basketball', 'icofont-football-american', 'icofont-golf-alt', 'icofont-table-tennis', 'icofont-volleyball', 'icofont-bowling', 'icofont-badminton-birdie', 'icofont-rugby', 'icofont-tennis'] },
-
-{ nombre: "Sport", items: ['icofont-swimmer', 'icofont-steering', 'icofont-padding', 'icofont-hockey', 'icofont-baseballer', 'icofont-racer', 'icofont-skiing-man', 'icofont-runner-alt-1', 'icofont-tracking', 'icofont-climbing'] },
-
+    { nombre: "Sport", items: ['icofont-swimmer', 'icofont-steering', 'icofont-padding', 'icofont-hockey', 'icofont-baseballer', 'icofont-racer', 'icofont-skiing-man', 'icofont-runner-alt-1', 'icofont-tracking', 'icofont-climbing'] },
     { nombre: "Comida", items: ['icofont-pizza-slice', 'icofont-burger', 'icofont-french-fries', 'icofont-hot-dog', 'icofont-cheese', 'icofont-bread', 'icofont-chicken-fry', 'icofont-sandwich', 'icofont-taco', 'icofont-croissant'] },
-
     { nombre: "Vehículos", items: ['icofont-car', 'icofont-car-alt-3', 'icofont-auto-rickshaw', 'icofont-bus-alt-1', 'icofont-truck-alt', 'icofont-truck', 'icofont-taxi', 'icofont-fast-delivery', 'icofont-fire-truck', 'icofont-tractor'] },
-
     { nombre: "Divisas", items: ['icofont-dollar', 'icofont-euro', 'icofont-peseta', 'icofont-lira', 'icofont-hryvnia', 'icofont-frank', 'icofont-dong', 'icofont-bitcoin', 'icofont-afghani', 'Bs.'] },
-
-  { nombre: "Monedas", items: ['icofont-won', 'icofont-yen', 'icofont-turkish-lira', 'icofont-taka', 'icofont-rupee', 'icofont-rouble', 'icofont-pound', 'icofont-riyal', 'icofont-renminbi', 'icofont-peso'] },
-
+    { nombre: "Monedas", items: ['icofont-won', 'icofont-yen', 'icofont-turkish-lira', 'icofont-taka', 'icofont-rupee', 'icofont-rouble', 'icofont-pound', 'icofont-riyal', 'icofont-renminbi', 'icofont-peso'] },
     { nombre: "Pagos", items: ['icofont-western-union', 'icofont-visa-electron', 'icofont-jcb', 'icofont-eway', 'icofont-discover', 'icofont-cash-on-delivery', 'icofont-braintree', 'icofont-bank-transfer', 'icofont-amazon-alt', 'icofont-2checkout'] },
-
     { nombre: "Payment", items: ['icofont-apple-pay', 'icofont-visa', 'icofont-diners-club', 'icofont-stripe', 'icofont-mastercard', 'icofont-paypal', 'icofont-maestro', 'icofont-payoneer', 'icofont-google-wallet', 'icofont-sage'] },
-
     { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-simple-smile', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
-
- { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-confounded', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
-
+    { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-confounded', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
     { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-worker', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-workers-group', 'icofont-danger-zone'] },
-
-  { nombre: "Construction", items: ['icofont-help-robot', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
-
-{ nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-calculations', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
-
-{ nombre: "Herramientas", items: ['icofont-fire-extinguisher-alt', 'icofont-glue-oil', 'icofont-power-zone', 'icofont-recycle-alt', 'icofont-recycling-man', 'icofont-safety-hat-light', 'icofont-tools-1', 'icofont-tools-bag', 'icofont-under-construction-alt', 'icofont-labour'] },
-
-{ nombre: "Industria", items: ['icofont-mining', 'icofont-pollution', 'icofont-industries', 'icofont-industries-3', 'icofont-industries-1', 'icofont-industries-2', 'icofont-industries-4', 'icofont-industries-5', 'icofont-industries', 'icofont-building-alt'] },
-
-{ nombre: "Maquinaria", items: ['icofont-vehicle-wrecking', 'icofont-vehicle-trucktor', 'icofont-vehicle-excavator', 'icofont-vehicle-dozer', 'icofont-vehicle-delivery-van', 'icofont-vehicle-crane', 'icofont-vehicle-cement', 'icofont-tow-truck', 'icofont-concrete-mixer', 'icofont-fork-lift'] },
-
+    { nombre: "Construction", items: ['icofont-help-robot', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
+    { nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-calculations', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
+    { nombre: "Herramientas", items: ['icofont-fire-extinguisher-alt', 'icofont-glue-oil', 'icofont-power-zone', 'icofont-recycle-alt', 'icofont-recycling-man', 'icofont-safety-hat-light', 'icofont-tools-1', 'icofont-tools-bag', 'icofont-under-construction-alt', 'icofont-labour'] },
+    { nombre: "Industria", items: ['icofont-mining', 'icofont-pollution', 'icofont-industries', 'icofont-industries-3', 'icofont-industries-1', 'icofont-industries-2', 'icofont-industries-4', 'icofont-industries-5', 'icofont-industries', 'icofont-building-alt'] },
+    { nombre: "Maquinaria", items: ['icofont-vehicle-wrecking', 'icofont-vehicle-trucktor', 'icofont-vehicle-excavator', 'icofont-vehicle-dozer', 'icofont-vehicle-delivery-van', 'icofont-vehicle-crane', 'icofont-vehicle-cement', 'icofont-tow-truck', 'icofont-concrete-mixer', 'icofont-fork-lift'] },
     { nombre: "Naturaleza", items: ['icofont-eclipse', 'icofont-forest-fire', 'icofont-night', 'icofont-sun-alt', 'icofont-thunder-light', 'icofont-snow', 'icofont-volcano', 'icofont-clouds', 'icofont-tornado', 'icofont-wave'] },
-
- { nombre: "Clima", items: ['icofont-sunny-day-temp', 'icofont-wind', 'icofont-sunny', 'icofont-rainy', 'icofont-celsius', 'icofont-fahrenheit', 'icofont-breakdown', 'icofont-rainy-thunder', 'icofont-sun-set', 'icofont-umbrella'] },
-
+    { nombre: "Clima", items: ['icofont-sunny-day-temp', 'icofont-wind', 'icofont-sunny', 'icofont-rainy', 'icofont-celsius', 'icofont-fahrenheit', 'icofont-breakdown', 'icofont-rainy-thunder', 'icofont-sun-set', 'icofont-umbrella'] },
     { nombre: "Negocio", items: ['icofont-bank', 'icofont-barcode', 'icofont-briefcase-1', 'icofont-bill-alt', 'icofont-coins', 'icofont-stamp', 'icofont-files-stack', 'icofont-handshake-deal', 'icofont-money-bag', 'icofont-presentation'] },
-
     { nombre: "Kids", items: ['icofont-baby-milk-bottle', 'icofont-candy', 'icofont-baby', 'icofont-baby-cloth', 'icofont-baby-trolley', 'icofont-toy-horse', 'icofont-toy-lattu', 'icofont-safety-pin', 'icofont-toy-hand', 'icofont-baby-backpack'] },
-
     { nombre: "Bebidas", items: ['icofont-soft-drinks', 'icofont-coffee-mug', 'icofont-cola', 'icofont-juice', 'icofont-cocktail', 'icofont-beer', 'icofont-milk', 'icofont-tea-pot', 'icofont-coconut-water', 'icofont-coffee-alt'] },
-
     { nombre: "Interfaz", items: ['icofont-ui-bluetooth', 'icofont-ui-alarm', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-clip', 'icofont-ui-video-play', 'icofont-ui-password', 'icofont-ui-music', 'icofont-ui-network', 'icofont-ui-dial-phone'] },
-
-{ nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-eraser', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
-
+    { nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-eraser', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
     { nombre: "Buscar", items: ['icofont-search-job', 'icofont-search-folder', 'icofont-search-document', 'icofont-search-property', 'icofont-search-restaurant', 'icofont-search-stock', 'icofont-search-user', 'icofont-search-map', 'icofont-search-2', 'icofont-search-1'] },
-
     { nombre: "Viajar", items: ['icofont-air-ticket', 'icofont-direction-sign', 'icofont-island-alt', 'icofont-beach', 'icofont-5-star-hotel', 'icofont-camping-vest', 'icofont-hotel', 'icofont-island', 'icofont-sandals-female', 'icofont-sandals-male'] },
-
     { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-muscle'] },
-
     { nombre: "Chart", items: ['icofont-chart-flow-2', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-chart-flow', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
-
     { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-toy-duck', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
-
     { nombre: "Education", items: ['icofont-abc', 'icofont-book-alt', 'icofont-globe-alt', 'icofont-instrument', 'icofont-pencil-alt-5', 'icofont-test-tube-alt', 'icofont-microscope-alt', 'icofont-certificate-alt-1', 'icofont-hat', 'icofont-paper'] },
-
     { nombre: "Educación", items: ['icofont-medal', 'icofont-lamp-light', 'icofont-school-bag', 'icofont-read-book', 'icofont-test-bulb', 'icofont-university', 'icofont-brainstorming', 'icofont-certificate-alt-2', 'icofont-black-board', 'icofont-graduate-alt'] },
-
     { nombre: "Multimedia", items: ['icofont-music-disk', 'icofont-volume-up', 'icofont-multimedia', 'icofont-record', 'icofont-cassette-player', 'icofont-video-alt', 'icofont-video-clapper', 'icofont-cassette', 'icofont-volume-mute', 'icofont-video-cam'] },
-
     { nombre: "Thing", items: ['icofont-anchor', 'icofont-binoculars', 'icofont-bomb', 'icofont-box', 'icofont-bucket', 'icofont-bullseye', 'icofont-cart-alt', 'icofont-code', 'icofont-dice', 'icofont-diskette'] },
-
     { nombre: "Others", items: ['icofont-home', 'icofont-hour-glass', 'icofont-karate', 'icofont-jewlery', 'icofont-letter', 'icofont-life-buoy', 'icofont-lighter', 'icofont-megaphone', 'icofont-mop', 'icofont-print'] },
-
     { nombre: "Cosas", items: ['icofont-news', 'icofont-newspaper', 'icofont-telescope', 'icofont-space', 'icofont-paint', 'icofont-plugin', 'icofont-puzzle', 'icofont-usb-drive', 'icofont-royal', 'icofont-recycle'] },
-
     { nombre: "Mamíferos", items: ['icofont-zebra', 'icofont-gorilla', 'icofont-horse-head-2', 'icofont-giraffe', 'icofont-squirrel', 'icofont-camel', 'icofont-monkey-3', 'icofont-kangaroo', 'icofont-bull', 'icofont-elephant-head'] },
-
     { nombre: "Acuaticos", items: ['icofont-fish', 'icofont-crocodile', 'icofont-dolphin', 'icofont-crab', 'icofont-turtle', 'icofont-octopus', 'icofont-seahorse', 'icofont-shrimp-alt', 'icofont-whale', 'icofont-seal'] },
-
     { nombre: "Transporte", items: ['icofont-air-balloon', 'icofont-airplane-alt', 'icofont-bicycle', 'icofont-helicopter', 'icofont-rocket-alt-2', 'icofont-motor-biker', 'icofont-sail-boat', 'icofont-train-steam', 'icofont-ship-alt', 'icofont-cable-car'] },
-
     { nombre: "Vegetables", items: ['icofont-egg-plant', 'icofont-bell-pepper-capsicum', 'icofont-broccoli', 'icofont-pumpkin', 'icofont-mushroom', 'icofont-onion', 'icofont-potato', 'icofont-carrot', 'icofont-pepper', 'icofont-tomato'] },
-
     { nombre: "Profesión", items: ['icofont-farmer-alt', 'icofont-police', 'icofont-lawyer', 'icofont-legal', 'icofont-nurse-alt', 'icofont-doctor', 'icofont-labour', 'icofont-military', 'icofont-investigator', 'icofont-burglar'] },
-
     { nombre: "Ley", items: ['icofont-law-order', 'icofont-handcuff', 'icofont-law-alt-1', 'icofont-pistol', 'icofont-thief-alt', 'icofont-jail', 'icofont-cop-badge', 'icofont-lawyer-alt-2', 'icofont-law-scales', 'icofont-law-document'] },
-
     { nombre: "Persona", items: ['icofont-boy', 'icofont-business-man', 'icofont-girl-alt', 'icofont-kid', 'icofont-woman-in-glasses', 'icofont-hotel-boy-alt', 'icofont-funky-man', 'icofont-girl', 'icofont-man-in-glasses', 'icofont-waiter'] },
-
-{ nombre: "Person", items: ['icofont-support', 'icofont-user-alt-5', 'icofont-user-female', 'icofont-user-suited', 'icofont-users-alt-4', 'icofont-users-alt-6', 'icofont-users-social', 'icofont-users-alt-2', 'icofont-users-alt-1', 'icofont-users-social'] },
-
+    { nombre: "Person", items: ['icofont-support', 'icofont-user-alt-5', 'icofont-user-female', 'icofont-user-suited', 'icofont-users-alt-4', 'icofont-users-alt-6', 'icofont-users-social', 'icofont-users-alt-2', 'icofont-users-alt-1', 'icofont-users-social'] },
     { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-shell', 'icofont-brand-general-electric', 'icofont-brand-nasa'] },
-
- { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
-
-{ nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-mercedes', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-volkswagen'] },
-
-{ nombre: "Marca de comida", items: ['icofont-brand-nescafe', 'icofont-brand-redbull', 'icofont-brand-mcdonals', 'icofont-brand-cocal-cola', 'icofont-brand-nestle', 'icofont-brand-burger-king', 'icofont-brand-pizza-hut', 'icofont-brand-eleven', 'icofont-brand-pepsi', 'icofont-brand-starbucks'] },
-
- { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-youtube', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp'] },
-
-{ nombre: "RRSS 2", items: ['icofont-facebook-messenger', 'icofont-spotify', 'icofont-twitch', 'icofont-x', 'icofont-soundcloud', 'icofont-reddit', 'icofont-rss', 'icofont-discord', 'icofont-bbm-messenger', 'icofont-blogger'] }
-
+    { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
+    { nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-mercedes', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-volkswagen'] },
+    { nombre: "Marca de comida", items: ['icofont-brand-nescafe', 'icofont-brand-redbull', 'icofont-brand-mcdonals', 'icofont-brand-cocal-cola', 'icofont-brand-nestle', 'icofont-brand-burger-king', 'icofont-brand-pizza-hut', 'icofont-brand-eleven', 'icofont-brand-pepsi', 'icofont-brand-starbucks'] },
+    { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-youtube', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp'] },
+    { nombre: "RRSS 2", items: ['icofont-facebook-messenger', 'icofont-spotify', 'icofont-twitch', 'icofont-x', 'icofont-soundcloud', 'icofont-reddit', 'icofont-rss', 'icofont-discord', 'icofont-bbm-messenger', 'icofont-blogger'] }
 ];
 
-// Recuperar el índice de la categoría actual o empezar en 0 si no existe
+// Carga de datos persistentes desde localStorage
+let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
+let maxVidas = parseInt(localStorage.getItem('maxVidas')) || 7;
+let vidas = parseInt(localStorage.getItem('vidas'));
+if (isNaN(vidas)) { vidas = maxVidas; }
+
+let victorias = parseInt(localStorage.getItem('victorias')) || 0;
+let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
+let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let indiceCategoriaActual = parseInt(localStorage.getItem('indiceCategoriaActual')) || 0;
 
 let cartasVolteadas = [];
@@ -120,29 +75,17 @@ let bloqueado = true;
 let juegoIniciado = false;
 let juegoPausado = false;
 let puntuacionPartida = 0;
-let vidas = 7;
-let scoreAcumuladoParaVida = 0; 
-let maxVidas = 7; 
-
-// Recuperar datos desde localStorage
-let victorias = parseInt(localStorage.getItem('victorias')) || 0;
-let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
-let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
-let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
 let tiempo = 0;
 let cronometroInterval; 
-
-// Cargar datos guardados o usar valores por defecto
-
-let maxVidas = parseInt(localStorage.getItem('maxVidas')) || 7;
-let vidas = parseInt(localStorage.getItem('vidas')) !== NaN ? parseInt(localStorage.getItem('vidas')) : maxVidas;
 
 function guardarDatosLocales() {
     localStorage.setItem('scoreTotal', scoreTotal);
     localStorage.setItem('maxVidas', maxVidas);
     localStorage.setItem('vidas', vidas);
+    localStorage.setItem('victorias', victorias);
+    localStorage.setItem('derrotas', derrotas);
+    localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
 }
-
 
 function animarVidaExtra() {
     const corazonAnimado = document.createElement('div');
@@ -174,10 +117,8 @@ function animarVidaExtra() {
     }, 1250);
 }
 
-// Funciones para reproducir efectos de sonido
 function reproducirSonido(tipo) {
     let audioSrc = '';
-
     switch(tipo) {
         case 'voltear': audioSrc = 'voltear.ogg'; break;
         case 'acierto': audioSrc = 'acierto.ogg'; break;
@@ -185,7 +126,6 @@ function reproducirSonido(tipo) {
         case 'victoria': audioSrc = 'victoria.ogg'; break;
         case 'derrota': audioSrc = 'derrota.ogg'; break;
     }
-
     if (audioSrc) {
         const audio = new Audio(audioSrc);
         audio.volume = 0.8;
@@ -193,13 +133,13 @@ function reproducirSonido(tipo) {
     }
 }
 
-// 1. Crear contenedor de vidas flotante en la esquina superior derecha
+// Interfaz flotante de vidas
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
-vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;"><i class="icofont-heart" style="color: #e74c3c;"></i> 7</strong>`;
+vidasFlotantes.innerHTML = `<span></span><strong id="vidas" style="color: #e74c3c;"><i class="icofont-heart" style="color: #e74c3c;"></i> ${vidas}</strong>`;
 document.body.appendChild(vidasFlotantes);
 
-// 2. Crear contenedor de marcadores principal
+// Panel de estadísticas
 const displayInfo = document.createElement('div');
 displayInfo.id = 'panel-estadisticas'; 
 displayInfo.style.cssText = `
@@ -223,7 +163,6 @@ displayInfo.innerHTML = `
         <div><div class="valores">Derrotas</div><strong id="derrotas" style="color: #e74c3c;">${derrotas}</strong></div>
     </div>
 `;
-
 tablero.parentNode.insertBefore(displayInfo, tablero);
 
 function actualizarUI() {
@@ -234,14 +173,12 @@ function actualizarUI() {
     document.getElementById('cronometro').innerText = `${tiempo}s`;
     document.getElementById('mejor-tiempo').innerText = mejorTiempo ? `${mejorTiempo}s` : '--';
 
-    // Aseguramos que pinte el icono y luego el número de vidas
     const claseIcono = vidas > 0 ? 'icofont-heart' : 'icofont-heart-alt';
     const colorIcono = vidas > 0 ? '#e74c3c' : '#333';
-    
     document.getElementById('vidas').innerHTML = `<i class="${claseIcono}" style="color: ${colorIcono};"></i> ${Math.max(0, vidas)}`;
 }
 
-// Botón único para Iniciar, Pausar y Reanudar
+// Botón Iniciar / Pausar
 btnIniciar.onclick = () => {
     if (!juegoIniciado) {
         juegoIniciado = true;
@@ -271,14 +208,13 @@ btnIniciar.onclick = () => {
         btnIniciar.innerText = "Pausar";
         tablero.style.opacity = "1";
     }
-}; // <--- LLAVE DE CIERRE DE btnIniciar.onclick AÑADIDA CORRECTAMENTE
+};
 
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    maxVidas = 7;                
-    vidas = maxVidas;             
-    scoreAcumuladoParaVida = 0;   
+    // OJO: Ya no reseteamos las vidas aquí al iniciar partida, 
+    // mantenemos las vidas y maxVidas que el usuario ya trae guardadas.
     bloqueado = true;
     juegoIniciado = false;
     juegoPausado = false;
@@ -307,8 +243,7 @@ function crearTablero() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.id = id;
-        
-        // Soporte tanto para Emojis como para clases de Icofont automáticamente
+
         const contenidoCarta = id.startsWith('icofont-') ? `<i class="${id}"></i>` : id;
 
         card.innerHTML = `
@@ -324,7 +259,7 @@ function crearTablero() {
 
 function flipCard(cardElement) {
     if (bloqueado || juegoPausado || cardElement.classList.contains('flipped') || vidas <= 0) return;
-    
+
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
     reproducirSonido('voltear');
@@ -333,40 +268,44 @@ function flipCard(cardElement) {
     }
 }
 
+// Función encargada de evaluar si se cruzó una centena exacta en el score total
+function sumarPuntosYVerificarVida(puntosASumar) {
+    let scoreAnterior = scoreTotal;
+    scoreTotal += puntosASumar;
+
+    // Evaluamos cuántas centenas completas tiene antes y después
+    let centenasAnteriores = Math.floor(scoreAnterior / 100);
+    let centenasActuales = Math.floor(scoreTotal / 100);
+
+    // Si cruzó una centena nueva, sumamos la vida extra y disparamos animación
+    if (centenasActuales > centenasAnteriores) {
+        let diferencia = centenasActuales - centenasAnteriores;
+        maxVidas += diferencia;
+        vidas += diferencia;
+        animarVidaExtra();
+    }
+
+    guardarDatosLocales();
+    actualizarUI();
+}
+
 function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
 
     if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
-        scoreTotal += 2; 
-        // Ejemplo: cuando el usuario gana la partida y se suman los puntos totales
-scoreTotal += 20; // (O los puntos que haya sumado en la partida)
-
-// --- LÓGICA DE VIDA EXTRA POR CADA 100 PUNTOS DE SCORE TOTAL ---
-// Calculamos cuántas veces cabe 100 en el score total actual (ej: 100/100 = 1, 200/100 = 2)
-let vidasEsperadasPorScore = 7 + Math.floor(scoreTotal / 300);
-
-// Si el número de vidas que debería tener por su score es mayor al máximo actual, subimos de nivel la vida base
-if (vidasEsperadasPorScore > maxVidas) {
-    let diferencia = vidasEsperadasPorScore - maxVidas;
-    maxVidas += diferencia; // Aumenta el límite predeterminado (ej: de 7 a 8)
-    vidas += diferencia;    // Le suma la vida actual al marcador activo
-    animarVidaExtra();      // Dispara la animación flotante que hicimos antes
-} else {
-            if (vidas < maxVidas) {
-                vidas++;
-            }
-        }
-
         reproducirSonido('acierto');
-guardarDatosLocales();
-        actualizarUI();
+        
+        // Sumamos los 2 puntos de este acierto a nivel global y revisamos centenas
+        sumarPuntosYVerificarVida(2);
+
         resetearTurno();
         verificarVictoria();
     } else {
         reproducirSonido('error');
         vidas--; 
+        guardarDatosLocales();
         actualizarUI();
 
         if (vidas <= 0) {
@@ -378,11 +317,10 @@ guardarDatosLocales();
             bloqueado = true;
 
             reproducirSonido('derrota');
-            
             derrotas++;
-            localStorage.setItem('derrotas', derrotas);
+            guardarDatosLocales();
             actualizarUI(); 
-            
+
             document.querySelectorAll('.card').forEach(card => {
                 card.classList.add('flipped');
             });
@@ -406,18 +344,19 @@ function verificarVictoria() {
     if (Array.from(todasLasCartas).every(card => card.classList.contains('flipped'))) {
         clearInterval(cronometroInterval);
         victorias++;
-        scoreTotal += puntuacionPartida;
         juegoIniciado = true; 
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
+
+        // Sumamos los puntos obtenidos en esta partida completada al score total mediante la función de centenas
+        sumarPuntosYVerificarVida(puntuacionPartida);
 
         indiceCategoriaActual++;
         if (indiceCategoriaActual >= categoriasFiguras.length) {
             indiceCategoriaActual = 0;
         }
-        localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
-        localStorage.setItem('victorias', victorias);
-        localStorage.setItem('scoreTotal', scoreTotal);
+
+        guardarDatosLocales();
 
         if (typeof confetti === 'function') {
             confetti({
@@ -448,7 +387,11 @@ function resetearTurno() {
 btnBorrar.onclick = () => {
     if (confirm("¿Borrar todo el historial?")) {
         localStorage.clear();
-        victorias = scoreTotal = derrotas = 0;
+        scoreTotal = 0;
+        maxVidas = 7;
+        vidas = 7;
+        victorias = 0;
+        derrotas = 0;
         mejorTiempo = null;
         indiceCategoriaActual = 0; 
         actualizarUI();

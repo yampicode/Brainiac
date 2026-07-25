@@ -58,7 +58,7 @@ export const categoriasFiguras = [
 
         { nombre: "Interfaz 3", items: ['icofont-ui-add', 'icofont-ui-laoding', 'icofont-ui-alarm', 'icofont-ui-battery', 'icofont-ui-block', 'icofont-ui-bluetooth', 'icofont-ui-brightness', 'icofont-ui-browser', 'icofont-ui-calculator', 'icofont-ui-calendar'] },
 
-    { nombre: "Interfaz 4", items: ['icofont-ui-call', 'icofont-ui-camera', 'icofont-ui-cart', 'icofont-ui-cell-phone', 'icofont-ui-chat', 'icofont-ui-check', 'icofont-ui-clip', 'icofont-ui-close', 'icofont-ui-cloud', 'icofont-ui-settings'] },
+    { nombre: "Interfaz 4", items: ['icofont-ui-call', 'icofont-ui-camera', 'icofont-ui-cart', 'icofont-ui-cell-phone', 'icofont-ui-chat', 'icofont-ui-check', 'icofont-ui-clip', 'icofont-ui-close', 'icofont-ui-map', 'icofont-ui-settings'] },
     { nombre: "Interfaz 5", items: ['icofont-ui-contact-list', 'icofont-ui-copy', 'icofont-ui-cut', 'icofont-ui-delete', 'icofont-ui-dial-phone', 'icofont-ui-directory', 'icofont-ui-edit', 'icofont-ui-email', 'icofont-ui-file', 'icofont-ui-fire'] },
         { nombre: "Brand 2", items: ['icofont-brand-adobe', 'icofont-brand-airbnb', 'icofont-brand-android', 'icofont-brand-angular', 'icofont-brand-apple', 'icofont-brand-behance', 'icofont-brand-bing', 'icofont-brand-Blogger', 'icofont-brand-bootstrap', 'icofont-brand-chrome'] },
     { nombre: "Brand 3", items: ['icofont-brand-codepen', 'icofont-brand-css3', 'icofont-brand-deviantart', 'icofont-brand-digg', 'icofont-brand-dribbble', 'icofont-brand-dropbox', 'icofont-brand-ebay', 'icofont-brand-facebook', 'icofont-brand-flickr', 'icofont-brand-foursquare'] },

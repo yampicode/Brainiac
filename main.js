@@ -169,9 +169,25 @@ btnIniciar.onclick = () => {
 };
 
 function crearTablero() {
+    const cartasExistentes = document.querySelectorAll('.card.flipped');
+    
+    if (cartasExistentes.length > 0) {
+        // 1. Quitamos la clase 'flipped' para que se desvolteen con la animación CSS
+        cartasExistentes.forEach(card => card.classList.remove('flipped'));
+        
+        // 2. Esperamos a que termine la animación (ej. 400ms) antes de limpiar y regenerar el tablero
+        setTimeout(() => {
+            inicializarNuevaPartida();
+        }, 400); // Este tiempo debe coincidir o ser cercano al 'transition' de tu CSS
+    } else {
+        inicializarNuevaPartida();
+    }
+}
+
+function inicializarNuevaPartida() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    vidas = 7; // Reset clásico de vidas al iniciar nueva partida
+    vidas = 7; 
     bloqueado = false;
     juegoIniciado = false;
     tiempo = 0;
@@ -213,7 +229,6 @@ function crearTablero() {
         card.onclick = () => flipCard(card);
         tablero.appendChild(card);
     });
-}
 
 function flipCard(cardElement) {
     if (!juegoIniciado || bloqueado || cardElement.classList.contains('flipped') || vidas <= 0) return;

@@ -1,63 +1,14 @@
+import { categoriasFiguras } from './categorias.js';
+
+// A partir de aquí, tu código del juego funciona exactamente igual, 
+// ya que 'categoriasFiguras' estará disponible con todos tus arrays.
+//;console.log(categoriasFiguras);
+
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
-// 1. Array anidado con diferentes categorías de figuras
-const categoriasFiguras = [
-    { nombre: "Animales", items: ['icofont-dog-alt', 'icofont-cat-alt-2', 'icofont-rabbit', 'icofont-fox', 'icofont-bear-face', 'icofont-panda', 'icofont-rhino-head', 'icofont-lion-head', 'icofont-tiger-face', 'icofont-cow-head'] },
-    { nombre: "Animals", items: ['icofont-rat', 'icofont-snake', 'icofont-pig', 'icofont-panther', 'icofont-lemur', 'icofont-frog', 'icofont-bat', 'icofont-deer-head', 'icofont-elk', 'icofont-giraffe-head-2'] },
-    { nombre: "Frutas", items: ['icofont-apple', 'icofont-banana', 'icofont-watermelon', 'icofont-grapes', 'icofont-strawberry', 'icofont-pineapple', 'icofont-kiwi', 'icofont-mango', 'icofont-cherry', 'icofont-lemon-alt'] },
-    { nombre: "Fruts", items: ['icofont-avocado', 'icofont-coconut', 'icofont-corn', 'icofont-fruits', 'icofont-wheat', 'icofont-lemon', 'icofont-honey', 'icofont-cucumber', 'icofont-pear', 'icofont-orange'] },
-    { nombre: "Deportes", items: ['icofont-football', 'icofont-basketball', 'icofont-football-american', 'icofont-golf-alt', 'icofont-table-tennis', 'icofont-volleyball', 'icofont-bowling', 'icofont-badminton-birdie', 'icofont-rugby', 'icofont-tennis'] },
-    { nombre: "Sport", items: ['icofont-swimmer', 'icofont-steering', 'icofont-padding', 'icofont-hockey', 'icofont-baseballer', 'icofont-racer', 'icofont-skiing-man', 'icofont-runner-alt-1', 'icofont-tracking', 'icofont-climbing'] },
-    { nombre: "Comida", items: ['icofont-pizza-slice', 'icofont-burger', 'icofont-french-fries', 'icofont-hot-dog', 'icofont-cheese', 'icofont-bread', 'icofont-chicken-fry', 'icofont-sandwich', 'icofont-taco', 'icofont-croissant'] },
-    { nombre: "Vehículos", items: ['icofont-car', 'icofont-car-alt-3', 'icofont-auto-rickshaw', 'icofont-bus-alt-1', 'icofont-truck-alt', 'icofont-truck', 'icofont-taxi', 'icofont-fast-delivery', 'icofont-fire-truck', 'icofont-tractor'] },
-    { nombre: "Divisas", items: ['icofont-dollar', 'icofont-euro', 'icofont-peseta', 'icofont-lira', 'icofont-hryvnia', 'icofont-frank', 'icofont-dong', 'icofont-bitcoin', 'icofont-afghani', 'Bs.'] },
-    { nombre: "Monedas", items: ['icofont-won', 'icofont-yen', 'icofont-turkish-lira', 'icofont-taka', 'icofont-rupee', 'icofont-rouble', 'icofont-pound', 'icofont-riyal', 'icofont-renminbi', 'icofont-peso'] },
-    { nombre: "Pagos", items: ['icofont-western-union', 'icofont-visa-electron', 'icofont-jcb', 'icofont-eway', 'icofont-discover', 'icofont-cash-on-delivery', 'icofont-braintree', 'icofont-bank-transfer', 'icofont-amazon-alt', 'icofont-2checkout'] },
-    { nombre: "Payment", items: ['icofont-apple-pay', 'icofont-visa', 'icofont-diners-club', 'icofont-stripe', 'icofont-mastercard', 'icofont-paypal', 'icofont-maestro', 'icofont-payoneer', 'icofont-google-wallet', 'icofont-sage'] },
-    { nombre: "Caritas", items: ['icofont-angry', 'icofont-astonished', 'icofont-simple-smile', 'icofont-confused', 'icofont-crying', 'icofont-nerd-smile', 'icofont-expressionless', 'icofont-heart-eyes', 'icofont-laughing', 'icofont-dizzy'] },
-    { nombre: "Emoji", items: ['icofont-open-mouth', 'icofont-rage', 'icofont-rolling-eyes', 'icofont-sad', 'icofont-confounded', 'icofont-stuck-out-tongue', 'icofont-smirk', 'icofont-slightly-smile', 'icofont-worried', 'icofont-wink-smile'] },
-    { nombre: "Construcción", items: ['icofont-architecture-alt', 'icofont-architecture', 'icofont-barricade', 'icofont-worker', 'icofont-bricks', 'icofont-bolt', 'icofont-cement-mix', 'icofont-calculations', 'icofont-workers-group', 'icofont-danger-zone'] },
-    { nombre: "Construction", items: ['icofont-help-robot', 'icofont-cement-mixer', 'icofont-eco-environmen', 'icofont-eco-energy', 'icofont-energy-savings', 'icofont-energy-oil', 'icofont-energy-air', 'icofont-energy-water', 'icofont-energy-solar', 'icofont-radio-active'] },
-    { nombre: "Tools", items: ['icofont-drill', 'icofont-fix-tools', 'icofont-hammer', 'icofont-wrench', 'icofont-calculations', 'icofont-paint-brush', 'icofont-screw-driver', 'icofont-saw', 'icofont-trolley', 'icofont-trowel'] },
-    { nombre: "Herramientas", items: ['icofont-fire-extinguisher-alt', 'icofont-glue-oil', 'icofont-power-zone', 'icofont-recycle-alt', 'icofont-recycling-man', 'icofont-safety-hat-light', 'icofont-tools-1', 'icofont-tools-bag', 'icofont-under-construction-alt', 'icofont-labour'] },
-    { nombre: "Industria", items: ['icofont-mining', 'icofont-pollution', 'icofont-industries', 'icofont-industries-3', 'icofont-industries-1', 'icofont-industries-2', 'icofont-industries-4', 'icofont-industries-5', 'icofont-industries', 'icofont-building-alt'] },
-    { nombre: "Maquinaria", items: ['icofont-vehicle-wrecking', 'icofont-vehicle-trucktor', 'icofont-vehicle-excavator', 'icofont-vehicle-dozer', 'icofont-vehicle-delivery-van', 'icofont-vehicle-crane', 'icofont-vehicle-cement', 'icofont-tow-truck', 'icofont-concrete-mixer', 'icofont-fork-lift'] },
-    { nombre: "Naturaleza", items: ['icofont-eclipse', 'icofont-forest-fire', 'icofont-night', 'icofont-sun-alt', 'icofont-thunder-light', 'icofont-snow', 'icofont-volcano', 'icofont-clouds', 'icofont-tornado', 'icofont-wave'] },
-    { nombre: "Clima", items: ['icofont-sunny-day-temp', 'icofont-wind', 'icofont-sunny', 'icofont-rainy', 'icofont-celsius', 'icofont-fahrenheit', 'icofont-breakdown', 'icofont-rainy-thunder', 'icofont-sun-set', 'icofont-umbrella'] },
-    { nombre: "Negocio", items: ['icofont-bank', 'icofont-barcode', 'icofont-briefcase-1', 'icofont-bill-alt', 'icofont-coins', 'icofont-stamp', 'icofont-files-stack', 'icofont-handshake-deal', 'icofont-money-bag', 'icofont-presentation'] },
-    { nombre: "Kids", items: ['icofont-baby-milk-bottle', 'icofont-candy', 'icofont-baby', 'icofont-baby-cloth', 'icofont-baby-trolley', 'icofont-toy-horse', 'icofont-toy-lattu', 'icofont-safety-pin', 'icofont-toy-hand', 'icofont-baby-backpack'] },
-    { nombre: "Bebidas", items: ['icofont-soft-drinks', 'icofont-coffee-mug', 'icofont-cola', 'icofont-juice', 'icofont-cocktail', 'icofont-beer', 'icofont-milk', 'icofont-tea-pot', 'icofont-coconut-water', 'icofont-coffee-alt'] },
-    { nombre: "Interfaz", items: ['icofont-ui-bluetooth', 'icofont-ui-alarm', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-clip', 'icofont-ui-video-play', 'icofont-ui-password', 'icofont-ui-music', 'icofont-ui-network', 'icofont-ui-dial-phone'] },
-    { nombre: "Interfaz 2", items: ['icofont-ui-game', 'icofont-ui-email', 'icofont-ui-music-player', 'icofont-ui-power', 'icofont-ui-settings', 'icofont-ui-social-link', 'icofont-eraser', 'icofont-ui-search', 'icofont-ui-message', 'icofont-ui-edit'] },
-    { nombre: "Buscar", items: ['icofont-search-job', 'icofont-search-folder', 'icofont-search-document', 'icofont-search-property', 'icofont-search-restaurant', 'icofont-search-stock', 'icofont-search-user', 'icofont-search-map', 'icofont-search-2', 'icofont-search-1'] },
-    { nombre: "Viajar", items: ['icofont-air-ticket', 'icofont-direction-sign', 'icofont-island-alt', 'icofont-beach', 'icofont-5-star-hotel', 'icofont-camping-vest', 'icofont-hotel', 'icofont-island', 'icofont-sandals-female', 'icofont-sandals-male'] },
-    { nombre: "Gym", items: ['icofont-gym-alt-2', 'icofont-muscle-weight', 'icofont-dumbbell', 'icofont-cycling', 'icofont-gym-alt-1', 'icofont-gym', 'icofont-gym-alt-3', 'icofont-dumbbells', 'icofont-cycling-alt', 'icofont-muscle'] },
-    { nombre: "Chart", items: ['icofont-chart-flow-2', 'icofont-chart-histogram', 'icofont-chart-flow-1', 'icofont-chart-arrows-axis', 'icofont-chart-flow', 'icofont-chart-pie', 'icofont-chart-line', 'icofont-chart-pie-alt', 'icofont-chart-line-alt', 'icofont-chart-bar-graph'] },
-    { nombre: "Aves", items: ['icofont-eagle-head', 'icofont-toy-duck', 'icofont-penguin', 'icofont-rooster', 'icofont-woodpecker', 'icofont-bird-alt', 'icofont-owl', 'icofont-pelican', 'icofont-pigeon-2', 'icofont-parrot'] },
-    { nombre: "Education", items: ['icofont-abc', 'icofont-book-alt', 'icofont-globe-alt', 'icofont-instrument', 'icofont-pencil-alt-5', 'icofont-test-tube-alt', 'icofont-microscope-alt', 'icofont-certificate-alt-1', 'icofont-hat', 'icofont-paper'] },
-    { nombre: "Educación", items: ['icofont-medal', 'icofont-lamp-light', 'icofont-school-bag', 'icofont-read-book', 'icofont-test-bulb', 'icofont-university', 'icofont-brainstorming', 'icofont-certificate-alt-2', 'icofont-black-board', 'icofont-graduate-alt'] },
-    { nombre: "Multimedia", items: ['icofont-music-disk', 'icofont-volume-up', 'icofont-multimedia', 'icofont-record', 'icofont-cassette-player', 'icofont-video-alt', 'icofont-video-clapper', 'icofont-cassette', 'icofont-volume-mute', 'icofont-video-cam'] },
-    { nombre: "Thing", items: ['icofont-anchor', 'icofont-binoculars', 'icofont-bomb', 'icofont-box', 'icofont-bucket', 'icofont-bullseye', 'icofont-cart-alt', 'icofont-code', 'icofont-dice', 'icofont-diskette'] },
-    { nombre: "Others", items: ['icofont-home', 'icofont-hour-glass', 'icofont-karate', 'icofont-jewlery', 'icofont-letter', 'icofont-life-buoy', 'icofont-lighter', 'icofont-megaphone', 'icofont-mop', 'icofont-print'] },
-    { nombre: "Cosas", items: ['icofont-news', 'icofont-newspaper', 'icofont-telescope', 'icofont-space', 'icofont-paint', 'icofont-plugin', 'icofont-puzzle', 'icofont-usb-drive', 'icofont-royal', 'icofont-recycle'] },
-    { nombre: "Mamíferos", items: ['icofont-zebra', 'icofont-gorilla', 'icofont-horse-head-2', 'icofont-giraffe', 'icofont-squirrel', 'icofont-camel', 'icofont-monkey-3', 'icofont-kangaroo', 'icofont-bull', 'icofont-elephant-head'] },
-    { nombre: "Acuaticos", items: ['icofont-fish', 'icofont-crocodile', 'icofont-dolphin', 'icofont-crab', 'icofont-turtle', 'icofont-octopus', 'icofont-seahorse', 'icofont-shrimp-alt', 'icofont-whale', 'icofont-seal'] },
-    { nombre: "Transporte", items: ['icofont-air-balloon', 'icofont-airplane-alt', 'icofont-bicycle', 'icofont-helicopter', 'icofont-rocket-alt-2', 'icofont-motor-biker', 'icofont-sail-boat', 'icofont-train-steam', 'icofont-ship-alt', 'icofont-cable-car'] },
-    { nombre: "Vegetables", items: ['icofont-egg-plant', 'icofont-bell-pepper-capsicum', 'icofont-broccoli', 'icofont-pumpkin', 'icofont-mushroom', 'icofont-onion', 'icofont-potato', 'icofont-carrot', 'icofont-pepper', 'icofont-tomato'] },
-    { nombre: "Profesión", items: ['icofont-farmer-alt', 'icofont-police', 'icofont-lawyer', 'icofont-legal', 'icofont-nurse-alt', 'icofont-doctor', 'icofont-labour', 'icofont-military', 'icofont-investigator', 'icofont-burglar'] },
-    { nombre: "Ley", items: ['icofont-law-order', 'icofont-handcuff', 'icofont-law-alt-1', 'icofont-pistol', 'icofont-thief-alt', 'icofont-jail', 'icofont-cop-badge', 'icofont-lawyer-alt-2', 'icofont-law-scales', 'icofont-law-document'] },
-    { nombre: "Persona", items: ['icofont-boy', 'icofont-business-man', 'icofont-girl-alt', 'icofont-kid', 'icofont-woman-in-glasses', 'icofont-hotel-boy-alt', 'icofont-funky-man', 'icofont-girl', 'icofont-man-in-glasses', 'icofont-waiter'] },
-    { nombre: "Person", items: ['icofont-support', 'icofont-user-alt-5', 'icofont-user-female', 'icofont-user-suited', 'icofont-users-alt-4', 'icofont-users-alt-6', 'icofont-users-social', 'icofont-users-alt-2', 'icofont-users-alt-1', 'icofont-group'] },
-    { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-ferrari', 'icofont-brand-android-robot', 'icofont-brand-shell', 'icofont-brand-general-electric', 'icofont-brand-nasa'] },
-    { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
-    { nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-mercedes', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-volkswagen'] },
-    { nombre: "Marca de comida", items: ['icofont-brand-nescafe', 'icofont-brand-redbull', 'icofont-brand-mcdonals', 'icofont-brand-cocal-cola', 'icofont-brand-nestle', 'icofont-brand-burger-king', 'icofont-brand-pizza-hut', 'icofont-brand-eleven', 'icofont-brand-pepsi', 'icofont-brand-starbucks'] },
-    { nombre: "RRSS", items: ['icofont-facebook', 'icofont-linkedin', 'icofont-tiktok', 'icofont-tinder', 'icofont-instagram', 'icofont-youtube', 'icofont-telegram', 'icofont-wechat', 'icofont-pinterest', 'icofont-whatsapp'] },
-    { nombre: "RRSS 2", items: ['icofont-facebook-messenger', 'icofont-spotify', 'icofont-twitch', 'icofont-x', 'icofont-soundcloud', 'icofont-reddit', 'icofont-rss', 'icofont-discord', 'icofont-bbm-messenger', 'icofont-blogger'] }
-];
 
 // Carga de datos base desde localStorage
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;

@@ -229,6 +229,7 @@ function inicializarNuevaPartida() {
         card.onclick = () => flipCard(card);
         tablero.appendChild(card);
     });
+}
 
 function flipCard(cardElement) {
     if (!juegoIniciado || bloqueado || cardElement.classList.contains('flipped') || vidas <= 0) return;

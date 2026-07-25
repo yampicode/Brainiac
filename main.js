@@ -59,12 +59,9 @@ const categoriasFiguras = [
     { nombre: "RRSS 2", items: ['icofont-facebook-messenger', 'icofont-spotify', 'icofont-twitch', 'icofont-x', 'icofont-soundcloud', 'icofont-reddit', 'icofont-rss', 'icofont-discord', 'icofont-bbm-messenger', 'icofont-blogger'] }
 ];
 
-// Variables de estado y persistencia
+// Carga de datos base desde localStorage
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
-let maxVidas = parseInt(localStorage.getItem('maxVidas')) || 7;
-let vidas = parseInt(localStorage.getItem('vidas'));
-if (isNaN(vidas)) { vidas = maxVidas; }
-
+let vidas = parseInt(localStorage.getItem('vidas')) || 7;
 let victorias = parseInt(localStorage.getItem('victorias')) || 0;
 let derrotas = parseInt(localStorage.getItem('derrotas')) || 0;
 let mejorTiempo = parseInt(localStorage.getItem('mejorTiempo')) || null;
@@ -79,7 +76,6 @@ let cronometroInterval = null;
 
 function guardarDatosLocales() {
     localStorage.setItem('scoreTotal', scoreTotal);
-    localStorage.setItem('maxVidas', maxVidas);
     localStorage.setItem('vidas', vidas);
     localStorage.setItem('victorias', victorias);
     localStorage.setItem('derrotas', derrotas);
@@ -155,7 +151,6 @@ btnIniciar.onclick = () => {
         }, 1000);
 
     } else {
-        // Pausar / Reanudar
         if (bloqueado) {
             bloqueado = false;
             btnIniciar.innerText = "Pausar";
@@ -176,6 +171,7 @@ btnIniciar.onclick = () => {
 function crearTablero() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
+    vidas = 7; // Reset clásico de vidas al iniciar nueva partida
     bloqueado = false;
     juegoIniciado = false;
     tiempo = 0;
@@ -184,6 +180,7 @@ function crearTablero() {
     btnIniciar.disabled = false;
     tablero.style.opacity = "1";
     if (cronometroInterval) clearInterval(cronometroInterval);
+    guardarDatosLocales();
     actualizarUI();
 
     if (indiceCategoriaActual >= categoriasFiguras.length) {
@@ -230,32 +227,15 @@ function flipCard(cardElement) {
     }
 }
 
-// Lógica de centenas exactas para sumar vida extra
-function sumarPuntosYVerificarVida(puntosASumar) {
-    let scoreAnterior = scoreTotal;
-    scoreTotal += puntosASumar;
-
-    let centenasAnteriores = Math.floor(scoreAnterior / 100);
-    let centenasActuales = Math.floor(scoreTotal / 100);
-
-    if (centenasActuales > centenasAnteriores) {
-        let diferencia = centenasActuales - centenasAnteriores;
-        maxVidas += diferencia;
-        vidas += diferencia;
-    }
-
-    guardarDatosLocales();
-    actualizarUI();
-}
-
 function verificarCoincidencia() {
     bloqueado = true;
     const [primera, segunda] = cartasVolteadas;
 
     if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
+        scoreTotal += 2;
         reproducirSonido('acierto');
-        sumarPuntosYVerificarVida(2);
+        guardarDatosLocales();
         resetearTurno();
         verificarVictoria();
     } else {
@@ -300,8 +280,7 @@ function verificarVictoria() {
         btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
 
-        sumarPuntosYVerificarVida(puntuacionPartida);
-
+        scoreTotal += puntuacionPartida;
         indiceCategoriaActual++;
         if (indiceCategoriaActual >= categoriasFiguras.length) {
             indiceCategoriaActual = 0;
@@ -335,7 +314,6 @@ btnBorrar.onclick = () => {
     if (confirm("¿Borrar todo el historial y reiniciar puntuaciones?")) {
         localStorage.clear();
         scoreTotal = 0;
-        maxVidas = 7;
         vidas = 7;
         victorias = 0;
         derrotas = 0;

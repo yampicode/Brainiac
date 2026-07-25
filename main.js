@@ -137,6 +137,7 @@ function actualizarUI() {
 
 // Botón de Iniciar / Pausar controlado
 btnIniciar.onclick = () => {
+        reproducirSonido('click');
     if (vidas <= 0) return;
 
     if (!juegoIniciado) {
@@ -333,6 +334,7 @@ function resetearTurno() {
 }
 
 btnBorrar.onclick = () => {
+        reproducirSonido('click');
     if (confirm("¿Borrar todo el historial y reiniciar puntuaciones?")) {
         localStorage.clear();
         scoreTotal = 0;
@@ -347,6 +349,7 @@ btnBorrar.onclick = () => {
 };
 
 btnReiniciar.onclick = () => {
+    reproducirSonido('click');
     crearTablero();
 };
 

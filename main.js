@@ -188,7 +188,9 @@ function crearTablero() {
 function inicializarNuevaPartida() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-    // vidas = 7;
+     if (vidas <= 0) {
+        vidas = 7;
+    }
     bloqueado = false;
     juegoIniciado = false;
     tiempo = 0;

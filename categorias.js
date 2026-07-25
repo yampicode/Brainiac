@@ -67,9 +67,14 @@ export const categoriasFiguras = [
         { nombre: "Dispositivos", items: ['icofont-playstation-alt', 'icofont-radio', 'icofont-washing-machine', 'icofont-refrigerator', 'icofont-wifi-router', 'icofont-mp3-player', 'icofont-xbox-360', 'icofont-wireless-mouse', 'icofont-ui-head-phone', 'icofont-ui-keyboard'] },
     { nombre: "Dispositivos 2", items: ['icofont-game-console', 'icofont-fax', 'icofont-hard-disk', 'icofont-server', 'icofont-radio-mic', 'icofont-nintendo', 'icofont-micro-chip', 'icofont-ipod-nano', 'icofont-microphone-alt', 'icofont-headphone'] },
   
-        { nombre: "Abstract", items: ['icofont-abstract-1', 'icofont-abstract-2', 'icofont-abstract-3', 'icofont-abstract-4', 'icofont-abstract-5', 'icofont-abstract-6', 'icofont-abstract-7', 'icofont-abstract-8', 'icofont-abstract-9', 'icofont-abstract-10'] },
-    { nombre: "Abstract 2", items: ['icofont-shape', 'icofont-circle', 'icofont-square', 'icofont-triangle', 'icofont-star', 'icofont-heart', 'icofont-polygon', 'icofont-spiral', 'icofont-orbit', 'icofont-infinity'] },
-    { nombre: "Abstract 3", items: ['icofont-fire-extinguisher', 'icofont-flash', 'icofont-atom', 'icofont-magnet', 'icofont-radiation', 'icofont-biohazard', 'icofont-bullseye', 'icofont-target', 'icofont-labyrinth', 'icofont-puzzle'] },
+    { nombre: "Abstract", items: ['icofont-angry-monster', 'icofont-bathtub', 'icofont-bird-wings', 'icofont-bow', 'icofont-castle', 'icofont-circuit', 'icofont-crown-king', 'icofont-crown-queen', 'icofont-dart', 'icofont-disability-race'] },
+
+    { nombre: "Abstract 2", items: ['icofont-diving-goggle', 'icofont-eye-open', 'icofont-flora-flower', 'icofont-flora', 'icofont-gift-box', 'icofont-halloween-pumpkin', 'icofont-hand-power', 'icofont-hand-thunder', 'icofont-king-monster', 'icofont-love'] },
+
+  { nombre: "Abstract 3", items: ['icofont-magician-hat', 'icofont-native-american', 'icofont-owl-look', 'icofont-phoenix', 'icofont-robot-face', 'icofont-sand-clock', 'icofont-shield-alt', 'icofont-ship-wheel', 'icofont-skull-danger', 'icofont-snowmobile'] },
+
+{ nombre: "Abstract 4", items: ['icofont-star-shape', 'icofont-swirl', 'icofont-tattoo-wing', 'icofont-throne', 'icofont-tree-alt', 'icofont-triangle', 'icofont-unity-hand', 'icofont-woman-bird', 'icofont-weed', 'icofont-skull-face'] },
+
         { nombre: "Directional", items: ['icofont-arrow-up', 'icofont-arrow-right', 'icofont-arrow-down', 'icofont-arrow-left', 'icofont-caret-up', 'icofont-caret-right', 'icofont-caret-down', 'icofont-caret-left', 'icofont-rounded-up', 'icofont-rounded-right'] },
     { nombre: "Directional 2", items: ['icofont-rounded-down', 'icofont-rounded-left', 'icofont-hand-drawn-up', 'icofont-hand-drawn-right', 'icofont-hand-drawn-down', 'icofont-hand-drawn-left', 'icofont-long-arrow-up', 'icofont-long-arrow-right', 'icofont-long-arrow-down', 'icofont-long-arrow-left'] },
     { nombre: "Directional 3", items: ['icofont-ewall-up', 'icofont-wall-right', 'icofont-wall-down', 'icofont-wall-left', 'icofont-swoosh-up', 'icofont-swoosh-right', 'icofont-swoosh-down', 'icofont-swoosh-left', 'icofont-line-block-up', 'icofont-line-block-down'] },

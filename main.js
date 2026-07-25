@@ -328,14 +328,20 @@ function verificarCoincidencia() {
     if (primera.dataset.id === segunda.dataset.id) {
         puntuacionPartida += 2;
         scoreTotal += 2; 
-        scoreAcumuladoParaVida += 2;
+        // Ejemplo: cuando el usuario gana la partida y se suman los puntos totales
+scoreTotal += 20; // (O los puntos que haya sumado en la partida)
 
-        if (scoreAcumuladoParaVida >= 100) {
-            scoreAcumuladoParaVida -= 100; 
-            maxVidas++; 
-            vidas = maxVidas; 
-            animarVidaExtra(); 
-        } else {
+// --- LÓGICA DE VIDA EXTRA POR CADA 100 PUNTOS DE SCORE TOTAL ---
+// Calculamos cuántas veces cabe 100 en el score total actual (ej: 100/100 = 1, 200/100 = 2)
+let vidasEsperadasPorScore = 7 + Math.floor(scoreTotal / 300);
+
+// Si el número de vidas que debería tener por su score es mayor al máximo actual, subimos de nivel la vida base
+if (vidasEsperadasPorScore > maxVidas) {
+    let diferencia = vidasEsperadasPorScore - maxVidas;
+    maxVidas += diferencia; // Aumenta el límite predeterminado (ej: de 7 a 8)
+    vidas += diferencia;    // Le suma la vida actual al marcador activo
+    animarVidaExtra();      // Dispara la animación flotante que hicimos antes
+} else {
             if (vidas < maxVidas) {
                 vidas++;
             }

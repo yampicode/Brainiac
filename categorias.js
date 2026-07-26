@@ -189,7 +189,25 @@ export const categoriasFiguras = [
 
         { nombre: "Duotone", items: ['icofont-duotone icofont-access-levels', 'icofont-duotone icofont-accessibility', 'icofont-duotone icofont-add-users', 'icofont-duotone icofont-address', 'icofont-duotone icofont-angle-double-left', 'icofont-duotone icofont-angle-double-right', 'icofont-duotone icofont-apply', 'icofont-duotone icofont-archive', 'icofont-duotone icofont-arrow-first', 'icofont-duotone icofont-arrow-last'] },
 
-    { nombre: "Duotone 2", items: ['icofont-duotone icofont-duotone-bar-code', 'icofont-duotone-basket', 'icofont-duotone-battery', 'icofont-duotone-bed', 'icofont-duotone-bell', 'icofont-duotone-bill', 'icofont-duotone-bird', 'icofont-duotone-book', 'icofont-duotone-bookmark', 'icofont-duotone-bottle'] },
+    { nombre: "Duotone 2", items: ['icofont-duotone icofont-ascending', 'icofont-duotone icofont-articles', 'icofont-duotone icofont-backward', 'icofont-duotone icofont-bar', 'icofont-duotone icofont-batch 'icofont-duotone icofont-book', 'icofont-duotone icofont-bookmark', 'icofont-duotone icofont-briefcase-alt', 'icofont-duotone icofont-broadcast', 'icofont-duotone icofont-brush'] },
 
-    { nombre: "Duotone 3", items: ['icofont-duotone-box', 'icofont-duotone-briefcase', 'icofont-duotone-brush', 'icofont-duotone-bucket', 'icofont-duotone-bug', 'icofont-duotone-building', 'icofont-duotone-bulb', 'icofont-duotone-bullhorn', 'icofont-duotone-bus', 'icofont-duotone-calculator'] }
+    { nombre: "Duotone 3", items: ['icofont-duotone icofont-compass', 'icofont-duotone icofont-components', 'icofont-duotone icofont-contacts-alt', 'icofont-duotone icofont-contacts', 'icofont-duotone icofont-content-scalling', 'icofont-duotone icofont-content', 'icofont-duotone icofont-contract-alt', 'icofont-duotone icofont-credit', 'icofont-duotone icofont-cube', 'icofont-duotone icofont-dark-mode'] },
+
+ { nombre: "Duotone 4", items: ['icofont-duotone icofont-bug', 'icofont-duotone icofont-calendar', 'icofont-duotone icofont-camera', 'icofont-duotone icofont-cart', 'icofont-duotone icofont-category', 'icofont-duotone icofont-chart', 'icofont-duotone icofont-checkedout', 'icofont-duotone icofont-click', 'icofont-duotone icofont-cogs', 'icofont-duotone icofont-comment'] },
+
+{ nombre: "Duotone 5", items: ['icofont-duotone icofont-dashboard', 'icofont-duotone icofont-database', 'icofont-duotone icofont-descending', 'icofont-duotone icofont-disable-motion', 'icofont-duotone icofont-download', 'icofont-duotone icofont-duplicate-alt', 'icofont-duotone icofont-duplicate', 'icofont-duotone icofont-envelope-badge', 'icofont-duotone icofont-envelope-open', 'icofont-duotone icofont-envelope'] },
+
+{ nombre: "Duotone 6", items: ['icofont-duotone icofont-equalizer', 'icofont-duotone icofont-exit', 'icofont-duotone icofont-expand-full', 'icofont-duotone icofont-expand', 'icofont-duotone icofont-eye-close', 'icofont-duotone icofont-eye-open', 'icofont-duotone icofont-feed', 'icofont-duotone icofont-field-group', 'icofont-duotone icofont-fields', 'icofont-duotone icofont-flag'] },
+
+{ nombre: "Duotone 7", items: ['icofont-duotone icofont-file', 'icofont-duotone icofont-folder-close', 'icofont-duotone icofont-folder-open', 'icofont-duotone icofont-folder-plus', 'icofont-duotone icofont-folder-remove', 'icofont-duotone icofont-gift', 'icofont-duotone icofont-grayscale', 'icofont-duotone icofont-grid-advance', 'icofont-duotone icofont-groups', 'icofont-duotone icofont-home'] },
+
+{ nombre: "Duotone 8", items: ['icofont-duotone icofont-increase', 'icofont-duotone icofont-info-circle', 'icofont-duotone icofont-info', 'icofont-duotone icofont-lamp', 'icofont-duotone icofont-learn', 'icofont-duotone icofont-link', 'icofont-duotone icofont-list', 'icofont-duotone icofont-location', 'icofont-duotone icofont-lock', 'icofont-duotone icofont-logs'] },
+
+{ nombre: "Duotone 9", items: ['icofont-duotone icofont-loop', 'icofont-duotone icofont-manage-user', 'icofont-duotone icofont-manage', 'icofont-duotone icofont-mass-mail', 'icofont-duotone icofont-media', 'icofont-duotone icofont-menu', 'icofont-duotone icofont-messaging', 'icofont-duotone icofont-modules', 'icofont-duotone icofont-mouse-pointer-highlighter', 'icofont-duotone icofont-move'] },
+
+{ nombre: "Duotone 10", items: ['icofont-duotone icofont-multilingual', 'icofont-duotone icofont-new-tab-alt', 'icofont-duotone icofont-next', 'icofont-duotone icofont-notification-circle', 'icofont-duotone icofont-notification', 'icofont-duotone icofont-paint-brush', 'icofont-duotone icofont-pictures', 'icofont-duotone icofont-pencil', 'icofont-duotone icofont-phone', 'icofont-duotone icofont-pie'] },
+
+{ nombre: "Duotone 11", items: ['icofont-duotone icofont-pin', 'icofont-duotone icofont-play-circle', 'icofont-duotone icofont-plugins', 'icofont-duotone icofont-plus-circle', 'icofont-duotone icofont-print', 'icofont-duotone icofont-privacy', 'icofont-duotone icofont-radio-checked', 'icofont-duotone icofont-scissors', 'icofont-duotone icofont-screen', 'icofont-duotone icofont-save'] },
+
+{ nombre: "Duotone 12", items: ['icofont-duotone icofont-screwdriver', 'icofont-duotone icofont-share-alt', 'icofont-duotone icofont-shield', 'icofont-duotone icofont-shuffle', 'icofont-duotone icofont-support', 'icofont-duotone icofont-table', 'icofont-duotone icofont-tags-trio', 'icofont-duotone icofont-unlock', 'icofont-duotone icofont-video', 'icofont-duotone icofont-vcard'] }
 ];

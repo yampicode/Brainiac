@@ -189,7 +189,7 @@ export const categoriasFiguras = [
 
         { nombre: "Duotone", items: ['icofont-duotone icofont-access-levels', 'icofont-duotone icofont-accessibility', 'icofont-duotone icofont-add-users', 'icofont-duotone icofont-address', 'icofont-duotone icofont-angle-double-left', 'icofont-duotone icofont-angle-double-right', 'icofont-duotone icofont-apply', 'icofont-duotone icofont-archive', 'icofont-duotone icofont-arrow-first', 'icofont-duotone icofont-arrow-last'] },
 
-    { nombre: "Duotone 2", items: ['icofont-duotone icofont-ascending', 'icofont-duotone icofont-articles', 'icofont-duotone icofont-backward', 'icofont-duotone icofont-bar', 'icofont-duotone icofont-batch 'icofont-duotone icofont-book', 'icofont-duotone icofont-bookmark', 'icofont-duotone icofont-briefcase-alt', 'icofont-duotone icofont-broadcast', 'icofont-duotone icofont-brush'] },
+    { nombre: "Duotone 2", items: ['icofont-duotone icofont-ascending', 'icofont-duotone icofont-articles', 'icofont-duotone icofont-backward', 'icofont-duotone icofont-bar', 'icofont-duotone icofont-batch', 'icofont-duotone icofont-book', 'icofont-duotone icofont-bookmark', 'icofont-duotone icofont-briefcase-alt', 'icofont-duotone icofont-broadcast', 'icofont-duotone icofont-brush'] },
 
     { nombre: "Duotone 3", items: ['icofont-duotone icofont-compass', 'icofont-duotone icofont-components', 'icofont-duotone icofont-contacts-alt', 'icofont-duotone icofont-contacts', 'icofont-duotone icofont-content-scalling', 'icofont-duotone icofont-content', 'icofont-duotone icofont-contract-alt', 'icofont-duotone icofont-credit', 'icofont-duotone icofont-cube', 'icofont-duotone icofont-dark-mode'] },
 

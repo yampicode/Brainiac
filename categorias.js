@@ -187,7 +187,7 @@ export const categoriasFiguras = [
 
 { nombre: "Más branding", items: ['icofont-visual-studio', 'icofont-vuejs', 'icofont-sass', 'icofont-brand-fujitsu', 'icofont-brand-hi5', 'icofont-brand-microsoft', 'icofont-brand-msi', 'icofont-brand-myspace', 'icofont-brand-nokia', 'icofont-brand-oracle'] },
 
-        { nombre: "Duotone", items: ['icofont-duotone-alarm', 'icofont-duotone-ambulance', 'icofont-duotone-anchor', 'icofont-duotone-archive', 'icofont-duotone-atom', 'icofont-duotone-award', 'icofont-duotone-baby', 'icofont-duotone-bag', 'icofont-duotone-balance', 'icofont-duotone-bank'] },
+        { nombre: "Duotone", items: ['icofont-duotone icofont-access-levels', 'icofont-duotone icofont-accessibility', 'icofont-duotone icofont-add-users', 'icofont-duotone icofont-address', 'icofont-duotone icofont-angle-double-left', 'icofont-duotone icofont-angle-double-right', 'icofont-duotone icofont-apply', 'icofont-duotone icofont-archive', 'icofont-duotone icofont-arrow-first', 'icofont-duotone icofont-arrow-last'] },
 
     { nombre: "Duotone 2", items: ['icofont-duotone icofont-duotone-bar-code', 'icofont-duotone-basket', 'icofont-duotone-battery', 'icofont-duotone-bed', 'icofont-duotone-bell', 'icofont-duotone-bill', 'icofont-duotone-bird', 'icofont-duotone-book', 'icofont-duotone-bookmark', 'icofont-duotone-bottle'] },
 

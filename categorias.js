@@ -189,7 +189,7 @@ export const categoriasFiguras = [
 
         { nombre: "Duotone", items: ['icofont-duotone-alarm', 'icofont-duotone-ambulance', 'icofont-duotone-anchor', 'icofont-duotone-archive', 'icofont-duotone-atom', 'icofont-duotone-award', 'icofont-duotone-baby', 'icofont-duotone-bag', 'icofont-duotone-balance', 'icofont-duotone-bank'] },
 
-    { nombre: "Duotone 2", items: ['icofont-duotone-bar-code', 'icofont-duotone-basket', 'icofont-duotone-battery', 'icofont-duotone-bed', 'icofont-duotone-bell', 'icofont-duotone-bill', 'icofont-duotone-bird', 'icofont-duotone-book', 'icofont-duotone-bookmark', 'icofont-duotone-bottle'] },
+    { nombre: "Duotone 2", items: ['icofont-duotone icofont-duotone-bar-code', 'icofont-duotone-basket', 'icofont-duotone-battery', 'icofont-duotone-bed', 'icofont-duotone-bell', 'icofont-duotone-bill', 'icofont-duotone-bird', 'icofont-duotone-book', 'icofont-duotone-bookmark', 'icofont-duotone-bottle'] },
 
     { nombre: "Duotone 3", items: ['icofont-duotone-box', 'icofont-duotone-briefcase', 'icofont-duotone-brush', 'icofont-duotone-bucket', 'icofont-duotone-bug', 'icofont-duotone-building', 'icofont-duotone-bulb', 'icofont-duotone-bullhorn', 'icofont-duotone-bus', 'icofont-duotone-calculator'] }
 ];

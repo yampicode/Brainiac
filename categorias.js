@@ -125,7 +125,7 @@ export const categoriasFiguras = [
 
 { nombre: "Marcas de Carros", items: ['icofont-brand-gucci', 'icofont-brand-honda', 'icofont-brand-hyundai', 'icofont-brand-mercedes', 'icofont-brand-ferrari', 'icofont-brand-tesla', 'icofont-brand-toyota', 'icofont-brand-volkswagen', 'icofont-brand-audi', 'icofont-brand-bmw'] },
 
-        { nombre: "Dispositivos", items: ['icofont-playstation-alt', 'icofont-radio', 'icofont-washing-machine', 'icofont-refrigerator', 'icofont-wifi-router', 'icofont-mp3-player', 'icofont-xbox-360', 'icofont-wireless-mouse', 'icofont-ui-head-phone', 'icofont-ui-keyboard'] },
+        { nombre: "Dispositivos", items: ['icofont-playstation-alt', 'icofont-radio', 'icofont-washing-machine', 'icofont-refrigerator', 'icofont-wifi-router', 'icofont-mp3-player', 'icofont-xbox-360', 'icofont-wireless-mouse', 'icofont-lamp', 'icofont-bed'] },
 
     { nombre: "Dispositivos 2", items: ['icofont-game-console', 'icofont-fax', 'icofont-hard-disk', 'icofont-server', 'icofont-radio-mic', 'icofont-nintendo', 'icofont-micro-chip', 'icofont-ipod-nano', 'icofont-microphone-alt', 'icofont-headphone'] },
   
@@ -149,7 +149,7 @@ export const categoriasFiguras = [
 
 { nombre: "Directional 6", items: ['icofont-simple-left-down', 'icofont-simple-left-up', 'icofont-simple-right-down', 'icofont-simple-right-up', 'icofont-stylish-down', 'icofont-stylish-left', 'icofont-stylish-right', 'icofont-stylish-up', 'icofont-hand-drag', 'icofont-thin-up'] },
 
-        { nombre: "Archivos", items: ['icofont-file-code', 'icofont-file-css', 'icofont-file-python', 'icofont-file-ruby', 'icofont-file-sql', 'icofont-file-java', 'icofont-file-php', 'icofont-file-javascript', 'icofont-file-html5', 'icofont-file-iso'] },
+        { nombre: "Archivos", items: ['icofont-binary', 'icofont-file-css', 'icofont-file-python', 'icofont-file-ruby', 'icofont-file-sql', 'icofont-file-java', 'icofont-file-php', 'icofont-file-javascript', 'icofont-file-html5', 'icofont-file-iso'] },
 
     { nombre: "Archivos 2", items: ['icofont-file-word', 'icofont-file-text', 'icofont-file-spreadsheet', 'icofont-file-pdf', 'icofont-file-presentation', 'icofont-file-gif', 'icofont-file-jpg', 'icofont-file-zip', 'icofont-file-midi', 'icofont-file-video'] },
 
@@ -171,11 +171,21 @@ export const categoriasFiguras = [
 
   { nombre: "Editor de texto 4", items: ['icofont-save', 'icofont-small-cap', 'icofont-strike-through', 'icofont-sub-listing', 'icofont-subscript', 'icofont-superscript', 'icofont-table', 'icofont-text-height', 'icofont-trash', 'icofont-underline'] },
 
-        { nombre: "Aplicación", items: ['icofont-application-alt', 'icofont-ui-calculator', 'icofont-ui-calendar', 'icofont-ui-camera', 'icofont-ui-cart', 'icofont-ui-chat', 'icofont-ui-check', 'icofont-ui-clip', 'icofont-ui-cloud', 'icofont-ui-email'] },
+        { nombre: "Aplicación", items: ['icofont-file-code', 'icofont-attachment', 'icofont-badge', 'icofont-automation', icofont-battery-full', 'icofont-battery-half', 'icofont-battery-low', 'icofont-battery-empty', 'icofont-bell', 'icofont-bill'] },
 
-    { nombre: "Aplicación 2", items: ['icofont-ui-file', 'icofont-ui-folder', 'icofont-ui-home', 'icofont-ui-image', 'icofont-ui-lock', 'icofont-ui-map', 'icofont-ui-message', 'icofont-ui-messaging', 'icofont-ui-mic', 'icofont-ui-mms'] },
+    { nombre: "Aplicación 2", items: ['icofont-ui-keyboard', 'icofont-beverage', 'icofont-book-mark', 'icofont-binoculars', 'icofont-bulb-alt', 'icofont-bug', 'icofont-cc', 'icofont-children-care', 'icofont-cloud-download', 'icofont-copyright'] },
 
-    { nombre: "Aplicación 3", items: ['icofont-ui-movie', 'icofont-ui-music', 'icofont-ui-note', 'icofont-ui-notification', 'icofont-ui-Password', 'icofont-ui-phone', 'icofont-ui-photo', 'icofont-ui-play', 'icofont-ui-pointer', 'icofont-ui-power'] },
+    { nombre: "Aplicación 3", items: ['icofont-contacts', 'icofont-credit-card', 'icofont-dashboard-web', 'icofont-cubes', 'icofont-dice-multiple', 'icofont-earth', 'icofont-email', 'icofont-garbage', 'icofont-foot-print', 'icofont-horn'] },
+
+  { nombre: "Aplicación 4", items: ['icofont-invisible', 'icofont-infinite', 'icofont-institution', 'icofont-ui-head-phone', 'icofont-lego', 'icofont-letterbox', 'icofont-library', 'icofont-leaf', 'icofont-listening', 'icofont-map-pins'] },
+
+{ nombre: "Aplicación 5", items: ['icofont-memorial', 'icofont-memory-card', 'icofont-mill', 'icofont-molecule', 'icofont-muffin', 'icofont-mustache', 'icofont-navigation', 'icofont-notification', 'icofont-no-smoking', 'icofont-pixels'] },
+
+{ nombre: "Aplicación 6", items: ['icofont-qr-code', 'icofont-print', 'icofont-sale-discount', 'icofont-satellite', 'icofont-tack-pin', 'icofont-ssl-security', 'icofont-support-faq', 'icofont-telescope', 'icofont-street-view', 'icofont-traffic-light'] },
+
+{ nombre: "Aplicación 7", items: ['icofont-tie', 'icofont-transparent', 'icofont-touch', 'icofont-unique-idea', 'icofont-usb', 'icofont-wallet', 'icofont-zigzag', 'icofont-world', 'icofont-web', 'icofont-wall'] },
+
+{ nombre: "Más branding", items: ['icofont-visual-studio', 'icofont-vuejs', 'icofont-sass', 'icofont-brand-fujitsu', 'icofont-brand-hi5', 'icofont-brand-microsoft', 'icofont-brand-msi', 'icofont-brand-myspace', 'icofont-brand-nokia', 'icofont-brand-oracle'] },
 
         { nombre: "Duotone", items: ['icofont-duotone-alarm', 'icofont-duotone-ambulance', 'icofont-duotone-anchor', 'icofont-duotone-archive', 'icofont-duotone-atom', 'icofont-duotone-award', 'icofont-duotone-baby', 'icofont-duotone-bag', 'icofont-duotone-balance', 'icofont-duotone-bank'] },
 

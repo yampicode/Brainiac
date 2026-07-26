@@ -161,7 +161,7 @@ export const categoriasFiguras = [
 
     { nombre: "Matemáticas 2", items: ['icofont-compass-alt-1', 'icofont-golden-ratio', 'icofont-marker-alt-1', 'icofont-math', 'icofont-mathematical-alt-1', 'icofont-mathematical-alt-2', 'icofont-mathematical', 'icofont-pen-alt-2', 'icofont-ruler-alt-1', 'icofont-pen-holder'] },
 
-    { nombre: "Matemáticas 3", items: ['icofont-superscript', 'icofont-number-exact', 'icofont-numbers', 'icofont-axis', 'icofont-geometry', 'icofont-compass', 'icofont-protractor', 'icofont-ruler-alt-1', 'icofont-ruler-alt-2', 'icofont-pie-chart'] },
+    { nombre: "Matemáticas 3", items: ['icofont-rulers', 'icofont-ruler-compass', 'icofont-pen-alt-3', 'icofont-ruler-compass-alt', 'icofont-geometry', 'icofont-compass', 'icofont-protractor', 'icofont-ruler-pencil-alt-2', 'icofont-ruler', 'icofont-pie-chart'] },
 
         { nombre: "Editor de texto", items: ['icofont-align-center', 'icofont-align-left', 'icofont-align-right', 'icofont-all-caps', 'icofont-bold', 'icofont-brush', 'icofont-clip-board', 'icofont-code-alt', 'icofont-color-bucket', 'icofont-color-picker'] },
 

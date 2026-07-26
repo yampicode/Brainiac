@@ -171,7 +171,7 @@ export const categoriasFiguras = [
 
   { nombre: "Editor de texto 4", items: ['icofont-save', 'icofont-small-cap', 'icofont-strike-through', 'icofont-sub-listing', 'icofont-subscript', 'icofont-superscript', 'icofont-table', 'icofont-text-height', 'icofont-trash', 'icofont-underline'] },
 
-        { nombre: "Aplicación", items: ['icofont-file-code', 'icofont-attachment', 'icofont-badge', 'icofont-automation', icofont-battery-full', 'icofont-battery-half', 'icofont-battery-low', 'icofont-battery-empty', 'icofont-bell', 'icofont-bill'] },
+        { nombre: "Aplicación", items: ['icofont-file-code', 'icofont-attachment', 'icofont-badge', 'icofont-automation', 'icofont-battery-full', 'icofont-battery-half', 'icofont-battery-low', 'icofont-battery-empty', 'icofont-bell', 'icofont-bill'] },
 
     { nombre: "Aplicación 2", items: ['icofont-ui-keyboard', 'icofont-beverage', 'icofont-book-mark', 'icofont-binoculars', 'icofont-bulb-alt', 'icofont-bug', 'icofont-cc', 'icofont-children-care', 'icofont-cloud-download', 'icofont-copyright'] },
 

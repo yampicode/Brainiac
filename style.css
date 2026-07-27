@@ -259,10 +259,10 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     align-items: center;
     gap: 8px;
     background-color: transparent;
-    color: #4682b4; /* Steel Blue clásico */
-    border: 1.5px solid #4682b4;
+    color: var(--color-primary); /* Steel Blue clásico */
+    border: none;
     padding: 6px 12px;
-    border-radius: 50%;
+    
     font-family: inherit;
     font-size: 14px;
     font-weight: 500;
@@ -272,14 +272,14 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 }
 
 .btn-apoyo:hover {
-    background-color: #4682b4;
+    background-color: var(--color-primary);
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(70, 130, 180, 0.25);
     transform: translateY(-1px);
 }
 
 .icono-cafe {
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 /* Ocultar el texto en pantallas muy pequeñas de móviles para que solo quede el ícono y ocupe menos espacio */

@@ -5,6 +5,8 @@ const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
 
+const footer = document.getElementById("footer");
+
 // --- MANEJO DE PANTALLAS ---
 const btnJugar = document.getElementById('btn-jugar');
 const menuPrincipal = document.getElementById('menu-principal');
@@ -15,6 +17,7 @@ const img = document.getElementById('img');
 btnJugar.addEventListener('click', () => {
     reproducirEfectoSonido('voltear');
     menuPrincipal.style.display = 'none';
+footer.style.display = 'none';
     img.style.display = 'none';
     pantallaJuego.style.display = 'block';
 });
@@ -22,6 +25,7 @@ btnJugar.addEventListener('click', () => {
 btnVolverMenu.addEventListener('click', () => {
     reproducirEfectoSonido('voltear');
     pantallaJuego.style.display = 'none';
+footer.style.display = 'block';
     img.style.display = 'block';
     menuPrincipal.style.display = 'flex';
 });
@@ -40,6 +44,7 @@ const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
         reproducirEfectoSonido('voltear');
+
         e.target.closest('.modal-overlay').style.display = 'none';
     });
 });

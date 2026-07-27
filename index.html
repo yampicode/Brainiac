@@ -157,7 +157,7 @@ Objetivo: Voltea las cartas de dos en dos para encontrar las parejas idénticas 
 <p>
 Hola, soy Yampiero Mujica, creé Memoria con mucho cariño, HTML, CSS y Javascript para que pases un buen rato entrenando tu memoria sin anuncios molestos. Si te gusta el proyecto y quieres apoyarme a mantenerlo activo, invítame un café haciendo clic en la tacita <a href=" https://www.paypal.me/yampieromujica" target="_blank" class="btn-apoyo" title="Invítame un café">
     <span class="icono-cafe"><i class="icofont-coffee-mug"></i></span>
-    </a> 2026 © | V 1.9
+    </a> 2026 © | V 2.0
 </p>
 <button class="btn-cerrar-modal">Cerrar</button>
 </div>
@@ -191,9 +191,20 @@ Hola, soy Yampiero Mujica, creé Memoria con mucho cariño, HTML, CSS y Javascri
     <span class="icono-cafe"><i class="icofont-coffee-mug"></i></span>
     <span class="texto-apoyo">Apoyar proyecto</span>
 </a>
-
-
 </footer>
+
+<!-- Agrega esto al final de tu archivo index.html, justo antes de </body> -->
+
+<div id="modal-sistema" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <h2 id="modal-titulo" class="modal-titulo">¡Alerta!</h2>
+        <p id="modal-mensaje" class="modal-mensaje">Este es un mensaje genérico.</p>
+        <button id="modal-boton-principal" class="modal-boton-accion">Aceptar</button>
+        <!-- Opcional: Botón secundario para "Jugar de nuevo" -->
+        <button id="modal-boton-secundario" class="modal-boton-secundario" style="display: none;">Jugar de nuevo</button>
+    </div>
+</div>
+
 <script type="module" src="main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>

@@ -34,10 +34,12 @@ btnVolverMenu.addEventListener('click', () => {
 function abrirModal(idModal) {
     reproducirEfectoSonido('voltear');
     const modal = document.getElementById(idModal);
-    if (modal) modal.style.display = 'flex';
+    if (modal) {
+        modal.classList.add('activo'); // Usamos la clase activo para garantizar que se muestren
+    }
 }
 
-// Eventos para abrir los modales del menú principal (¡Esto faltaba!)
+// Eventos para abrir los modales del menú principal
 const btnComoJugar = document.getElementById('btn-como-jugar');
 const btnAjustes = document.getElementById('btn-ajustes');
 const btnDesarrolladores = document.getElementById('btn-desarrolladores');
@@ -46,12 +48,15 @@ if (btnComoJugar) btnComoJugar.addEventListener('click', () => abrirModal('modal
 if (btnAjustes) btnAjustes.addEventListener('click', () => abrirModal('modal-ajustes'));
 if (btnDesarrolladores) btnDesarrolladores.addEventListener('click', () => abrirModal('modal-desarrolladores'));
 
+// Botones de cierre para los modales estáticos
 const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
         reproducirEfectoSonido('voltear');
         const modalOverlay = e.target.closest('.modal-overlay');
-        if (modalOverlay) modalOverlay.style.display = 'none';
+        if (modalOverlay) {
+            modalOverlay.classList.remove('activo'); // Quitamos la clase activo para ocultarlos
+        }
     });
 });
 

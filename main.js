@@ -17,7 +17,7 @@ const img = document.getElementById('img');
 btnJugar.addEventListener('click', () => {
     reproducirEfectoSonido('voltear');
     menuPrincipal.style.display = 'none';
-footer.style.display = 'none';
+    footer.style.display = 'none';
     img.style.display = 'none';
     pantallaJuego.style.display = 'block';
 });
@@ -25,7 +25,7 @@ footer.style.display = 'none';
 btnVolverMenu.addEventListener('click', () => {
     reproducirEfectoSonido('voltear');
     pantallaJuego.style.display = 'none';
-footer.style.display = 'block';
+    footer.style.display = 'block';
     img.style.display = 'block';
     menuPrincipal.style.display = 'flex';
 });
@@ -33,19 +33,25 @@ footer.style.display = 'block';
 // --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {
     reproducirEfectoSonido('voltear');
-    document.getElementById(idModal).style.display = 'flex';
+    const modal = document.getElementById(idModal);
+    if (modal) modal.style.display = 'flex';
 }
 
-document.getElementById('btn-como-jugar').addEventListener('click', () => abrirModal('modal-como-jugar'));
-document.getElementById('btn-ajustes').addEventListener('click', () => abrirModal('modal-ajustes'));
-document.getElementById('btn-desarrolladores').addEventListener('click', () => abrirModal('modal-desarrolladores'));
+// Eventos para abrir los modales del menú principal (¡Esto faltaba!)
+const btnComoJugar = document.getElementById('btn-como-jugar');
+const btnAjustes = document.getElementById('btn-ajustes');
+const btnDesarrolladores = document.getElementById('btn-desarrolladores');
+
+if (btnComoJugar) btnComoJugar.addEventListener('click', () => abrirModal('modal-como-jugar'));
+if (btnAjustes) btnAjustes.addEventListener('click', () => abrirModal('modal-ajustes'));
+if (btnDesarrolladores) btnDesarrolladores.addEventListener('click', () => abrirModal('modal-desarrolladores'));
 
 const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
         reproducirEfectoSonido('voltear');
-
-        e.target.closest('.modal-overlay').style.display = 'none';
+        const modalOverlay = e.target.closest('.modal-overlay');
+        if (modalOverlay) modalOverlay.style.display = 'none';
     });
 });
 

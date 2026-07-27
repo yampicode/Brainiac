@@ -152,7 +152,7 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 .btn__secundario {
     border: none;
     color: #fff/*var(--color-primary)*/;
-    text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 40px;
     left: 5px;

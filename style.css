@@ -154,9 +154,9 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     color: #fff/*var(--color-primary)*/;
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 5px;
-    font-size: 2.3em;
+    font-size: 2.5em;
     background: transparent;
 }
 

@@ -51,6 +51,55 @@ botonesCerrar.forEach(boton => {
 });
 
 
+// --- Lógica del Sistema de Modales ---
+
+const modalOverlay = document.getElementById('modal-sistema');
+const modalTitulo = document.getElementById('modal-titulo');
+const modalMensaje = document.getElementById('modal-mensaje');
+const modalBotonPrincipal = document.getElementById('modal-boton-principal');
+const modalBotonSecundario = document.getElementById('modal-boton-secundario');
+
+/**
+ * Muestra el modal genérico del sistema.
+ * @param {string} titulo - El texto del título.
+ * @param {string} mensaje - El cuerpo del mensaje.
+ * @param {object} opciones - Objeto opcional con {textoBotonPrincipal, callbackPrincipal, textoBotonSecundario, callbackSecundario}.
+ */
+function mostrarModal(titulo, mensaje, opciones = {}) {
+    // 1. Configurar textos
+    modalTitulo.textContent = titulo;
+    modalMensaje.innerHTML = mensaje; // Usamos innerHTML por si quieres poner íconos
+
+    // 2. Configurar Botón Principal
+    modalBotonPrincipal.textContent = opciones.textoBotonPrincipal || 'Aceptar';
+    // Limpiar eventos anteriores para evitar acumulación
+    modalBotonPrincipal.onclick = null; 
+    modalBotonPrincipal.onclick = () => {
+        ocultarModal();
+        if (opciones.callbackPrincipal) opciones.callbackPrincipal();
+    };
+
+    // 3. Configurar Botón Secundario (Opcional)
+    if (opciones.textoBotonSecundario) {
+        modalBotonSecundario.style.display = 'inline-block';
+        modalBotonSecundario.textContent = opciones.textoBotonSecundario;
+        modalBotonSecundario.onclick = null;
+        modalBotonSecundario.onclick = () => {
+            ocultarModal();
+            if (opciones.callbackSecundario) opcione.callbackSecundario();
+        };
+    } else {
+        modalBotonSecundario.style.display = 'none';
+    }
+
+    // 4. Mostrar el modal
+    modalOverlay.classList.add('activo');
+}
+
+function ocultarModal() {
+    modalOverlay.classList.remove('activo');
+}
+
 // ==========================================
 // CONFIGURACIÓN DE MODO DARK (Con LocalStorage)
 // ==========================================

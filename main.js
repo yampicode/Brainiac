@@ -17,82 +17,63 @@ btnJugar.addEventListener('click', () => {
     menuPrincipal.style.display = 'none';
     img.style.display = 'none';
     pantallaJuego.style.display = 'block';
-    
-    // Aquí puedes llamar a tu función de inicializar el tablero del juego
 });
 
 btnVolverMenu.addEventListener('click', () => {
     reproducirEfectoSonido('voltear');
     pantallaJuego.style.display = 'none';
-       img.style.display = 'block';
+    img.style.display = 'block';
     menuPrincipal.style.display = 'flex';
 });
 
-// --- MANEJO DE MODALES ---
-// Función genérica para abrir modales
+// --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {
     reproducirEfectoSonido('voltear');
     document.getElementById(idModal).style.display = 'flex';
 }
 
-// Asignar eventos a los botones de los modales
 document.getElementById('btn-como-jugar').addEventListener('click', () => abrirModal('modal-como-jugar'));
 document.getElementById('btn-ajustes').addEventListener('click', () => abrirModal('modal-ajustes'));
 document.getElementById('btn-desarrolladores').addEventListener('click', () => abrirModal('modal-desarrolladores'));
 
-// Botones para cerrar cualquier modal
 const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
         reproducirEfectoSonido('voltear');
-        // Encuentra el contenedor modal padre y lo oculta
         e.target.closest('.modal-overlay').style.display = 'none';
     });
 });
 
-
-// --- Lógica del Sistema de Modales ---
-
+// --- Lógica del Sistema de Modales Dinámicos ---
 const modalOverlay = document.getElementById('modal-sistema');
 const modalTitulo = document.getElementById('modal-titulo');
 const modalMensaje = document.getElementById('modal-mensaje');
 const modalBotonPrincipal = document.getElementById('modal-boton-principal');
 const modalBotonSecundario = document.getElementById('modal-boton-secundario');
 
-/**
- * Muestra el modal genérico del sistema.
- * @param {string} titulo - El texto del título.
- * @param {string} mensaje - El cuerpo del mensaje.
- * @param {object} opciones - Objeto opcional con {textoBotonPrincipal, callbackPrincipal, textoBotonSecundario, callbackSecundario}.
- */
 function mostrarModal(titulo, mensaje, opciones = {}) {
-    // 1. Configurar textos
     modalTitulo.textContent = titulo;
-    modalMensaje.innerHTML = mensaje; // Usamos innerHTML por si quieres poner íconos
+    modalMensaje.innerHTML = mensaje;
 
-    // 2. Configurar Botón Principal
     modalBotonPrincipal.textContent = opciones.textoBotonPrincipal || 'Aceptar';
-    // Limpiar eventos anteriores para evitar acumulación
     modalBotonPrincipal.onclick = null; 
     modalBotonPrincipal.onclick = () => {
         ocultarModal();
         if (opciones.callbackPrincipal) opciones.callbackPrincipal();
     };
 
-    // 3. Configurar Botón Secundario (Opcional)
     if (opciones.textoBotonSecundario) {
         modalBotonSecundario.style.display = 'inline-block';
         modalBotonSecundario.textContent = opciones.textoBotonSecundario;
         modalBotonSecundario.onclick = null;
         modalBotonSecundario.onclick = () => {
             ocultarModal();
-            if (opciones.callbackSecundario) opcione.callbackSecundario();
+            if (opciones.callbackSecundario) opciones.callbackSecundario();
         };
     } else {
         modalBotonSecundario.style.display = 'none';
     }
 
-    // 4. Mostrar el modal
     modalOverlay.classList.add('activo');
 }
 
@@ -101,15 +82,11 @@ function ocultarModal() {
 }
 
 // ==========================================
-// CONFIGURACIÓN DE MODO DARK (Con LocalStorage)
+// CONFIGURACIÓN DE MODO DARK
 // ==========================================
-
-// 1. Verificamos si ya había una preferencia guardada en el navegador
 let modoDarkActivado = localStorage.getItem('modoDark') === 'true';
-
 const btnToggleDark = document.getElementById('btn-toggle-dark');
 
-// Función para aplicar el modo oscuro visualmente
 function actualizarModoDarkVisual() {
     if (modoDarkActivado) {
         document.body.classList.add('dark-mode');
@@ -124,28 +101,18 @@ function actualizarModoDarkVisual() {
     }
 }
 
-// Ejecutamos al iniciar la página para aplicar el estado guardado de inmediato
 actualizarModoDarkVisual();
 
-// 2. Evento al hacer clic en el botón
 if (btnToggleDark) {
     btnToggleDark.addEventListener('click', () => {
-        modoDarkActivado = !modoDarkActivado; // Invierte el estado
-
-        // Guardamos la preferencia en el navegador
+        modoDarkActivado = !modoDarkActivado;
         localStorage.setItem('modoDark', modoDarkActivado);
-
-        // Actualizamos los estilos y el texto/icono del botón
         actualizarModoDarkVisual();
-        
-        // Opcional: reproducir tu sonido de voltear o un efecto al cambiar
         if (typeof reproducirEfectoSonido === 'function') {
             reproducirEfectoSonido('voltear');
         }
     });
 }
-
-
 
 // Carga de datos base desde localStorage
 let scoreTotal = parseInt(localStorage.getItem('scoreTotal')) || 0;
@@ -171,14 +138,11 @@ function guardarDatosLocales() {
 }
 
 // ==========================================
-// CONFIGURACIÓN DE SONIDO (Con LocalStorage)
+// CONFIGURACIÓN DE SONIDO
 // ==========================================
-
 let sonidoActivado = localStorage.getItem('sonidoActivado') !== 'false';
-
 const btnToggleSonido = document.getElementById('btn-toggle-sonido');
 
-// Función auxiliar para actualizar la apariencia visual del botón
 function actualizarBotonSonidoVisual() {
     if (!btnToggleSonido) return;
     
@@ -193,25 +157,18 @@ function actualizarBotonSonidoVisual() {
     }
 }
 
-// Ejecutamos al iniciar la página para mostrar el estado correcto de inmediato
 actualizarBotonSonidoVisual();
 
-// Evento al hacer clic en el botón de ajustes
 if (btnToggleSonido) {
     btnToggleSonido.addEventListener('click', () => {
-        sonidoActivado = !sonidoActivado; // Cambia entre true y false
-
-        // Guardamos la preferencia en el navegador
+        sonidoActivado = !sonidoActivado;
         localStorage.setItem('sonidoActivado', sonidoActivado);
-
-        // Actualizamos el aspecto visual del botón
         actualizarBotonSonidoVisual();
     });
 }
 
-// Función central para reproducir efectos de audio respetando el ajuste
 function reproducirEfectoSonido(tipo) {
-    if (!sonidoActivado) return; // Si está silenciado, no hace nada
+    if (!sonidoActivado) return;
 
     let rutaAudio = '';
     if (tipo === 'acierto') rutaAudio = 'acierto.ogg';
@@ -265,9 +222,9 @@ function actualizarUI() {
     document.getElementById('vidas').innerHTML = `<i class="${claseIcono}" style="color: #e74c3c;"></i> ${Math.max(0, vidas)}`;
 }
 
-// Botón de Iniciar / Pausar controlado
+// Botón de Iniciar / Pausar
 btnIniciar.onclick = () => {
-        reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('voltear');
     if (vidas <= 0) return;
 
     if (!juegoIniciado) {
@@ -303,13 +260,10 @@ function crearTablero() {
     const cartasExistentes = document.querySelectorAll('.card.flipped');
     
     if (cartasExistentes.length > 0) {
-        // 1. Quitamos la clase 'flipped' para que se desvolteen con la animación CSS
         cartasExistentes.forEach(card => card.classList.remove('flipped'));
-        
-        // 2. Esperamos a que termine la animación (ej. 400ms) antes de limpiar y regenerar el tablero
         setTimeout(() => {
             inicializarNuevaPartida();
-        }, 400); // Este tiempo debe coincidir o ser cercano al 'transition' de tu CSS
+        }, 400);
     } else {
         inicializarNuevaPartida();
     }
@@ -318,7 +272,7 @@ function crearTablero() {
 function inicializarNuevaPartida() {
     tablero.innerHTML = '';
     puntuacionPartida = 0;
-     if (vidas <= 0) {
+    if (vidas <= 0) {
         vidas = 7;
     }
     bloqueado = false;
@@ -340,7 +294,6 @@ function inicializarNuevaPartida() {
     const pares = categoriaActual.items;
     let IDs = [...pares, ...pares];
 
-    // Mezclar cartas
     for (let i = IDs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [IDs[i], IDs[j]] = [IDs[j], IDs[i]];
@@ -349,7 +302,6 @@ function inicializarNuevaPartida() {
     IDs.forEach(id => {
         const card = document.createElement('div');
         card.classList.add('card');
-        
         card.dataset.id = id;
 
         const contenidoCarta = id.startsWith('icofont-') ? `<i class="${id}"></i>` : id;
@@ -382,14 +334,13 @@ function verificarCoincidencia() {
     const [primera, segunda] = cartasVolteadas;
 
     if (primera.dataset.id === segunda.dataset.id) {
-        // Sumamos los 2 puntos y la vida extra por acierto
         puntuacionPartida += 2;
         scoreTotal += 2;
         vidas++; 
         
         reproducirEfectoSonido('acierto');
         guardarDatosLocales();
-        actualizarUI(); // Refresca los contadores en pantalla inmediatamente
+        actualizarUI();
         
         resetearTurno();
         verificarVictoria();
@@ -414,7 +365,6 @@ function verificarCoincidencia() {
             document.querySelectorAll('.card').forEach(card => card.classList.add('flipped'));
 
             setTimeout(() => {
-                            setTimeout(() => {
                 mostrarModal(
                     "¡Game Over!",
                     "¡Lástima! Te has quedado sin vidas.",
@@ -427,8 +377,8 @@ function verificarCoincidencia() {
                         },
                         textoBotonSecundario: "Reintentar Nivel",
                         callbackSecundario: () => {
-                            vidas = 7; // Restaurar vidas
-                            crearTablero(); // Reiniciar el tablero correctamente
+                            vidas = 7;
+                            crearTablero();
                         }
                     }
                 );
@@ -443,7 +393,6 @@ function verificarCoincidencia() {
         }, 1000);
     }
 }
-
 
 function verificarVictoria() {
     const todasLasCartas = document.querySelectorAll('.card');
@@ -469,10 +418,6 @@ function verificarVictoria() {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
             reproducirEfectoSonido('victoria');
-        if (mejorTiempo === null || tiempo < mejorTiempo) {
-            mejorTiempo = tiempo;
-            localStorage.setItem('mejorTiempo', mejorTiempo);
-            reproducirEfectoSonido('victoria');
             
             mostrarModal(
                 `¡Nuevo Récord! Tiempo: ${tiempo}s`,
@@ -480,11 +425,10 @@ function verificarVictoria() {
                 {
                     textoBotonPrincipal: "Siguiente Nivel",
                     callbackPrincipal: () => {
-                        crearTablero(); // Carga la siguiente categoría/nivel
+                        crearTablero();
                     }
                 }
             );
-            
         } else {
             reproducirEfectoSonido('victoria');
             
@@ -494,7 +438,7 @@ function verificarVictoria() {
                 {
                     textoBotonPrincipal: "Siguiente Nivel",
                     callbackPrincipal: () => {
-                        crearTablero(); // Carga la siguiente categoría/nivel
+                        crearTablero();
                     }
                 }
             );
@@ -510,7 +454,7 @@ function resetearTurno() {
 }
 
 btnBorrar.onclick = () => {
-        reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('voltear');
     if (confirm("¿Borrar todo el historial y reiniciar puntuaciones?")) {
         localStorage.clear();
         scoreTotal = 0;
@@ -526,8 +470,7 @@ btnBorrar.onclick = () => {
 
 btnReiniciar.onclick = () => {
     reproducirEfectoSonido('voltear');
-    tablero.classList.toggle('revolviendo')
-    
+    tablero.classList.toggle('revolviendo');
     crearTablero();
 }
 

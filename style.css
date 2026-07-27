@@ -289,10 +289,11 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 
 /* Ocultar el texto en pantallas muy pequeñas de móviles para que solo quede el ícono y ocupe menos espacio */
 @media (max-width: 480px) {
-    .btn-apoyo {
+  /*  .btn-apoyo {
         padding: 8px;
         border-radius: 50%;
     }
+*/
 }
 
 /* Estilos generales para los modales */

@@ -30,6 +30,21 @@ btnVolverMenu.addEventListener('click', () => {
     menuPrincipal.style.display = 'flex';
 });
 
+const btnSalir = document.getElementById('btn-salir');
+
+if (btnSalir) {
+    btnSalir.addEventListener('click', () => {
+        reproducirEfectoSonido('voltear');
+        
+        // Opción A: Mandarlo a Google o a otra web
+     //   window.location.href = "https://webzona.vercel.app";
+        
+        // Opción B (Si quieres intentar cerrarla por si acaso fue abierta por script):
+         window.close();
+    });
+}
+
+
 // --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {
     reproducirEfectoSonido('voltear');

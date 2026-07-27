@@ -254,6 +254,20 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     animation: revolverEfecto 0.4s ease-in-out;
 }
 
+/* Si las animaciones están desactivadas, anulamos las transiciones */
+body.sin-animaciones .card-inner {
+    transition: transform 0s !important;
+}
+
+body.sin-animaciones .tablero.revolviendo {
+    animation: none !important;
+}
+
+body.sin-animaciones .modal-content,
+body.sin-animaciones .modal-overlay {
+    transition: none !important;
+}
+
 .btn-apoyo {
     display: inline-flex;
     align-items: center;

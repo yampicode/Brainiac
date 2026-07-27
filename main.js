@@ -44,6 +44,42 @@ if (btnSalir) {
     });
 }
 
+// ==========================================
+// CONFIGURACIÓN DE ANIMACIONES
+// ==========================================
+let animacionesActivadas = localStorage.getItem('animacionesActivadas') !== 'false';
+const btnToggleAnimaciones = document.getElementById('btn-toggle-animaciones');
+
+function actualizarBotonAnimacionesVisual() {
+    if (!btnToggleAnimaciones) return;
+    
+    if (animacionesActivadas) {
+        btnToggleAnimaciones.innerHTML = `Activadas`;
+        btnToggleAnimaciones.classList.add('activo');
+        btnToggleAnimaciones.classList.remove('inactivo');
+        document.body.classList.remove('sin-animaciones');
+    } else {
+        btnToggleAnimaciones.innerHTML = `Desactivadas`;
+        btnToggleAnimaciones.classList.add('inactivo');
+        btnToggleAnimaciones.classList.remove('activo');
+        document.body.classList.add('sin-animaciones');
+    }
+}
+
+// Inicializar al cargar la app
+actualizarBotonAnimacionesVisual();
+
+if (btnToggleAnimaciones) {
+    btnToggleAnimaciones.addEventListener('click', () => {
+        animacionesActivadas = !animacionesActivadas;
+        localStorage.setItem('animacionesActivadas', animacionesActivadas);
+        actualizarBotonAnimacionesVisual();
+        if (typeof reproducirEfectoSonido === 'function') {
+            reproducirEfectoSonido('voltear');
+        }
+    });
+}
+
 
 // --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {

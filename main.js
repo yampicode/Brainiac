@@ -476,9 +476,9 @@ mostrarModal(
             irANivel2(); // Cuando creemos el nivel 2
         }
     }
-);
+)
             
-        } else {
+} else {
             reproducirEfectoSonido('victoria');
 mostrarModal(
     "¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}",

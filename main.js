@@ -414,22 +414,24 @@ function verificarCoincidencia() {
             document.querySelectorAll('.card').forEach(card => card.classList.add('flipped'));
 
             setTimeout(() => {
+                            setTimeout(() => {
                 mostrarModal(
-    "¡Game Over!",
-    "¡Lástima! Te has quedado sin vidas.",
-    {
-        textoBotonPrincipal: "Ir al menú",
-        callbackPrincipal: () => {
-            console.log("El usuario regresó al menú tras perder");
-            window.location.href = 'menu.html'; // O tu lógica para reiniciar
-        },
-        textoBotonSecundario: "Reintentar Nivel",
-        callbackSecundario: () => {
-            console.log("El usuario va a reintentar");
-            iniciarNivel1(); // O tu función de reinicio
-        }
-    }
-);
+                    "¡Game Over!",
+                    "¡Lástima! Te has quedado sin vidas.",
+                    {
+                        textoBotonPrincipal: "Ir al menú",
+                        callbackPrincipal: () => {
+                            pantallaJuego.style.display = 'none';
+                            img.style.display = 'block';
+                            menuPrincipal.style.display = 'flex';
+                        },
+                        textoBotonSecundario: "Reintentar Nivel",
+                        callbackSecundario: () => {
+                            vidas = 7; // Restaurar vidas
+                            crearTablero(); // Reiniciar el tablero correctamente
+                        }
+                    }
+                );
             }, 300);
             return;
         }
@@ -467,31 +469,37 @@ function verificarVictoria() {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
             reproducirEfectoSonido('victoria');
-mostrarModal(
-    "¡Nuevo Récord! Tiempo: ${tiempo}s",
-    "¡Felicitaciones, has completado el nivel con éxito!",
-    {
-        textoBotonPrincipal: "Siguiente Nivel",
-        callbackPrincipal: () => {
-            irANivel2(); // Cuando creemos el nivel 2
-        }
-    }
-)
-            
-} else {
+        if (mejorTiempo === null || tiempo < mejorTiempo) {
+            mejorTiempo = tiempo;
+            localStorage.setItem('mejorTiempo', mejorTiempo);
             reproducirEfectoSonido('victoria');
-mostrarModal(
-    "¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}",
-    "¡Felicitaciones, has completado el nivel con éxito!",
-    {
-        textoBotonPrincipal: "Siguiente Nivel",
-        callbackPrincipal: () => {
-            irANivel2(); // Cuando creemos el nivel 2
-        }
-    }
-);
             
+            mostrarModal(
+                `¡Nuevo Récord! Tiempo: ${tiempo}s`,
+                "¡Felicitaciones, has completado el nivel con éxito!",
+                {
+                    textoBotonPrincipal: "Siguiente Nivel",
+                    callbackPrincipal: () => {
+                        crearTablero(); // Carga la siguiente categoría/nivel
+                    }
+                }
+            );
+            
+        } else {
+            reproducirEfectoSonido('victoria');
+            
+            mostrarModal(
+                `¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`,
+                "¡Felicitaciones, has completado el nivel con éxito!",
+                {
+                    textoBotonPrincipal: "Siguiente Nivel",
+                    callbackPrincipal: () => {
+                        crearTablero(); // Carga la siguiente categoría/nivel
+                    }
+                }
+            );
         }
+
         actualizarUI();
     }
 }

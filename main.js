@@ -1,13 +1,100 @@
 import { categoriasFiguras } from './categorias.js';
 
-// A partir de aquí, tu código del juego funciona exactamente igual, 
-// ya que 'categoriasFiguras' estará disponible con todos tus arrays.
-//;console.log(categoriasFiguras);
-
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
 const btnIniciar = document.getElementById("btn-iniciar");
+
+// --- MANEJO DE PANTALLAS ---
+const btnJugar = document.getElementById('btn-jugar');
+const menuPrincipal = document.getElementById('menu-principal');
+const pantallaJuego = document.getElementById('pantalla-juego');
+const btnVolverMenu = document.getElementById('btn-volver-menu');
+const img = document.getElementById('img');
+
+btnJugar.addEventListener('click', () => {
+    reproducirEfectoSonido('voltear');
+    menuPrincipal.style.display = 'none';
+    img.style.display = 'none';
+    pantallaJuego.style.display = 'block';
+    
+    // Aquí puedes llamar a tu función de inicializar el tablero del juego
+});
+
+btnVolverMenu.addEventListener('click', () => {
+    reproducirEfectoSonido('voltear');
+    pantallaJuego.style.display = 'none';
+       img.style.display = 'block';
+    menuPrincipal.style.display = 'flex';
+});
+
+// --- MANEJO DE MODALES ---
+// Función genérica para abrir modales
+function abrirModal(idModal) {
+    reproducirEfectoSonido('voltear');
+    document.getElementById(idModal).style.display = 'flex';
+}
+
+// Asignar eventos a los botones de los modales
+document.getElementById('btn-como-jugar').addEventListener('click', () => abrirModal('modal-como-jugar'));
+document.getElementById('btn-ajustes').addEventListener('click', () => abrirModal('modal-ajustes'));
+document.getElementById('btn-desarrolladores').addEventListener('click', () => abrirModal('modal-desarrolladores'));
+
+// Botones para cerrar cualquier modal
+const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
+botonesCerrar.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        reproducirEfectoSonido('voltear');
+        // Encuentra el contenedor modal padre y lo oculta
+        e.target.closest('.modal-overlay').style.display = 'none';
+    });
+});
+
+// ==========================================
+// CONFIGURACIÓN DE MODO DARK (Con LocalStorage)
+// ==========================================
+
+// 1. Verificamos si ya había una preferencia guardada en el navegador
+let modoDarkActivado = localStorage.getItem('modoDark') === 'true';
+
+const btnToggleDark = document.getElementById('btn-toggle-dark');
+
+// Función para aplicar el modo oscuro visualmente
+function actualizarModoDarkVisual() {
+    if (modoDarkActivado) {
+        document.body.classList.add('dark-mode');
+        if (btnToggleDark) {
+            btnToggleDark.innerHTML = `<i class="icofont icofont-sun"></i> Light`;
+        }
+    } else {
+        document.body.classList.remove('dark-mode');
+        if (btnToggleDark) {
+            btnToggleDark.innerHTML = `<i class="icofont icofont-moon"></i> Dark`;
+        }
+    }
+}
+
+// Ejecutamos al iniciar la página para aplicar el estado guardado de inmediato
+actualizarModoDarkVisual();
+
+// 2. Evento al hacer clic en el botón
+if (btnToggleDark) {
+    btnToggleDark.addEventListener('click', () => {
+        modoDarkActivado = !modoDarkActivado; // Invierte el estado
+
+        // Guardamos la preferencia en el navegador
+        localStorage.setItem('modoDark', modoDarkActivado);
+
+        // Actualizamos los estilos y el texto/icono del botón
+        actualizarModoDarkVisual();
+        
+        // Opcional: reproducir tu sonido de voltear o un efecto al cambiar
+        if (typeof reproducirEfectoSonido === 'function') {
+            reproducirEfectoSonido('voltear');
+        }
+    });
+}
+
 
 
 // Carga de datos base desde localStorage
@@ -33,19 +120,61 @@ function guardarDatosLocales() {
     localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
 }
 
-function reproducirSonido(tipo) {
-    let audioSrc = '';
-    switch(tipo) {
-        case 'voltear': audioSrc = 'voltear.ogg'; break;
-        case 'acierto': audioSrc = 'acierto.ogg'; break;
-        case 'error': audioSrc = 'error.ogg'; break;
-        case 'victoria': audioSrc = 'victoria.ogg'; break;
-        case 'derrota': audioSrc = 'derrota.ogg'; break;
+// ==========================================
+// CONFIGURACIÓN DE SONIDO (Con LocalStorage)
+// ==========================================
+
+let sonidoActivado = localStorage.getItem('sonidoActivado') !== 'false';
+
+const btnToggleSonido = document.getElementById('btn-toggle-sonido');
+
+// Función auxiliar para actualizar la apariencia visual del botón
+function actualizarBotonSonidoVisual() {
+    if (!btnToggleSonido) return;
+    
+    if (sonidoActivado) {
+        btnToggleSonido.innerHTML = `<i class="icofont-volume-up"></i> Activado`;
+        btnToggleSonido.classList.add('activo');
+        btnToggleSonido.classList.remove('inactivo');
+    } else {
+        btnToggleSonido.innerHTML = `<i class="icofont-volume-mute"></i> Silenciado`;
+        btnToggleSonido.classList.add('inactivo');
+        btnToggleSonido.classList.remove('activo');
     }
-    if (audioSrc) {
-        const audio = new Audio(audioSrc);
-        audio.volume = 0.8;
-        audio.play().catch(e => console.log("Audio bloqueado:", e));
+}
+
+// Ejecutamos al iniciar la página para mostrar el estado correcto de inmediato
+actualizarBotonSonidoVisual();
+
+// Evento al hacer clic en el botón de ajustes
+if (btnToggleSonido) {
+    btnToggleSonido.addEventListener('click', () => {
+        sonidoActivado = !sonidoActivado; // Cambia entre true y false
+
+        // Guardamos la preferencia en el navegador
+        localStorage.setItem('sonidoActivado', sonidoActivado);
+
+        // Actualizamos el aspecto visual del botón
+        actualizarBotonSonidoVisual();
+    });
+}
+
+// Función central para reproducir efectos de audio respetando el ajuste
+function reproducirEfectoSonido(tipo) {
+    if (!sonidoActivado) return; // Si está silenciado, no hace nada
+
+    let rutaAudio = '';
+    if (tipo === 'acierto') rutaAudio = 'acierto.ogg';
+    if (tipo === 'error') rutaAudio = 'error.ogg';
+    if (tipo === 'voltear') rutaAudio = 'voltear.ogg';
+    if (tipo === 'derrota') rutaAudio = 'derrota.ogg';
+    if (tipo === 'victoria') rutaAudio = 'victoria.ogg';
+
+    if (rutaAudio) {
+        const sonido = new Audio(rutaAudio);
+        sonido.play().catch(error => {
+            console.log("El navegador bloqueó el audio o no se encontró el archivo", error);
+        });
     }
 }
 
@@ -53,13 +182,13 @@ function reproducirSonido(tipo) {
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
 vidasFlotantes.innerHTML = `<strong id="vidas" style="color: #e74c3c;"><i class="icofont-heart" style="color: #e74c3c;"></i> ${vidas}</strong>`;
-document.body.appendChild(vidasFlotantes);
+pantallaJuego.appendChild(vidasFlotantes);
 
 const displayInfo = document.createElement('div');
 displayInfo.id = 'panel-estadisticas'; 
 displayInfo.style.cssText = `
     width: 100%; max-width: 600px; margin-bottom: 20px; 
-    background-color: #fff; padding: 12px; border-radius: 8px; 
+    background-color: #fff; padding: 10px; border-radius: 8px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); color: #333;
 `;
 displayInfo.innerHTML = `
@@ -88,7 +217,7 @@ function actualizarUI() {
 
 // Botón de Iniciar / Pausar controlado
 btnIniciar.onclick = () => {
-        reproducirSonido('voltear');
+        reproducirEfectoSonido('voltear');
     if (vidas <= 0) return;
 
     if (!juegoIniciado) {
@@ -170,6 +299,7 @@ function inicializarNuevaPartida() {
     IDs.forEach(id => {
         const card = document.createElement('div');
         card.classList.add('card');
+        
         card.dataset.id = id;
 
         const contenidoCarta = id.startsWith('icofont-') ? `<i class="${id}"></i>` : id;
@@ -190,7 +320,7 @@ function flipCard(cardElement) {
 
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
-    reproducirSonido('voltear');
+    reproducirEfectoSonido('voltear');
 
     if (cartasVolteadas.length === 2) {
         verificarCoincidencia();
@@ -207,14 +337,14 @@ function verificarCoincidencia() {
         scoreTotal += 2;
         vidas++; 
         
-        reproducirSonido('acierto');
+        reproducirEfectoSonido('acierto');
         guardarDatosLocales();
         actualizarUI(); // Refresca los contadores en pantalla inmediatamente
         
         resetearTurno();
         verificarVictoria();
     } else {
-        reproducirSonido('error');
+        reproducirEfectoSonido('error');
         vidas--; 
         guardarDatosLocales();
         actualizarUI();
@@ -226,7 +356,7 @@ function verificarCoincidencia() {
             tablero.style.opacity = "0.4";
             bloqueado = true;
 
-            reproducirSonido('derrota');
+            reproducirEfectoSonido('derrota');
             derrotas++;
             guardarDatosLocales();
             actualizarUI(); 
@@ -271,10 +401,10 @@ function verificarVictoria() {
         if (mejorTiempo === null || tiempo < mejorTiempo) {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
-            reproducirSonido('victoria');
+            reproducirEfectoSonido('victoria');
             alert(`¡Nuevo Récord! Tiempo: ${tiempo}s`);
         } else {
-            reproducirSonido('victoria');
+            reproducirEfectoSonido('victoria');
             alert(`¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`);
         }
         actualizarUI();
@@ -287,7 +417,7 @@ function resetearTurno() {
 }
 
 btnBorrar.onclick = () => {
-        reproducirSonido('voltear');
+        reproducirEfectoSonido('voltear');
     if (confirm("¿Borrar todo el historial y reiniciar puntuaciones?")) {
         localStorage.clear();
         scoreTotal = 0;
@@ -302,8 +432,10 @@ btnBorrar.onclick = () => {
 };
 
 btnReiniciar.onclick = () => {
-    reproducirSonido('voltear');
+    reproducirEfectoSonido('voltear');
+    tablero.classList.toggle('revolviendo')
+    
     crearTablero();
-};
+}
 
 document.addEventListener("DOMContentLoaded", crearTablero);

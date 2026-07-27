@@ -352,7 +352,7 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     transition: background 0.2s;
 }
 
-/* --- ESTILOS PARA EL MODAL DINÁMICO DEL SISTEMA --- */
+/* --- ESTILOS GENERALES PARA LOS MODALES Y SISTEMA --- */
 
 .modal-overlay {
     position: fixed;
@@ -360,8 +360,8 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-    display: none; /* Oculto por defecto */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente unificado */
+    display: none; /* Oculto por defecto para que no aparezcan solos */
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Asegura que esté por encima de todo */
@@ -370,11 +370,53 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Esta clase 'activo' es la que inyecta JavaScript para mostrarlo */
+/* Esta clase 'activo' es la que inyecta JavaScript para mostrarlos */
 .modal-overlay.activo {
     display: flex !important;
     opacity: 1;
     visibility: visible;
+}
+
+.modal-card {
+    background: white;
+    color: var(--color-oscuro);
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-card button {
+    margin-top: 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    font-size: 1em;
+    font-weight: 900;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.btn-toggle {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
 /* Contenedor interno del modal del sistema */

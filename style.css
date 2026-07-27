@@ -154,7 +154,7 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     color: var(--color-primary);
     text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 70px;
+    top: 30px;
     left: 5px;
     font-size: 2.3em;
     background: transparent;

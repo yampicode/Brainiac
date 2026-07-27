@@ -414,7 +414,22 @@ function verificarCoincidencia() {
             document.querySelectorAll('.card').forEach(card => card.classList.add('flipped'));
 
             setTimeout(() => {
-                alert("¡Te has quedado sin vidas! Game Over.");
+                mostrarModal(
+    "¡Game Over!",
+    "¡Lástima! Te has quedado sin vidas.",
+    {
+        textoBotonPrincipal: "Ir al menú",
+        callbackPrincipal: () => {
+            console.log("El usuario regresó al menú tras perder");
+            window.location.href = 'menu.html'; // O tu lógica para reiniciar
+        },
+        textoBotonSecundario: "Reintentar Nivel",
+        callbackSecundario: () => {
+            console.log("El usuario va a reintentar");
+            iniciarNivel1(); // O tu función de reinicio
+        }
+    }
+);
             }, 300);
             return;
         }
@@ -452,10 +467,30 @@ function verificarVictoria() {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
             reproducirEfectoSonido('victoria');
-            alert(`¡Nuevo Récord! Tiempo: ${tiempo}s`);
+mostrarModal(
+    "¡Nuevo Récord! Tiempo: ${tiempo}s",
+    "¡Felicitaciones, has completado el nivel con éxito!",
+    {
+        textoBotonPrincipal: "Siguiente Nivel",
+        callbackPrincipal: () => {
+            irANivel2(); // Cuando creemos el nivel 2
+        }
+    }
+);
+            
         } else {
             reproducirEfectoSonido('victoria');
-            alert(`¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`);
+mostrarModal(
+    "¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}",
+    "¡Felicitaciones, has completado el nivel con éxito!",
+    {
+        textoBotonPrincipal: "Siguiente Nivel",
+        callbackPrincipal: () => {
+            irANivel2(); // Cuando creemos el nivel 2
+        }
+    }
+);
+            
         }
         actualizarUI();
     }

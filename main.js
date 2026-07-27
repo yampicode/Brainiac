@@ -51,6 +51,57 @@ botonesCerrar.forEach(boton => {
 });
 
 // ==========================================
+// LÓGICA DE VIDAS, MODAL Y MONETAG (RECOMPENSA)
+// ==========================================
+
+const modalSinVidas = document.getElementById('modal-sin-vidas'); // Asegúrate de que este sea el ID de tu modal en el HTML
+const btnVerVideo = document.getElementById('btn-ver-video');         // Botón para aceptar el video de recompensa
+const btnReiniciarCero = document.getElementById('btn-reiniciar');   // Botón para rechazar y empezar de nuevo
+
+// Función que puedes llamar cuando las vidas del usuario llegan a 0
+function mostrarModalDerrota() {
+    if (modalSinVidas) {
+        modalSinVidas.style.display = 'flex'; // O 'block' dependiendo de tu CSS
+    }
+}
+
+// 1. Si el usuario decide ver el video para recuperar vidas
+if (btnVerVideo) {
+    btnVerVideo.addEventListener('click', () => {
+        // Como estás usando el MultiTag de Monetag, el script maneja los anuncios de forma inteligente.
+        // Aquí aplicamos la lógica de negocio que acordamos:
+        
+        vidas = 3; // Le devolvemos un respiro de vidas para continuar
+        actualizarInterfazVidas(); // Función que actualiza los corazones/número en pantalla
+
+        // Cerramos el modal de derrota
+        if (modalSinVidas) {
+            modalSinVidas.style.display = 'none';
+        }
+
+        // NOTA IMPORTANTE: Al NO llamar a crearTablero(), el usuario conserva 
+        // exactamente las mismas cartas volteadas y su puntuación actual.
+    });
+}
+
+// 2. Si el usuario decide NO ver el video y empezar de nuevo
+if (btnReiniciarCero) {
+    btnReiniciarCero.addEventListener('click', () => {
+        vidas = 7; // Reiniciamos a tus 7 vidas predeterminadas
+        actualizarInterfazVidas();
+
+        // Cerramos el modal
+        if (modalSinVidas) {
+            modalSinVidas.style.display = 'none';
+        }
+
+        // Aquí SÍ barajamos y reiniciamos el tablero por completo
+        crearTablero(); 
+    });
+}
+
+
+// ==========================================
 // CONFIGURACIÓN DE MODO DARK (Con LocalStorage)
 // ==========================================
 

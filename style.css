@@ -349,29 +349,32 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     transition: background 0.2s;
 }
 
-/* Estilos para el fondo oscuro del modal */
+/* --- ESTILOS PARA EL MODAL DINÁMICO DEL SISTEMA --- */
+
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    display: flex;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    display: none; /* Oculto por defecto */
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Para que esté por encima de todo */
+    z-index: 1000; /* Asegura que esté por encima de todo */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Esta clase 'activo' es la que inyecta JavaScript para mostrarlo */
 .modal-overlay.activo {
+    display: flex !important;
     opacity: 1;
     visibility: visible;
 }
 
-/* Estilos de la caja blanca del modal */
+/* Contenedor interno del modal del sistema */
 .modal-content {
     background: #ffffff;
     width: 90%;
@@ -379,35 +382,35 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transform: scale(0.8);
     transition: transform 0.3s ease;
 }
 
 .modal-overlay.activo .modal-content {
-    transform: scale(1);
+    transform: scale(1); /* Pequeña animación de zoom al abrir */
 }
 
 .modal-titulo {
-    color: #0a2a45; /* Color oscuro del logo */
+    color: #0a2a45;
     margin-top: 0;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 15px;
 }
 
 .modal-mensaje {
-    color: #4a5568; /* Gris oscuro para el texto */
+    color: #4a5568;
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 25px;
 }
 
-/* Estilos de los botones */
+/* Botones dentro del modal del sistema */
 .modal-boton-accion, .modal-boton-secundario {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 25px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     border: none;
@@ -416,7 +419,7 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 }
 
 .modal-boton-accion {
-    background-color: #4682b4; /* Steel Blue */
+    background-color: #4682b4; /* Steel Blue clásico de tu app */
     color: white;
 }
 
@@ -425,35 +428,10 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 }
 
 .modal-boton-secundario {
-    background-color: #edf2f7; /* Gris claro */
+    background-color: #edf2f7;
     color: #4a5568;
 }
 
 .modal-boton-secundario:hover {
     background-color: #e2e8f0;
-}
-
-/* Estado cuando el sonido está activo (Steel Blue) */
-
-.btn-toggle.activo {
-    background-color: #4682b4;
-    color: white;
-}
-
-/* Estado cuando el sonido está desactivado */
-.btn-toggle.inactivo {
-    background-color: #d9534f;
-    color: white;
-}
-
-/* Ajuste para pantallas más grandes (Desktop) */
-@media (min-width: 600px) {
-    .tablero {
-        grid-template-columns: repeat(5, 120px);
-        /* 5 columnas fijas en desktop */
-    }
-    .card {
-        height: 160px;
-        /* Altura fija para desktop */
-    }
 }

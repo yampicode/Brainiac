@@ -254,6 +254,45 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     animation: revolverEfecto 0.4s ease-in-out;
 }
 
+.btn-apoyo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #4682b4; /* Steel Blue clásico */
+    border: 1.5px solid #4682b4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-apoyo:hover {
+    background-color: #4682b4;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(70, 130, 180, 0.25);
+    transform: translateY(-1px);
+}
+
+.icono-cafe {
+    font-size: 16px;
+}
+
+/* Ocultar el texto en pantallas muy pequeñas de móviles para que solo quede el ícono y ocupe menos espacio */
+@media (max-width: 480px) {
+    .texto-apoyo {
+        display: none;
+    }
+    .btn-apoyo {
+        padding: 8px;
+        border-radius: 50%;
+    }
+}
+
 /* Estilos generales para los modales */
 .modal-overlay {
     position: fixed;

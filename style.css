@@ -282,11 +282,13 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
     font-size: 2.5em;
 }
 
+  .texto-apoyo {
+        display: block;
+    }
+  
+
 /* Ocultar el texto en pantallas muy pequeñas de móviles para que solo quede el ícono y ocupe menos espacio */
 @media (max-width: 480px) {
-    .texto-apoyo {
-        display: none;
-    }
     .btn-apoyo {
         padding: 8px;
         border-radius: 50%;

@@ -299,7 +299,7 @@ filter: drop-shadow( 0 4px 6px var(--color-claro));
 /* Estilos generales para los modales */
 
 .game-container {
-    padding: 20px;
+    padding: 20px 0 0;
 }
 
 .modal-overlay {

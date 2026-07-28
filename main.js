@@ -1,5 +1,4 @@
 import { categoriasFiguras } from './categorias.js';
-import { dict } from './traducciones.js';
 
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
@@ -36,73 +35,16 @@ const btnSalir = document.getElementById('btn-salir');
 if (btnSalir) {
     btnSalir.addEventListener('click', () => {
         reproducirEfectoSonido('voltear');
-        window.close();
+        
+        // Opción A: Mandarlo a Google o a otra web
+     //   window.location.href = "https://webzona.vercel.app";
+        
+        // Opción B (Si quieres intentar cerrarla por si acaso fue abierta por script):
+         window.close();
     });
-}
+};
 
-// Cargar idioma guardado o por defecto 'es'
-let idiomaActual = localStorage.getItem('idiomaJuego') || 'es';
-const selectIdioma = document.getElementById('select-idioma');
 
-if (selectIdioma) {
-    selectIdioma.value = idiomaActual;
-    selectIdioma.addEventListener('change', (e) => {
-        idiomaActual = e.target.value;
-        localStorage.setItem('idiomaJuego', idiomaActual);
-        actualizarTextosIdioma();
-        if (typeof reproducirEfectoSonido === 'function') {
-            reproducirEfectoSonido('voltear');
-        }
-    });
-}
-
-function t(key) {
-    return dict[idiomaActual][key] || dict['es'][key] || key;
-}
-
-function actualizarTextosIdioma() {
-    // Menú principal y botones estáticos
-    const btnJugarText = document.getElementById('btn-jugar');
-    if (btnJugarText) btnJugarText.innerText = t('btnJugar');
-
-    const btnComoJugarText = document.getElementById('btn-como-jugar');
-    if (btnComoJugarText) btnComoJugarText.innerText = t('btnComoJugar');
-
-    const btnAjustesText = document.getElementById('btn-ajustes');
-    if (btnAjustesText) btnAjustesText.innerText = t('btnAjustes');
-
-    const btnDesarrolladoresText = document.getElementById('btn-desarrolladores');
-    if (btnDesarrolladoresText) btnDesarrolladoresText.innerText = t('btnDesarrolladores');
-
-    // Botón de iniciar partida según su estado actual
-    if (!juegoIniciado && vidas > 0) {
-        btnIniciar.innerText = t('iniciarJuego');
-    } else if (juegoIniciado && !bloqueado) {
-        btnIniciar.innerText = t('pausar') || "Pausar";
-    }
-
-    // Textos dinámicos del panel de estadísticas superior
-    const lblTiempo = document.getElementById('lbl-tiempo');
-    if (lblTiempo) lblTiempo.innerText = t('tiempo');
-
-    const lblPuntos = document.getElementById('lbl-puntos');
-    if (lblPuntos) lblPuntos.innerText = t('puntos');
-
-    const lblVictorias = document.getElementById('lbl-victorias');
-    if (lblVictorias) lblVictorias.innerText = t('victorias');
-
-    const lblRecord = document.getElementById('lbl-record');
-    if (lblRecord) lblRecord.innerText = t('record');
-
-    const lblScore = document.getElementById('lbl-score');
-    if (lblScore) lblScore.innerText = t('score');
-
-    const lblDerrotas = document.getElementById('lbl-derrotas');
-    if (lblDerrotas) lblDerrotas.innerText = t('derrotas');
-}
-
-// Ejecutar al iniciar la app para aplicar el idioma guardado
-actualizarTextosIdioma();
 
 // ==========================================
 // CONFIGURACIÓN DE ANIMACIONES
@@ -112,7 +54,7 @@ const btnToggleAnimaciones = document.getElementById('btn-toggle-animaciones');
 
 function actualizarBotonAnimacionesVisual() {
     if (!btnToggleAnimaciones) return;
-
+    
     if (animacionesActivadas) {
         btnToggleAnimaciones.innerHTML = `Activadas`;
         btnToggleAnimaciones.classList.add('activo');
@@ -126,6 +68,7 @@ function actualizarBotonAnimacionesVisual() {
     }
 }
 
+// Inicializar al cargar la app
 actualizarBotonAnimacionesVisual();
 
 if (btnToggleAnimaciones) {
@@ -144,10 +87,11 @@ function abrirModal(idModal) {
     reproducirEfectoSonido('voltear');
     const modal = document.getElementById(idModal);
     if (modal) {
-        modal.classList.add('activo');
+        modal.classList.add('activo'); // Usamos la clase activo para garantizar que se muestren
     }
 }
 
+// Eventos para abrir los modales del menú principal
 const btnComoJugar = document.getElementById('btn-como-jugar');
 const btnAjustes = document.getElementById('btn-ajustes');
 const btnDesarrolladores = document.getElementById('btn-desarrolladores');
@@ -156,13 +100,14 @@ if (btnComoJugar) btnComoJugar.addEventListener('click', () => abrirModal('modal
 if (btnAjustes) btnAjustes.addEventListener('click', () => abrirModal('modal-ajustes'));
 if (btnDesarrolladores) btnDesarrolladores.addEventListener('click', () => abrirModal('modal-desarrolladores'));
 
+// Botones de cierre para los modales estáticos
 const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
         reproducirEfectoSonido('voltear');
         const modalOverlay = e.target.closest('.modal-overlay');
         if (modalOverlay) {
-            modalOverlay.classList.remove('activo');
+            modalOverlay.classList.remove('activo'); // Quitamos la clase activo para ocultarlos
         }
     });
 });
@@ -268,7 +213,7 @@ const btnToggleSonido = document.getElementById('btn-toggle-sonido');
 
 function actualizarBotonSonidoVisual() {
     if (!btnToggleSonido) return;
-
+    
     if (sonidoActivado) {
         btnToggleSonido.innerHTML = `<i class="icofont-volume-up"></i> Activado`;
         btnToggleSonido.classList.add('activo');
@@ -308,7 +253,7 @@ function reproducirEfectoSonido(tipo) {
     }
 }
 
-// Elementos visuales flotantes y estadísticas (Con IDs para traducción)
+// Elementos visuales flotantes y estadísticas
 const vidasFlotantes = document.createElement('div');
 vidasFlotantes.className = 'vidas-flotantes';
 vidasFlotantes.innerHTML = `<strong id="vidas" style="color: #e74c3c;"><i class="icofont-heart" style="color: #e74c3c;"></i> ${vidas}</strong>`;
@@ -323,12 +268,12 @@ displayInfo.style.cssText = `
 `;
 displayInfo.innerHTML = `
     <div class="grid-stats" style="display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; gap: 10px;">
-        <div><div id="lbl-tiempo">${t('tiempo')}</div><strong id="cronometro">0s</strong></div>
-        <div><div id="lbl-puntos">${t('puntos')}</div><strong id="puntos-partida">0</strong></div>
-        <div><div id="lbl-victorias">${t('victorias')}</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
-        <div><div id="lbl-record">${t('record')}</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
-        <div><div id="lbl-score">${t('score')}</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
-        <div><div id="lbl-derrotas">${t('derrotas')}</div><strong id="derrotas" style="color: #e74c3c;">${derrotas}</strong></div>
+        <div><div>Tiempo</div><strong id="cronometro">0s</strong></div>
+        <div><div>Puntos</div><strong id="puntos-partida">0</strong></div>
+        <div><div>Victorias</div><strong id="victorias" style="color: #28a745;">${victorias}</strong></div>
+        <div><div>Récord</div><strong id="mejor-tiempo" style="color: #d9534f;">${mejorTiempo ? mejorTiempo + 's' : '--'}</strong></div>
+        <div><div>Score</div><strong id="score-total" style="color: #0056b3;">${scoreTotal}</strong></div>
+        <div><div>Derrotas</div><strong id="derrotas" style="color: #e74c3c;">${derrotas}</strong></div>
     </div>
 `;
 tablero.parentNode.insertBefore(displayInfo, tablero);
@@ -353,7 +298,7 @@ btnIniciar.onclick = () => {
     if (!juegoIniciado) {
         juegoIniciado = true;
         bloqueado = false;
-        btnIniciar.innerText = t('pausar') || "Pausar";
+        btnIniciar.innerText = "Pausar";
 
         if (cronometroInterval) clearInterval(cronometroInterval);
         cronometroInterval = setInterval(() => {
@@ -364,7 +309,7 @@ btnIniciar.onclick = () => {
     } else {
         if (bloqueado) {
             bloqueado = false;
-            btnIniciar.innerText = t('pausar') || "Pausar";
+            btnIniciar.innerText = "Pausar";
             tablero.style.opacity = "1";
             cronometroInterval = setInterval(() => {
                 tiempo++;
@@ -373,7 +318,7 @@ btnIniciar.onclick = () => {
         } else {
             clearInterval(cronometroInterval);
             bloqueado = true;
-            btnIniciar.innerText = t('reanudar') || "Reanudar";
+            btnIniciar.innerText = "Reanudar";
             tablero.style.opacity = "0.5";
         }
     }
@@ -381,7 +326,7 @@ btnIniciar.onclick = () => {
 
 function crearTablero() {
     const cartasExistentes = document.querySelectorAll('.card.flipped');
-
+    
     if (cartasExistentes.length > 0) {
         cartasExistentes.forEach(card => card.classList.remove('flipped'));
         setTimeout(() => {
@@ -402,7 +347,7 @@ function inicializarNuevaPartida() {
     juegoIniciado = false;
     tiempo = 0;
     cartasVolteadas = []; 
-    btnIniciar.innerText = t('iniciarJuego');
+    btnIniciar.innerText = "Iniciar Juego";
     btnIniciar.disabled = false;
     tablero.style.opacity = "1";
     if (cronometroInterval) clearInterval(cronometroInterval);
@@ -460,11 +405,11 @@ function verificarCoincidencia() {
         puntuacionPartida += 2;
         scoreTotal += 2;
         vidas++; 
-
+        
         reproducirEfectoSonido('acierto');
         guardarDatosLocales();
         actualizarUI();
-
+        
         resetearTurno();
         verificarVictoria();
     } else {
@@ -475,7 +420,7 @@ function verificarCoincidencia() {
 
         if (vidas <= 0) {
             clearInterval(cronometroInterval);
-            btnIniciar.innerText = t('gameOverTitulo');
+            btnIniciar.innerText = "¡Game Over!";
             btnIniciar.disabled = true;
             tablero.style.opacity = "0.4";
             bloqueado = true;
@@ -489,16 +434,16 @@ function verificarCoincidencia() {
 
             setTimeout(() => {
                 mostrarModal(
-                    t('gameOverTitulo'),
-                    t('gameOverMsg'),
+                    "¡Game Over!",
+                    "¡Lástima! Te has quedado sin vidas.",
                     {
-                        textoBotonPrincipal: t('btnIrMenu'),
+                        textoBotonPrincipal: "Ir al menú",
                         callbackPrincipal: () => {
                             pantallaJuego.style.display = 'none';
                             img.style.display = 'block';
                             menuPrincipal.style.display = 'flex';
                         },
-                        textoBotonSecundario: t('btnReintentar'),
+                        textoBotonSecundario: "Reintentar",
                         callbackSecundario: () => {
                             vidas = 7;
                             crearTablero();
@@ -522,7 +467,7 @@ function verificarVictoria() {
     if (Array.from(todasLasCartas).every(card => card.classList.contains('flipped'))) {
         clearInterval(cronometroInterval);
         victorias++;
-        btnIniciar.innerText = t('victoriaTitulo');
+        btnIniciar.innerText = "¡Ganaste!";
         btnIniciar.disabled = true;
 
         scoreTotal += puntuacionPartida;
@@ -541,12 +486,12 @@ function verificarVictoria() {
             mejorTiempo = tiempo;
             localStorage.setItem('mejorTiempo', mejorTiempo);
             reproducirEfectoSonido('victoria');
-
+            
             mostrarModal(
-                `${t('victoriaTitulo')} (${tiempo}s)`,
-                t('victoriaMsg'),
+                `¡Nuevo Récord! Tiempo: ${tiempo}s`,
+                "¡Felicitaciones, has completado el nivel con éxito!",
                 {
-                    textoBotonPrincipal: t('btnSiguiente'),
+                    textoBotonPrincipal: "Siguiente Nivel",
                     callbackPrincipal: () => {
                         crearTablero();
                     }
@@ -554,12 +499,12 @@ function verificarVictoria() {
             );
         } else {
             reproducirEfectoSonido('victoria');
-
+            
             mostrarModal(
-                `${t('victoriaTitulo')} (${tiempo}s)`,
-                t('victoriaMsg'),
+                `¡Victoria! Tiempo: ${tiempo}s. Puntos: ${puntuacionPartida}`,
+                "¡Felicitaciones, has completado el nivel con éxito!",
                 {
-                    textoBotonPrincipal: t('btnSiguiente'),
+                    textoBotonPrincipal: "Siguiente Nivel",
                     callbackPrincipal: () => {
                         crearTablero();
                     }

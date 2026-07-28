@@ -93,7 +93,7 @@ export const categoriasFiguras = [
 
     { nombre: "Marcas", items: ['icofont-brand-cnn', 'icofont-brand-apple', 'icofont-brand-amazon', 'icofont-brand-dell', 'icofont-brand-playstation', 'icofont-brand-netflix', 'icofont-brand-android-robot', 'icofont-brand-shell', 'icofont-brand-general-electric', 'icofont-brand-nasa'] },
 
-    { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-java', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
+    { nombre: "Brand", items: ['icofont-brand-adidas', 'icofont-brand-blackberry', 'icofont-brand-puma', 'icofont-brand-casio', 'icofont-brand-natgeo', 'icofont-brand-gillette', 'icofont-brand-hp', 'icofont-brand-lg', 'icofont-brand-warnerbros', 'icofont-brand-motorola'] },
 
     { nombre: "Logos", items: ['icofont-brand-levis', 'icofont-brand-lego', 'icofont-brand-intel', 'icofont-brand-ikea', 'icofont-brand-linux', 'icofont-brand-nike', 'icofont-brand-mytv', 'icofont-brand-wikipedia', 'icofont-brand-samsung', 'icofont-brand-java'] },
 
@@ -161,7 +161,7 @@ export const categoriasFiguras = [
 
     { nombre: "Matemáticas 2", items: ['icofont-compass-alt-1', 'icofont-golden-ratio', 'icofont-marker-alt-1', 'icofont-math', 'icofont-mathematical-alt-1', 'icofont-mathematical-alt-2', 'icofont-mathematical', 'icofont-pen-alt-2', 'icofont-ruler-alt-1', 'icofont-pen-holder'] },
 
-    { nombre: "Matemáticas 3", items: ['icofont-rulers', 'icofont-ruler-compass', 'icofont-pen-alt-3', 'icofont-ruler-compass-alt', 'icofont-pencil-alt-3', 'icofont-ruler-pencil', 'icofont-ruler-compass', 'icofont-ruler-pencil-alt-2', 'icofont-ruler', 'icofont-pie-chart'] },
+    { nombre: "Matemáticas 3", items: ['icofont-rulers', 'icofont-ruler-compass', 'icofont-pen-alt-3', 'icofont-ruler-compass-alt', 'icofont-pencil-alt-3', 'icofont-ruler-pencil', 'icofont-compass-alt-2', 'icofont-ruler-pencil-alt-2', 'icofont-ruler', 'icofont-pie-chart'] },
 
         { nombre: "Editor de texto", items: ['icofont-align-center', 'icofont-align-left', 'icofont-align-right', 'icofont-all-caps', 'icofont-bold', 'icofont-brush', 'icofont-clip-board', 'icofont-code-alt', 'icofont-color-bucket', 'icofont-color-picker'] },
 

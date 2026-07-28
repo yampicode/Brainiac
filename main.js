@@ -1,5 +1,7 @@
 import { categoriasFiguras } from './categorias.js';
 
+import { dict } from './traducciones.js';
+
 const tablero = document.getElementById("tablero-juego");
 const btnReiniciar = document.getElementById("btn-reiniciar");
 const btnBorrar = document.getElementById("btn-borrar-historial");
@@ -43,6 +45,50 @@ if (btnSalir) {
          window.close();
     });
 }
+
+// Cargar idioma guardado o por defecto 'es'
+let idiomaActual = localStorage.getItem('idiomaJuego') || 'es';
+const selectIdioma = document.getElementById('select-idioma');
+
+if (selectIdioma) {
+    selectIdioma.value = idiomaActual;
+    selectIdioma.addEventListener('change', (e) => {
+        idiomaActual = e.target.value;
+        localStorage.setItem('idiomaJuego', idiomaActual);
+        actualizarTextosIdioma();
+        if (typeof reproducirEfectoSonido === 'function') {
+            reproducirEfectoSonido('voltear');
+        }
+    });
+}
+
+function t(key) {
+    return dict[idiomaActual][key] || dict['es'][key] || key;
+}
+
+function actualizarTextosIdioma() {
+    // Ejemplo de cómo actualizar elementos estáticos por ID
+    const btnJugarText = document.getElementById('btn-jugar');
+    if (btnJugarText) btnJugarText.innerText = t('btnJugar');
+
+    const btnComoJugarText = document.getElementById('btn-como-jugar');
+    if (btnComoJugarText) btnComoJugarText.innerText = t('btnComoJugar');
+
+    const btnAjustesText = document.getElementById('btn-ajustes');
+    if (btnAjustesText) btnAjustesText.innerText = t('btnAjustes');
+
+    const btnDesarrolladoresText = document.getElementById('btn-desarrolladores');
+    if (btnDesarrolladoresText) btnDesarrolladoresText.innerText = t('btnDesarrolladores');
+
+    // El botón de iniciar partida según su estado actual
+    if (!juegoIniciado && vidas > 0) {
+        btnIniciar.innerText = t('iniciarJuego');
+    }
+}
+
+// Ejecutar al iniciar la app para aplicar el idioma guardado
+actualizarTextosIdioma();
+
 
 // ==========================================
 // CONFIGURACIÓN DE ANIMACIONES

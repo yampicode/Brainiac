@@ -42,9 +42,7 @@ if (btnSalir) {
         // Opción B (Si quieres intentar cerrarla por si acaso fue abierta por script):
          window.close();
     });
-};
-
-
+}
 
 // ==========================================
 // CONFIGURACIÓN DE ANIMACIONES
@@ -81,6 +79,7 @@ if (btnToggleAnimaciones) {
         }
     });
 }
+
 
 // --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {
@@ -443,7 +442,7 @@ function verificarCoincidencia() {
                             img.style.display = 'block';
                             menuPrincipal.style.display = 'flex';
                         },
-                        textoBotonSecundario: "Reintentar",
+                        textoBotonSecundario: "Reintentar Nivel",
                         callbackSecundario: () => {
                             vidas = 7;
                             crearTablero();

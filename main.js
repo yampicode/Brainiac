@@ -7,6 +7,55 @@ const btnIniciar = document.getElementById("btn-iniciar");
 
 const footer = document.getElementById("footer");
 
+// ==========================================
+// CONFIGURACIÓN DE SONIDO
+// ==========================================
+let sonidoActivado = localStorage.getItem('sonidoActivado') !== 'false';
+const btnToggleSonido = document.getElementById('btn-toggle-sonido');
+
+function actualizarBotonSonidoVisual() {
+    if (!btnToggleSonido) return;
+    
+    if (sonidoActivado) {
+        btnToggleSonido.innerHTML = `<i class="icofont-volume-up"></i> Activado`;
+        btnToggleSonido.classList.add('activo');
+        btnToggleSonido.classList.remove('inactivo');
+    } else {
+        btnToggleSonido.innerHTML = `<i class="icofont-volume-mute"></i> Silenciado`;
+        btnToggleSonido.classList.add('inactivo');
+        btnToggleSonido.classList.remove('activo');
+    }
+}
+
+actualizarBotonSonidoVisual();
+
+if (btnToggleSonido) {
+    btnToggleSonido.addEventListener('click', () => {
+        sonidoActivado = !sonidoActivado;
+        localStorage.setItem('sonidoActivado', sonidoActivado);
+        actualizarBotonSonidoVisual();
+    });
+}
+
+function reproducirEfectoSonido(tipo) {
+    if (!sonidoActivado) return;
+
+    let rutaAudio = '';
+    if (tipo === 'clic') rutaAudio = 'clic.ogg';
+    if (tipo === 'acierto') rutaAudio = 'acierto.ogg';
+    if (tipo === 'error') rutaAudio = 'error.ogg';
+    if (tipo === 'voltear') rutaAudio = 'voltear.ogg';
+    if (tipo === 'derrota') rutaAudio = 'derrota.ogg';
+    if (tipo === 'victoria') rutaAudio = 'victoria.ogg';
+
+    if (rutaAudio) {
+        const sonido = new Audio(rutaAudio);
+        sonido.play().catch(error => {
+            console.log("El navegador bloqueó el audio o no se encontró el archivo", error);
+        });
+    }
+}
+
 // --- MANEJO DE PANTALLAS ---
 const btnJugar = document.getElementById('btn-jugar');
 const menuPrincipal = document.getElementById('menu-principal');
@@ -202,55 +251,6 @@ function guardarDatosLocales() {
     localStorage.setItem('victorias', victorias);
     localStorage.setItem('derrotas', derrotas);
     localStorage.setItem('indiceCategoriaActual', indiceCategoriaActual);
-}
-
-// ==========================================
-// CONFIGURACIÓN DE SONIDO
-// ==========================================
-let sonidoActivado = localStorage.getItem('sonidoActivado') !== 'false';
-const btnToggleSonido = document.getElementById('btn-toggle-sonido');
-
-function actualizarBotonSonidoVisual() {
-    if (!btnToggleSonido) return;
-    
-    if (sonidoActivado) {
-        btnToggleSonido.innerHTML = `<i class="icofont-volume-up"></i> Activado`;
-        btnToggleSonido.classList.add('activo');
-        btnToggleSonido.classList.remove('inactivo');
-    } else {
-        btnToggleSonido.innerHTML = `<i class="icofont-volume-mute"></i> Silenciado`;
-        btnToggleSonido.classList.add('inactivo');
-        btnToggleSonido.classList.remove('activo');
-    }
-}
-
-actualizarBotonSonidoVisual();
-
-if (btnToggleSonido) {
-    btnToggleSonido.addEventListener('click', () => {
-        sonidoActivado = !sonidoActivado;
-        localStorage.setItem('sonidoActivado', sonidoActivado);
-        actualizarBotonSonidoVisual();
-    });
-}
-
-function reproducirEfectoSonido(tipo) {
-    if (!sonidoActivado) return;
-
-    let rutaAudio = '';
-    if (tipo === 'clic') rutaAudio = 'clic.ogg';
-    if (tipo === 'acierto') rutaAudio = 'acierto.ogg';
-    if (tipo === 'error') rutaAudio = 'error.ogg';
-    if (tipo === 'voltear') rutaAudio = 'voltear.ogg';
-    if (tipo === 'derrota') rutaAudio = 'derrota.ogg';
-    if (tipo === 'victoria') rutaAudio = 'victoria.ogg';
-
-    if (rutaAudio) {
-        const sonido = new Audio(rutaAudio);
-        sonido.play().catch(error => {
-            console.log("El navegador bloqueó el audio o no se encontró el archivo", error);
-        });
-    }
 }
 
 // Elementos visuales flotantes y estadísticas

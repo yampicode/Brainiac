@@ -392,7 +392,7 @@ function flipCard(cardElement) {
 
     cardElement.classList.add('flipped');
     cartasVolteadas.push(cardElement);
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
 
     if (cartasVolteadas.length === 2) {
         verificarCoincidencia();

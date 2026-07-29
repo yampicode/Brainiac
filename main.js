@@ -338,6 +338,8 @@ function crearTablero() {
 
 function inicializarNuevaPartida() {
     tablero.innerHTML = '';
+    tablero.style.backgroundColor = 'transparent';
+    tablero.style.background = 'transparent';
     puntuacionPartida = 0;
     if (vidas <= 0) {
         vidas = 7;

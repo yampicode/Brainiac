@@ -15,7 +15,7 @@ const btnVolverMenu = document.getElementById('btn-volver-menu');
 const img = document.getElementById('img');
 
 btnJugar.addEventListener('click', () => {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     menuPrincipal.style.display = 'none';
     footer.style.display = 'none';
     img.style.display = 'none';
@@ -23,7 +23,7 @@ btnJugar.addEventListener('click', () => {
 });
 
 btnVolverMenu.addEventListener('click', () => {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     pantallaJuego.style.display = 'none';
     footer.style.display = 'block';
     img.style.display = 'block';
@@ -34,7 +34,7 @@ const btnSalir = document.getElementById('btn-salir');
 
 if (btnSalir) {
     btnSalir.addEventListener('click', () => {
-        reproducirEfectoSonido('voltear');
+        reproducirEfectoSonido('clic');
         
         // Opción A: Mandarlo a Google o a otra web
      //   window.location.href = "https://webzona.vercel.app";
@@ -75,7 +75,7 @@ if (btnToggleAnimaciones) {
         localStorage.setItem('animacionesActivadas', animacionesActivadas);
         actualizarBotonAnimacionesVisual();
         if (typeof reproducirEfectoSonido === 'function') {
-            reproducirEfectoSonido('voltear');
+            reproducirEfectoSonido('clic');
         }
     });
 }
@@ -83,7 +83,7 @@ if (btnToggleAnimaciones) {
 
 // --- MANEJO DE MODALES (ESTÁTICOS) ---
 function abrirModal(idModal) {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     const modal = document.getElementById(idModal);
     if (modal) {
         modal.classList.add('activo'); // Usamos la clase activo para garantizar que se muestren
@@ -103,7 +103,7 @@ if (btnDesarrolladores) btnDesarrolladores.addEventListener('click', () => abrir
 const botonesCerrar = document.querySelectorAll('.btn-cerrar-modal');
 botonesCerrar.forEach(boton => {
     boton.addEventListener('click', (e) => {
-        reproducirEfectoSonido('voltear');
+        reproducirEfectoSonido('clic');
         const modalOverlay = e.target.closest('.modal-overlay');
         if (modalOverlay) {
             modalOverlay.classList.remove('activo'); // Quitamos la clase activo para ocultarlos
@@ -176,7 +176,7 @@ if (btnToggleDark) {
         localStorage.setItem('modoDark', modoDarkActivado);
         actualizarModoDarkVisual();
         if (typeof reproducirEfectoSonido === 'function') {
-            reproducirEfectoSonido('voltear');
+            reproducirEfectoSonido('clic');
         }
     });
 }
@@ -238,6 +238,7 @@ function reproducirEfectoSonido(tipo) {
     if (!sonidoActivado) return;
 
     let rutaAudio = '';
+    if (tipo === 'clic') rutaAudio = 'clic.ogg';
     if (tipo === 'acierto') rutaAudio = 'acierto.ogg';
     if (tipo === 'error') rutaAudio = 'error.ogg';
     if (tipo === 'voltear') rutaAudio = 'voltear.ogg';
@@ -291,7 +292,7 @@ function actualizarUI() {
 
 // Botón de Iniciar / Pausar
 btnIniciar.onclick = () => {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     if (vidas <= 0) return;
 
     if (!juegoIniciado) {
@@ -523,7 +524,7 @@ function resetearTurno() {
 }
 
 btnBorrar.onclick = () => {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     if (confirm("¿Borrar todo el historial y reiniciar puntuaciones?")) {
         localStorage.clear();
         scoreTotal = 0;
@@ -538,7 +539,7 @@ btnBorrar.onclick = () => {
 };
 
 btnReiniciar.onclick = () => {
-    reproducirEfectoSonido('voltear');
+    reproducirEfectoSonido('clic');
     tablero.classList.toggle('revolviendo');
     crearTablero();
 }

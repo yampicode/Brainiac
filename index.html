@@ -32,7 +32,7 @@
     <meta property="og:description" content=" Juego interactivo de memoria con cronómetro, tiempo record, puntos, score números de Victorias.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://memoria-ymujica.vercel.app">
-    <meta property="og:image" content="https://memoria-ymujica.vercel.app/memoria.webp"> <!-- Imagen de 1200x630px -->
+    <meta property="og:image" content="https://memoria-ymujica.vercel.app/memoria.webp">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -42,198 +42,161 @@
 
     <!-- Localización -->
     <meta name="geo.region" content="VE-J" />
-<meta name="geo.placename" content="Puerto Cabello, Venezuela" />
-<meta name="geo.position" content="10.4696;-68.0149" />
-<meta name="ICBM" content="10.4696, -68.0149" />
+    <meta name="geo.placename" content="Puerto Cabello, Venezuela" />
+    <meta name="geo.position" content="10.4696;-68.0149" />
+    <meta name="ICBM" content="10.4696, -68.0149" />
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="fuentes.css" type="text/css" media="all" />
-
-<link rel="stylesheet" href="icofont.min.css" type="text/css" media="all" />
-
-<link rel="shortcut icon" href="memoria-ico.webp" type="image/x-icon" />
-<script src="//web.webpushs.com/js/push/d87d5962637fd4ed0592c606c1a87211_1.js" async></script>
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fuentes.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="icofont.min.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="memoria-ico.webp" type="image/x-icon" />
+    <script src="//web.webpushs.com/js/push/d87d5962637fd4ed0592c606c1a87211_1.js" async></script>
 </head>
 <body>
 
 <header class="header">
-<img id="img" class="img" src="memoria.svg" alt="Logotipo de Memoria." />
-
+    <img id="img" class="img" src="memoria.svg" alt="Logotipo de Memoria." />
 </header>
 
 <main class="menu-principal" id="menu-principal">
-
-
-<div class="contenedor">
-<div class="cont__btn">
-
-<!-- Botones en pantalla móvil-->
-<button id="btn-jugar" class="btn__menu">Jugar Ahora</button>
-
-<button id="btn-como-jugar" class="btn__menu">¿Cómo Jugar?</button>
-
-<button id="btn-ajustes" class="btn__menu">Ajustes</button>
-
-<button id="btn-desarrolladores" class="btn__menu">Desarrollador</button>
-
-<button id="btn-salir" class="btn__menu">Salir</button>
-
-
-</div>
-</div>
-
+    <div class="contenedor">
+        <div class="cont__btn">
+            <!-- Botones en pantalla móvil -->
+            <button id="btn-jugar" class="btn__menu" data-i18n="jugar_ahora">Jugar Ahora</button>
+            <button id="btn-como-jugar" class="btn__menu" data-i18n="como_jugar">¿Cómo Jugar?</button>
+            <button id="btn-ajustes" class="btn__menu" data-i18n="ajustes">Ajustes</button>
+            <button id="btn-desarrolladores" class="btn__menu" data-i18n="desarrollador">Desarrollador</button>
+            <button id="btn-salir" class="btn__menu" data-i18n="salir">Salir</button>
+        </div>
+    </div>
 </main>
-
 
 <!-- VISTA DEL JUEGO (Oculta al inicio, se muestra al dar click en Jugar) -->
 <section id="pantalla-juego" class="game-container" style="display: none;">
-<!-- Aquí irá tu tablero de juego actual -->
-<!-- Botones en tamaño de PC -->
-<button id="btn-volver-menu" class="btn__secundario" title="Volver"><i class="icofont-arrow-left"></i></button>
-<div class="flex">
+    <!-- Botones en tamaño de PC -->
+    <button id="btn-volver-menu" class="btn__secundario" title="Volver" data-i18n-title="titulo_volver">
+        <i class="icofont-arrow-left"></i>
+    </button>
+    
+    <div class="flex">
+        <button id="btn-iniciar" class="btn" title="Iniciar el Juego" data-i18n="iniciar_juego" data-i18n-title="titulo_iniciar">Iniciar Juego</button>
+        <button id="btn-reiniciar" class="btn" title="Remover las cartas" data-i18n="revolver_cartas" data-i18n-title="titulo_revolver">Revolver Cartas</button>
+        <button id="btn-borrar-historial" class="btn" title="Reiniciar los Marcadores" data-i18n="resetear_valores" data-i18n-title="titulo_resetear">Resetear Valores</button>
+    </div>
 
-<button id="btn-iniciar" class="btn" title="Iniciar el Juego">Iniciar Juego</button>
-
-<button id="btn-reiniciar" class="btn" title="Remover las cartas">Revolver Cartas</button>
-
-<button id="btn-borrar-historial"class="btn" title="Reiniciar los Marcadores">Resetear Valores</button>
-
-</div>
-
-
-<!-- Tablero -->
-
-<div id="tablero-juego" class="tablero">
-<!-- Generaremos las 20 cartas (10 pares) dinámicamente con JS -->
-</div>
-
+    <!-- Tablero -->
+    <div id="tablero-juego" class="tablero">
+        <!-- Generaremos las cartas dinámicamente con JS -->
+    </div>
 </section>
 
 <!-- MODAL: ¿Cómo Jugar? -->
 <div id="modal-como-jugar" class="modal-overlay" style="display: none;">
-<div class="modal-card">
-<hgroup class="">
-<h2>¿Cómo Jugar?</h2>
-<h3 class="">¡Pon a prueba tu memoria, acumula aciertos y mantén tus vidas a salvo!</h3>
-</hgroup>
-
-<p>
-Voltea las cartas: Haz clic en dos cartas para descubrir los iconos ocultos en el tablero.
-</p>
-<p>
-Haz parejas y gana vidas: Cada vez que encuentres una pareja correcta, ganarás vidas como recompensa para seguir jugando.
-</p>
-<p>
-Cuidado con los errores: Si las cartas no coinciden, perderás una vida. Tienes un límite inicial de 7 vidas. Si te quedas a cero, podrás ver un anuncio rápido para recuperarlas y continuar exactamente donde ibas.
-</p>
-<p>
-Objetivo: Voltea las cartas de dos en dos para encontrar las parejas idénticas antes de que se te acaben las 7 vidas.
-</p>
-<button class="btn-cerrar-modal">Cerrar</button>
-</div>
+    <div class="modal-card">
+        <hgroup>
+            <h2 data-i18n="como_jugar_titulo">¿Cómo Jugar?</h2>
+            <h3 data-i18n="como_jugar_subtitulo">¡Pon a prueba tu memoria, acumula aciertos y mantén tus vidas a salvo!</h3>
+        </hgroup>
+        <p data-i18n="como_jugar_paso1">Voltea las cartas: Haz clic en dos cartas para descubrir los iconos ocultos en el tablero.</p>
+        <p data-i18n="como_jugar_paso2">Haz parejas y gana vidas: Cada vez que encuentres una pareja correcta, ganarás vidas como recompensa para seguir jugando.</p>
+        <p data-i18n="como_jugar_paso3">Cuidado con los errores: Si las cartas no coinciden, perderás una vida. Tienes un límite inicial de 7 vidas. Si te quedas a cero, podrás ver un anuncio rápido para recuperarlas y continuar exactamente donde ibas.</p>
+        <p data-i18n="como_jugar_paso4">Objetivo: Voltea las cartas de dos en dos para encontrar las parejas idénticas antes de que se te acaben las 7 vidas.</p>
+        <button class="btn-cerrar-modal" data-i18n="cerrar">Cerrar</button>
+    </div>
 </div>
 
 <!-- MODAL: Ajustes -->
 <div id="modal-ajustes" class="modal-overlay" style="display: none;">
-<div class="modal-card">
-<h2>Ajustes</h2>
+    <div class="modal-card">
+        <h2 data-i18n="ajustes_titulo">Ajustes</h2>
 
-<!-- Opción de Sonido -->
-<div class="setting-item">
-<span>Sonido:</span>
-<button id="btn-toggle-sonido" class="btn-toggle activo"><i class="icofont-volume-bar"></i> Activado</button>
-</div>
+        <!-- Opción de Sonido -->
+        <div class="setting-item">
+            <span data-i18n="sonido">Sonido:</span>
+            <button id="btn-toggle-sonido" class="btn-toggle activo"><i class="icofont-volume-bar"></i> Activado</button>
+        </div>
 
-<!-- Opción de Dark Mode -->
-<div class="setting-item">
-<span>Modo:</span>
-<button id="btn-toggle-dark"><i class="icofont-moon"></i> Dark</button>
-</div>
+        <!-- Opción de Dark Mode -->
+        <div class="setting-item">
+            <span data-i18n="modo">Modo:</span>
+            <button id="btn-toggle-dark"><i class="icofont-moon"></i> Dark</button>
+        </div>
 
-<!-- Ajustar Animaciones -->
-<div class="setting-item">
-    <span>Animaciones</span>
-    <button id="btn-toggle-animaciones" class="btn-toggle">Activadas</button>
-</div>
+        <!-- Ajustar Animaciones -->
+        <div class="setting-item">
+            <span data-i18n="animaciones">Animaciones</span>
+            <button id="btn-toggle-animaciones" class="btn-toggle">Activadas</button>
+        </div>
 
-<!-- Ajustar Idiomas 
-<div class="setting-item">
-    <span>Idioma</span>
-    <select id="select-idioma" class="btn-toggle" style="background: white; color: #333; padding: 5px 10px;">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-        <option value="pt">Português</option>
-    </select>
-</div>
--->
-<button class="btn-cerrar-modal">Cerrar</button>
+        <!-- Ajustar Idiomas -->
+        <div class="setting-item">
+            <span data-i18n="idioma">Idioma</span>
+            <select id="btn-toggle-idioma" class="btn-toggle" style="background: white; color: #333; padding: 5px 10px;">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
 
-</div>
+        <button class="btn-cerrar-modal" data-i18n="cerrar">Cerrar</button>
+    </div>
 </div>
 
 <!-- MODAL: Desarrolladores -->
 <div id="modal-desarrolladores" class="modal-overlay" style="display: none;">
-<div class="modal-card">
-<h2>Desarrollador</h2>
-<p>
-Hola, soy Yampiero Mujica, creé Memoria con mucho cariño, HTML, CSS y Javascript para que pases un buen rato entrenando tu memoria sin anuncios molestos. Si te gusta el proyecto y quieres apoyarme a mantenerlo activo, invítame un café haciendo clic en la tacita <a href=" https://www.paypal.me/yampieromujica" target="_blank" class="btn-apoyo" title="Invítame un café">
-    <span class="icono-cafe"><i class="icofont-coffee-mug"></i></span>
-    </a>
-</p>
-<button class="btn-cerrar-modal">Cerrar</button>
-</div>
+    <div class="modal-card">
+        <h2 data-i18n="desarrollador_titulo">Desarrollador</h2>
+        <p>
+            <span data-i18n="desarrollador_texto">Hola, soy Yampiero Mujica, creé Memoria con mucho cariño, HTML, CSS y Javascript para que pases un buen rato entrenando tu memoria sin anuncios molestos. Si te gusta el proyecto y quieres apoyarme a mantenerlo activo, invítame un café haciendo clic en la tacita</span>
+            <a href="https://www.paypal.me/yampieromujica" target="_blank" class="btn-apoyo" title="Invítame un café">
+                <span class="icono-cafe"><i class="icofont-coffee-mug"></i></span>
+            </a>
+        </p>
+        <button class="btn-cerrar-modal" data-i18n="cerrar">Cerrar</button>
+    </div>
 </div>
 
 <!-- Modal de "Sin Vidas" / Monetización -->
 <div id="modal-sin-vidas" class="modal-overlay" style="display: none;">
-<div class="modal-card">
-<h2>¡Te has quedado sin vidas!</h2>
-<p>
-¿Qué deseas hacer para continuar?
-</p>
+    <div class="modal-card">
+        <h2 data-i18n="sin_vidas_titulo">¡Te has quedado sin vidas!</h2>
+        <p data-i18n="sin_vidas_mensaje">¿Qué deseas hacer para continuar?</p>
 
-<div class="modal-botones">
-<!-- Opción con Recompensa (Ver Anuncio) -->
-<button id="btn-ver-anuncio" class="btn-video">
-🎬 Ver anuncio y recuperar 7 vidas (Continuar partida)
-</button>
+        <div class="modal-botones">
+            <!-- Opción con Recompensa (Ver Anuncio) -->
+            <button id="btn-ver-anuncio" class="btn-video" data-i18n="ver_anuncio">
+                🎬 Ver anuncio y recuperar 7 vidas (Continuar partida)
+            </button>
 
-<!-- Opción de Penalización (Reiniciar desde cero) -->
-<button id="btn-reiniciar" class="btn-penalizacion">
-🔄 Reiniciar partida (Perder progreso)
-</button>
-</div>
-</div>
+            <!-- Opción de Penalización (Reiniciar desde cero) -->
+            <button id="btn-reiniciar" class="btn-penalizacion" data-i18n="reiniciar_partida">
+                🔄 Reiniciar partida (Perder progreso)
+            </button>
+        </div>
+    </div>
 </div>
 
 <footer class="footer" id="footer">
-<!-- Botón de apoyo discreto -->
-<a href=" https://www.paypal.me/yampieromujica" target="_blank" class="btn-apoyo" title="Invítame un café">
-   <span class="icono-cafe icofont-coffee-mug">
-</span>
-    <span class="texto-apoyo">Invítame un café</span>
-</a>
-<div><p class="pie">2026 © | V 2.2</p></div>
+    <!-- Botón de apoyo discreto -->
+    <a href="https://www.paypal.me/yampieromujica" target="_blank" class="btn-apoyo" title="Invítame un café">
+        <span class="icono-cafe icofont-coffee-mug"></span>
+        <span class="texto-apoyo" data-i18n="invitar_cafe">Invítame un café</span>
+    </a>
+    <div><p class="pie" data-i18n="version">2026 © | V 2.2</p></div>
 </footer>
 
-<!-- Agrega esto al final de tu archivo index.html, justo antes de </body> -->
-
+<!-- Modal del sistema dinámico -->
 <div id="modal-sistema" class="modal-overlay" style="display: none;">
     <div class="modal-content">
         <h2 id="modal-titulo" class="modal-titulo">¡Alerta!</h2>
         <p id="modal-mensaje" class="modal-mensaje">Este es un mensaje genérico.</p>
-        
-        <!-- Opcional: Botón secundario para "Jugar de nuevo" -->
         <button id="modal-boton-secundario" class="modal-boton-secundario" style="display: none;">Jugar de nuevo</button>
-<!-- Botón principal para "Jugar de nuevo" -->
-<button id="modal-boton-principal" class="modal-boton-accion">Aceptar</button>
+        <button id="modal-boton-principal" class="modal-boton-accion">Aceptar</button>
     </div>
 </div>
 
 <script type="module" src="main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 
 </body>
 </html>

@@ -67,7 +67,7 @@ export const traducciones = {
         
         // Footer y otros
         invitar_cafe: "Invítame un café",
-        version: "2026 © | V 2.2",
+        version: "2026 © | V 2.5",
         confirmar_borrar: "¿Borrar todo el historial y reiniciar puntuaciones?",
         sin_vidas_titulo: "¡Te has quedado sin vidas!",
         sin_vidas_mensaje: "¿Qué deseas hacer para continuar?",
@@ -151,7 +151,7 @@ export const traducciones = {
         
         // Footer and others
         invitar_cafe: "Buy me a coffee",
-        version: "2026 © | V 2.2",
+        version: "2026 © | V 2.5",
         confirmar_borrar: "Delete all history and reset scores?",
         sin_vidas_titulo: "You've run out of lives!",
         sin_vidas_mensaje: "What do you want to do to continue?",
@@ -235,7 +235,7 @@ export const traducciones = {
         
         // Footer e outros
         invitar_cafe: "Me pague um café",
-        version: "2026 © | V 2.2",
+        version: "2026 © | V 2.5",
         confirmar_borrar: "Apagar todo o histórico e redefinir pontuações?",
         sin_vidas_titulo: "Você ficou sem vidas!",
         sin_vidas_mensaje: "O que você deseja fazer para continuar?",

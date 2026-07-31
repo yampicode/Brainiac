@@ -297,6 +297,10 @@ if (btnToggleDark) {
 // INICIALIZACIÓN DEL SISTEMA DE IDIOMAS
 // ==========================================
 const selectIdioma = document.getElementById('btn-toggle-idioma');
+
+selectIdioma.addEventListener('click', () => {
+    reproducirEfectoSonido('clic');
+});
 if (selectIdioma) {
     selectIdioma.value = idiomaActual;
     selectIdioma.addEventListener('change', (e) => {

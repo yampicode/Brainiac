@@ -67,7 +67,7 @@ export const traducciones = {
         
         // Footer y otros
         invitar_cafe: "Invítame un café",
-     //   version: "2026 © | V 2.2",
+       version: "2026 © | V 2.7",
         confirmar_borrar: "¿Borrar todo el historial y reiniciar puntuaciones?",
         sin_vidas_titulo: "¡Te has quedado sin vidas!",
         sin_vidas_mensaje: "¿Qué deseas hacer para continuar?",
@@ -151,7 +151,7 @@ export const traducciones = {
         
         // Footer and others
         invitar_cafe: "Buy me a coffee",
-    //    version: "2026 © | V 2.2",
+      version: "2026 © | V 2.7",
         confirmar_borrar: "Delete all history and reset scores?",
         sin_vidas_titulo: "You've run out of lives!",
         sin_vidas_mensaje: "What do you want to do to continue?",
@@ -235,7 +235,7 @@ export const traducciones = {
         
         // Footer e outros
         invitar_cafe: "Me pague um café",
-     //   version: "2026 © | V 2.2",
+        version: "2026 © | V 2.7",
         confirmar_borrar: "Apagar todo o histórico e redefinir pontuações?",
         sin_vidas_titulo: "Você ficou sem vidas!",
         sin_vidas_mensaje: "O que você deseja fazer para continuar?",
@@ -318,7 +318,7 @@ export const traducciones = {
     
     // Footer et autres
     invitar_cafe: "Offrez-moi un café",
- //   version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "Effacer tout l'historique et réinitialiser les scores?",
     sin_vidas_titulo: "Vous n'avez plus de vies!",
     sin_vidas_mensaje: "Que voulez-vous faire pour continuer?",
@@ -402,7 +402,7 @@ it: {
     
     // Footer e altri
     invitar_cafe: "Offrimi un caffè",
- //   version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "Cancellare tutta la cronologia e reimpostare i punteggi?",
     sin_vidas_titulo: "Hai esaurito le vite!",
     sin_vidas_mensaje: "Cosa vuoi fare per continuare?",
@@ -486,7 +486,7 @@ de: {
     
     // Footer und Andere
     invitar_cafe: "Lade mich auf einen Kaffee ein",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "Gesamten Verlauf löschen und Punktzahlen zurücksetzen?",
     sin_vidas_titulo: "Du hast keine Leben mehr!",
     sin_vidas_mensaje: "Was möchtest du tun, um fortzufahren?",
@@ -570,7 +570,7 @@ ar: {
     
     // التذييل وأخرى
     invitar_cafe: "ادعمني بفنجان قهوة",
- //   version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "مسح كل السجل وإعادة تعيين النتائج؟",
     sin_vidas_titulo: "لقد نفدت أرواحك!",
     sin_vidas_mensaje: "ماذا تريد أن تفعل للمتابعة؟",
@@ -654,7 +654,7 @@ ja: {
     
     // フッターとその他
     invitar_cafe: "コーヒーをおごる",
-    version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "履歴をすべて削除してスコアをリセットしますか?",
     sin_vidas_titulo: "ライフがなくなりました!",
     sin_vidas_mensaje: "続行するにはどうしますか?",
@@ -738,7 +738,7 @@ zh: {
     
     // 页脚和其他
     invitar_cafe: "请我喝杯咖啡",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "删除所有历史记录并重置分数?",
     sin_vidas_titulo: "你的生命用完了!",
     sin_vidas_mensaje: "你想怎么做来继续?",
@@ -822,7 +822,7 @@ ru: {
     
     // Подвал и прочее
     invitar_cafe: "Угостить меня кофе",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "Удалить всю историю и сбросить счета?",
     sin_vidas_titulo: "У вас закончились жизни!",
     sin_vidas_mensaje: "Что вы хотите сделать, чтобы продолжить?",
@@ -906,7 +906,7 @@ he: {
     
     // תחתית ונוספים
     invitar_cafe: "הזמן אותי לקפה",
- //   version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "למחוק את כל ההיסטוריה ולאפס ניקודים?",
     sin_vidas_titulo: "נגמרו לך החיים!",
     sin_vidas_mensaje: "מה תרצה לעשות כדי להמשיך?",
@@ -990,7 +990,7 @@ gn: { // Guaraní
     
     // Footer y otros
     invitar_cafe: "Eipay café",
- //   version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "Emboguete opaite tembiasakue ha embojevy papapykuéra?",
     sin_vidas_titulo: "Nderekovévéima tekove!",
     sin_vidas_mensaje: "Mba'épa rejapose reho hag̃ua tenonde?",
@@ -1074,7 +1074,7 @@ guc: { // Wayuunaiki
     
     // Footer y otros
     invitar_cafe: "Pükaaliijüin café",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "¿Jüpülaajünaa sukuwa'ipa je jüpülaajünaa puntu?",
     sin_vidas_titulo: "¡Nnojolüin püküa kakuuna!",
     sin_vidas_mensaje: "¿Kasa püleejeerü jüpüla jütanüin?",
@@ -1158,7 +1158,7 @@ wau: { // Warao
     
     // Footer y otros
     invitar_cafe: "Ine café",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "¿Moinibunatu score je historia?",
     sin_vidas_titulo: "¡A jebu najorokitane!",
     sin_vidas_mensaje: "¿Jine a wabatu jisaka?",
@@ -1242,7 +1242,7 @@ pex: { // Pemón
     
     // Footer y otros
     invitar_cafe: "Ene café",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "¿Enepaik pé score je historia?",
     sin_vidas_titulo: "¡Enapai nenapaika!",
     sin_vidas_mensaje: "¿Eneken enapa pé?",
@@ -1326,7 +1326,7 @@ jiv: { // Jivi (Hiwi/Guajibo)
     
     // Footer y otros
     invitar_cafe: "Jü café",
-    //version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "¿Jiwakajü jüme score je historia?",
     sin_vidas_titulo: "¡Jüme najiwapana!",
     sin_vidas_mensaje: "¿Jume jü jüme?",
@@ -1410,7 +1410,7 @@ wot: { // Wottuja (Piaroa)
     
     // Footer y otros
     invitar_cafe: "Ine café",
-  //  version: "2026 © | V 2.2",
+    version: "2026 © | V 2.7",
     confirmar_borrar: "¿Moinibunatu score je historia?",
     sin_vidas_titulo: "¡A jebu najorokitane!",
     sin_vidas_mensaje: "¿Jine a wabatu jisaka?",

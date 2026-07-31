@@ -67,7 +67,7 @@ export const traducciones = {
         
         // Footer y otros
         invitar_cafe: "Invítame un café",
-       version: "2026 © | V 2.7",
+       version: "2026 © | V 2.8",
         confirmar_borrar: "¿Borrar todo el historial y reiniciar puntuaciones?",
         sin_vidas_titulo: "¡Te has quedado sin vidas!",
         sin_vidas_mensaje: "¿Qué deseas hacer para continuar?",
@@ -151,7 +151,7 @@ export const traducciones = {
         
         // Footer and others
         invitar_cafe: "Buy me a coffee",
-      version: "2026 © | V 2.7",
+      version: "2026 © | V 2.8",
         confirmar_borrar: "Delete all history and reset scores?",
         sin_vidas_titulo: "You've run out of lives!",
         sin_vidas_mensaje: "What do you want to do to continue?",
@@ -235,7 +235,7 @@ export const traducciones = {
         
         // Footer e outros
         invitar_cafe: "Me pague um café",
-        version: "2026 © | V 2.7",
+        version: "2026 © | V 2.8",
         confirmar_borrar: "Apagar todo o histórico e redefinir pontuações?",
         sin_vidas_titulo: "Você ficou sem vidas!",
         sin_vidas_mensaje: "O que você deseja fazer para continuar?",
@@ -318,7 +318,7 @@ export const traducciones = {
     
     // Footer et autres
     invitar_cafe: "Offrez-moi un café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "Effacer tout l'historique et réinitialiser les scores?",
     sin_vidas_titulo: "Vous n'avez plus de vies!",
     sin_vidas_mensaje: "Que voulez-vous faire pour continuer?",
@@ -402,7 +402,7 @@ it: {
     
     // Footer e altri
     invitar_cafe: "Offrimi un caffè",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "Cancellare tutta la cronologia e reimpostare i punteggi?",
     sin_vidas_titulo: "Hai esaurito le vite!",
     sin_vidas_mensaje: "Cosa vuoi fare per continuare?",
@@ -486,7 +486,7 @@ de: {
     
     // Footer und Andere
     invitar_cafe: "Lade mich auf einen Kaffee ein",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "Gesamten Verlauf löschen und Punktzahlen zurücksetzen?",
     sin_vidas_titulo: "Du hast keine Leben mehr!",
     sin_vidas_mensaje: "Was möchtest du tun, um fortzufahren?",
@@ -570,7 +570,7 @@ ar: {
     
     // التذييل وأخرى
     invitar_cafe: "ادعمني بفنجان قهوة",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "مسح كل السجل وإعادة تعيين النتائج؟",
     sin_vidas_titulo: "لقد نفدت أرواحك!",
     sin_vidas_mensaje: "ماذا تريد أن تفعل للمتابعة؟",
@@ -654,7 +654,7 @@ ja: {
     
     // フッターとその他
     invitar_cafe: "コーヒーをおごる",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "履歴をすべて削除してスコアをリセットしますか?",
     sin_vidas_titulo: "ライフがなくなりました!",
     sin_vidas_mensaje: "続行するにはどうしますか?",
@@ -738,7 +738,7 @@ zh: {
     
     // 页脚和其他
     invitar_cafe: "请我喝杯咖啡",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "删除所有历史记录并重置分数?",
     sin_vidas_titulo: "你的生命用完了!",
     sin_vidas_mensaje: "你想怎么做来继续?",
@@ -822,7 +822,7 @@ ru: {
     
     // Подвал и прочее
     invitar_cafe: "Угостить меня кофе",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "Удалить всю историю и сбросить счета?",
     sin_vidas_titulo: "У вас закончились жизни!",
     sin_vidas_mensaje: "Что вы хотите сделать, чтобы продолжить?",
@@ -906,7 +906,7 @@ he: {
     
     // תחתית ונוספים
     invitar_cafe: "הזמן אותי לקפה",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "למחוק את כל ההיסטוריה ולאפס ניקודים?",
     sin_vidas_titulo: "נגמרו לך החיים!",
     sin_vidas_mensaje: "מה תרצה לעשות כדי להמשיך?",
@@ -990,7 +990,7 @@ gn: { // Guaraní
     
     // Footer y otros
     invitar_cafe: "Eipay café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "Emboguete opaite tembiasakue ha embojevy papapykuéra?",
     sin_vidas_titulo: "Nderekovévéima tekove!",
     sin_vidas_mensaje: "Mba'épa rejapose reho hag̃ua tenonde?",
@@ -1074,7 +1074,7 @@ guc: { // Wayuunaiki
     
     // Footer y otros
     invitar_cafe: "Pükaaliijüin café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "¿Jüpülaajünaa sukuwa'ipa je jüpülaajünaa puntu?",
     sin_vidas_titulo: "¡Nnojolüin püküa kakuuna!",
     sin_vidas_mensaje: "¿Kasa püleejeerü jüpüla jütanüin?",
@@ -1158,7 +1158,7 @@ wau: { // Warao
     
     // Footer y otros
     invitar_cafe: "Ine café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "¿Moinibunatu score je historia?",
     sin_vidas_titulo: "¡A jebu najorokitane!",
     sin_vidas_mensaje: "¿Jine a wabatu jisaka?",
@@ -1242,7 +1242,7 @@ pex: { // Pemón
     
     // Footer y otros
     invitar_cafe: "Ene café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "¿Enepaik pé score je historia?",
     sin_vidas_titulo: "¡Enapai nenapaika!",
     sin_vidas_mensaje: "¿Eneken enapa pé?",
@@ -1326,7 +1326,7 @@ jiv: { // Jivi (Hiwi/Guajibo)
     
     // Footer y otros
     invitar_cafe: "Jü café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "¿Jiwakajü jüme score je historia?",
     sin_vidas_titulo: "¡Jüme najiwapana!",
     sin_vidas_mensaje: "¿Jume jü jüme?",
@@ -1410,7 +1410,7 @@ wot: { // Wottuja (Piaroa)
     
     // Footer y otros
     invitar_cafe: "Ine café",
-    version: "2026 © | V 2.7",
+    version: "2026 © | V 2.8",
     confirmar_borrar: "¿Moinibunatu score je historia?",
     sin_vidas_titulo: "¡A jebu najorokitane!",
     sin_vidas_mensaje: "¿Jine a wabatu jisaka?",
@@ -1426,6 +1426,425 @@ wot: { // Wottuja (Piaroa)
     // Textos dinámicos
     tiempo_record: (tiempo) => `¡Rekor Jobaji! Jiara: ${tiempo}s`,
     tiempo_victoria: (tiempo, puntos) => `¡Winata! Jiara: ${tiempo}s. Puntu: ${puntos}`,
+},
+nl: { // Holandés (Neerlandés)
+    // Hoofdmenu
+    jugar_ahora: "Nu Spelen",
+    como_jugar: "Hoe Spelen?",
+    ajustes: "Instellingen",
+    desarrollador: "Ontwikkelaar",
+    salir: "Afsluiten",
+    
+    // Spelscherm
+    iniciar_juego: "Spel Starten",
+    pausar: "Pauzeren",
+    reanudar: "Hervatten",
+    revolver_cartas: "Kaarten Schudden",
+    resetear_valores: "Waarden Resetten",
+    
+    // Statistiekenpaneel
+    tiempo: "Tijd",
+    puntos: "Punten",
+    victorias_label: "Overwinningen",
+    record: "Record",
+    score: "Score",
+    derrotas: "Nederlagen",
+    
+    // Spelstatussen
+    game_over: "Game Over!",
+    ganaste: "Je hebt Gewonnen!",
+    nuevo_record: "Nieuw Record!",
+    victoria: "Overwinning!",
+    
+    // Modal Hoe Spelen
+    como_jugar_titulo: "Hoe Spelen?",
+    como_jugar_subtitulo: "Test je geheugen, verzamel punten en bescherm je levens!",
+    como_jugar_paso1: "Kaarten omdraaien: Klik op twee kaarten om de verborgen pictogrammen op het bord te ontdekken.",
+    como_jugar_paso2: "Paren maken en levens verdienen: Elke keer dat je een correct paar vindt, verdien je levens als beloning om door te spelen.",
+    como_jugar_paso3: "Pas op voor fouten: Als de kaarten niet overeenkomen, verlies je een leven. Je begint met 7 levens. Als ze op zijn, kun je een korte advertentie bekijken om ze te herstellen en verder te gaan waar je was.",
+    como_jugar_paso4: "Doel: Draai twee kaarten tegelijk om om identieke paren te vinden voordat je 7 levens op zijn.",
+    cerrar: "Sluiten",
+    
+    // Modal Instellingen
+    ajustes_titulo: "Instellingen",
+    sonido: "Geluid:",
+    activado: "Aan",
+    silenciado: "Uit",
+    modo: "Modus:",
+    dark: "Donker",
+    light: "Licht",
+    animaciones: "Animaties",
+    animaciones_activadas: "Ingeschakeld",
+    animaciones_desactivadas: "Uitgeschakeld",
+    idioma: "Taal",
+    
+    // Modal Ontwikkelaar
+    desarrollador_titulo: "Ontwikkelaar",
+    desarrollador_texto: "Hallo, ik ben Yampiero Mujica. Ik heb Memoria met liefde gemaakt met HTML, CSS en JavaScript zodat jij je geheugen kunt trainen zonder vervelende advertenties. Als je het project leuk vindt en me wilt steunen om het actief te houden, trakteer me dan op een koffie door op het kopje te klikken",
+    
+    // Systeemmodal (Game Over)
+    game_over_mensaje: "Jammer! Je hebt geen levens meer.",
+    ir_menu: "Naar menu",
+    reintentar_nivel: "Level Opnieuw Proberen",
+    
+    // Overwinningsmodal
+    victoria_mensaje: "Gefeliciteerd, je hebt het level succesvol voltooid!",
+    siguiente_nivel: "Volgend Level",
+    
+    // Footer en overige
+    invitar_cafe: "Trakteer me op een koffie",
+    version: "2026 © | V 2.8",
+    confirmar_borrar: "Alle geschiedenis wissen en scores resetten?",
+    sin_vidas_titulo: "Je hebt geen levens meer!",
+    sin_vidas_mensaje: "Wat wil je doen om door te gaan?",
+    ver_anuncio: "🎬 Bekijk advertentie en herstel 7 levens (Spel voortzetten)",
+    reiniciar_partida: "🔄 Spel herstarten (Voortgang verliezen)",
+    
+    // Tooltips
+    titulo_iniciar: "Spel Starten",
+    titulo_revolver: "Kaarten Schudden",
+    titulo_resetear: "Waarden Resetten",
+    titulo_volver: "Terug",
+    
+    // Dynamische teksten (functies)
+    tiempo_record: (tiempo) => `Nieuw Record! Tijd: ${tiempo}s`,
+    tiempo_victoria: (tiempo, puntos) => `Overwinning! Tijd: ${tiempo}s. Punten: ${puntos}`,
+},
+
+ko: { // Coreano
+    // 메인 메뉴
+    jugar_ahora: "지금 플레이",
+    como_jugar: "게임 방법",
+    ajustes: "설정",
+    desarrollador: "개발자",
+    salir: "나가기",
+    
+    // 게임 화면
+    iniciar_juego: "게임 시작",
+    pausar: "일시정지",
+    reanudar: "다시 시작",
+    revolver_cartas: "카드 섞기",
+    resetear_valores: "값 초기화",
+    
+    // 통계 패널
+    tiempo: "시간",
+    puntos: "점수",
+    victorias_label: "승리",
+    record: "기록",
+    score: "스코어",
+    derrotas: "패배",
+    
+    // 게임 상태
+    game_over: "게임 오버!",
+    ganaste: "승리했습니다!",
+    nuevo_record: "새 기록!",
+    victoria: "승리!",
+    
+    // 게임 방법 모달
+    como_jugar_titulo: "게임 방법",
+    como_jugar_subtitulo: "기억력을 테스트하고 점수를 쌓고 생명을 지키세요!",
+    como_jugar_paso1: "카드 뒤집기: 카드 두 장을 클릭하여 보드에 숨겨진 아이콘을 발견하세요.",
+    como_jugar_paso2: "짝을 맞추고 생명 획득: 올바른 짝을 찾을 때마다 보상으로 생명을 획득하여 계속 플레이할 수 있습니다.",
+    como_jugar_paso3: "실수 주의: 카드가 일치하지 않으면 생명을 하나 잃습니다. 7개의 생명으로 시작합니다. 모두 소진되면 짧은 광고를 보고 회복하고 중단한 곳에서 계속할 수 있습니다.",
+    como_jugar_paso4: "목표: 7개의 생명이 소진되기 전에 두 장씩 카드를 뒤집어 동일한 짝을 찾으세요.",
+    cerrar: "닫기",
+    
+    // 설정 모달
+    ajustes_titulo: "설정",
+    sonido: "소리:",
+    activado: "켜짐",
+    silenciado: "꺼짐",
+    modo: "모드:",
+    dark: "다크",
+    light: "라이트",
+    animaciones: "애니메이션",
+    animaciones_activadas: "활성화됨",
+    animaciones_desactivadas: "비활성화됨",
+    idioma: "언어",
+    
+    // 개발자 모달
+    desarrollador_titulo: "개발자",
+    desarrollador_texto: "안녕하세요, 저는 Yampiero Mujica입니다. 성가신 광고 없이 기억력을 훈련하며 즐거운 시간을 보낼 수 있도록 HTML, CSS, JavaScript로 정성을 담아 Memoria를 만들었습니다. 프로젝트가 마음에 들고 계속 유지되도록 지원하고 싶다면 컵을 클릭하여 커피 한 잔 사주세요",
+    
+    // 시스템 모달 (게임 오버)
+    game_over_mensaje: "안타깝습니다! 생명을 모두 소진했습니다.",
+    ir_menu: "메뉴로 이동",
+    reintentar_nivel: "레벨 다시 시도",
+    
+    // 승리 모달
+    victoria_mensaje: "축하합니다, 레벨을 성공적으로 완료했습니다!",
+    siguiente_nivel: "다음 레벨",
+    
+    // 푸터 및 기타
+    invitar_cafe: "커피 한 잔 사주기",
+    version: "2026 © | V 2.8",
+    confirmar_borrar: "모든 기록을 삭제하고 점수를 초기화하시겠습니까?",
+    sin_vidas_titulo: "생명을 모두 소진했습니다!",
+    sin_vidas_mensaje: "계속하려면 어떻게 하시겠습니까?",
+    ver_anuncio: "🎬 광고 보고 생명 7개 회복 (게임 계속)",
+    reiniciar_partida: "🔄 게임 재시작 (진행 상황 손실)",
+    
+    // 툴팁
+    titulo_iniciar: "게임 시작",
+    titulo_revolver: "카드 섞기",
+    titulo_resetear: "값 초기화",
+    titulo_volver: "뒤로",
+    
+    // 동적 텍스트 (함수)
+    tiempo_record: (tiempo) => `새 기록! 시간: ${tiempo}초`,
+    tiempo_victoria: (tiempo, puntos) => `승리! 시간: ${tiempo}초. 점수: ${puntos}`,
+},
+
+el: { // Griego
+    // Κύριο μενού
+    jugar_ahora: "Παίξε Τώρα",
+    como_jugar: "Πώς Παίζω;",
+    ajustes: "Ρυθμίσεις",
+    desarrollador: "Προγραμματιστής",
+    salir: "Έξοδος",
+    
+    // Οθόνη παιχνιδιού
+    iniciar_juego: "Έναρξη Παιχνιδιού",
+    pausar: "Παύση",
+    reanudar: "Συνέχεια",
+    revolver_cartas: "Ανακάτεμα Καρτών",
+    resetear_valores: "Επαναφορά Τιμών",
+    
+    // Πίνακας στατιστικών
+    tiempo: "Χρόνος",
+    puntos: "Πόντοι",
+    victorias_label: "Νίκες",
+    record: "Ρεκόρ",
+    score: "Σκορ",
+    derrotas: "Ήττες",
+    
+    // Καταστάσεις παιχνιδιού
+    game_over: "Τέλος Παιχνιδιού!",
+    ganaste: "Κέρδισες!",
+    nuevo_record: "Νέο Ρεκόρ!",
+    victoria: "Νίκη!",
+    
+    // Modal Πώς Παίζω
+    como_jugar_titulo: "Πώς Παίζω;",
+    como_jugar_subtitulo: "Δοκίμασε τη μνήμη σου, συγκέντρωσε πόντους και κράτησε τις ζωές σου ασφαλείς!",
+    como_jugar_paso1: "Γύρνα κάρτες: Κάνε κλικ σε δύο κάρτες για να ανακαλύψεις τα κρυμμένα εικονίδια στον πίνακα.",
+    como_jugar_paso2: "Φτιάξε ζευγάρια και κέρδισε ζωές: Κάθε φορά που βρίσκεις ένα σωστό ζευγάρι, κερδίζεις ζωές ως ανταμοιβή για να συνεχίσεις να παίζεις.",
+    como_jugar_paso3: "Πρόσεχε τα λάθη: Αν οι κάρτες δεν ταιριάζουν, χάνεις μια ζωή. Ξεκινάς με 7 ζωές. Αν τελειώσουν, μπορείς να δεις μια σύντομη διαφήμιση για να τις ανακτήσεις και να συνεχίσεις από εκεί που σταμάτησες.",
+    como_jugar_paso4: "Στόχος: Γύρνα δύο κάρτες κάθε φορά για να βρεις πανομοιότυπα ζευγάρια πριν τελειώσουν οι 7 ζωές.",
+    cerrar: "Κλείσιμο",
+    
+    // Modal Ρυθμίσεις
+    ajustes_titulo: "Ρυθμίσεις",
+    sonido: "Ήχος:",
+    activado: "Ενεργό",
+    silenciado: "Σίγαση",
+    modo: "Λειτουργία:",
+    dark: "Σκοτεινό",
+    light: "Φωτεινό",
+    animaciones: "Κινούμενα Σχέδια",
+    animaciones_activadas: "Ενεργοποιημένα",
+    animaciones_desactivadas: "Απενεργοποιημένα",
+    idioma: "Γλώσσα",
+    
+    // Modal Προγραμματιστής
+    desarrollador_titulo: "Προγραμματιστής",
+    desarrollador_texto: "Γεια σου, είμαι ο Yampiero Mujica. Δημιούργησα το Memoria με αγάπη χρησιμοποιώντας HTML, CSS και JavaScript για να περνάς καλά εκπαιδεύοντας τη μνήμη σου χωρίς ενοχλητικές διαφημίσεις. Αν σου αρέσει το έργο και θέλεις να με υποστηρίξεις να το κρατήσω ενεργό, κέρασέ με έναν καφέ κάνοντας κλικ στο φλιτζάνι",
+    
+    // Modal συστήματος (Game Over)
+    game_over_mensaje: "Κρίμα! Σου τελείωσαν οι ζωές.",
+    ir_menu: "Μετάβαση στο μενού",
+    reintentar_nivel: "Επανάληψη Επιπέδου",
+    
+    // Modal νίκης
+    victoria_mensaje: "Συγχαρητήρια, ολοκλήρωσες το επίπεδο με επιτυχία!",
+    siguiente_nivel: "Επόμενο Επίπεδο",
+    
+    // Υποσέλιδο και άλλα
+    invitar_cafe: "Κέρασέ με έναν καφέ",
+    version: "2026 © | V 2.8",
+    confirmar_borrar: "Διαγραφή όλου του ιστορικού και επαναφορά βαθμολογιών;",
+    sin_vidas_titulo: "Σου τελείωσαν οι ζωές!",
+    sin_vidas_mensaje: "Τι θέλεις να κάνεις για να συνεχίσεις;",
+    ver_anuncio: "🎬 Δες διαφήμιση και ανάκτησε 7 ζωές (Συνέχεια παιχνιδιού)",
+    reiniciar_partida: "🔄 Επανεκκίνηση παιχνιδιού (Απώλεια προόδου)",
+    
+    // Tooltips
+    titulo_iniciar: "Έναρξη Παιχνιδιού",
+    titulo_revolver: "Ανακάτεμα Καρτών",
+    titulo_resetear: "Επαναφορά Τιμών",
+    titulo_volver: "Πίσω",
+    
+    // Δυναμικά κείμενα (συναρτήσεις)
+    tiempo_record: (tiempo) => `Νέο Ρεκόρ! Χρόνος: ${tiempo}δ`,
+    tiempo_victoria: (tiempo, puntos) => `Νίκη! Χρόνος: ${tiempo}δ. Πόντοι: ${puntos}`,
+},
+
+pap: { // Papiamento (Aruba, Curazao, Bonaire)
+    // Menú prinsipal
+    jugar_ahora: "Juga Awor",
+    como_jugar: "Kon Juga?",
+    ajustes: "Ajuste",
+    desarrollador: "Desaroyadó",
+    salir: "Salí",
+    
+    // Pantaya di wega
+    iniciar_juego: "Kuminsá Wega",
+    pausar: "Pousa",
+    reanudar: "Kontinuá",
+    revolver_cartas: "Bati Karta",
+    resetear_valores: "Reset Valornan",
+    
+    // Panel di estadístika
+    tiempo: "Tempu",
+    puntos: "Punto",
+    victorias_label: "Viktoria",
+    record: "Rèkòrt",
+    score: "Skor",
+    derrotas: "Derota",
+    
+    // Estado di wega
+    game_over: "Wega A Kaba!",
+    ganaste: "Bo A Gana!",
+    nuevo_record: "Rèkòrt Nobo!",
+    victoria: "Viktoria!",
+    
+    // Modal Kon Juga
+    como_jugar_titulo: "Kon Juga?",
+    como_jugar_subtitulo: "Purba bo memoria, akumulá punto i tene bo bidanan salbo!",
+    como_jugar_paso1: "Bira karta: Klik riba dos karta pa deskubrí e ikononan skondí riba e tablero.",
+    como_jugar_paso2: "Traha par i gana bida: Kada biaha ku bo haña un par korekto, bo ta gana bida komo rekompensa pa sigui juga.",
+    como_jugar_paso3: "Kuidou ku eror: Si e kartanan no ta igual, bo ta pèrdè un bida. Bo ta kuminsá ku 7 bida. Si bo ta keda sin, bo por mira un anunsio kòrtiku pa rekuperá nan i sigui eksaktamente kaminda bo a keda.",
+    como_jugar_paso4: "Meta: Bira karta di dos den dos pa haña par igual promé ku bo 7 bidanan kaba.",
+    cerrar: "Sera",
+    
+    // Modal Ajuste
+    ajustes_titulo: "Ajuste",
+    sonido: "Zonido:",
+    activado: "Activá",
+    silenciado: "Silensiá",
+    modo: "Modo:",
+    dark: "Skur",
+    light: "Klaru",
+    animaciones: "Animashon",
+    animaciones_activadas: "Activá",
+    animaciones_desactivadas: "Desactivá",
+    idioma: "Idioma",
+    
+    // Modal Desaroyadó
+    desarrollador_titulo: "Desaroyadó",
+    desarrollador_texto: "Bon dia, mi ta Yampiero Mujica. Mi a krea Memoria ku amor usando HTML, CSS i JavaScript pa bo pasa un bon ratu entrenando bo memoria sin anunsio molestoso. Si bo gusta e proyecto i ke apoyá mi pa mantené aktivo, invitá mi un kòfi klikando riba e taza",
+    
+    // Modal di sistema (Game Over)
+    game_over_mensaje: "Lástima! Bo a keda sin bida.",
+    ir_menu: "Bai na menú",
+    reintentar_nivel: "Purba Nivel Atrobe",
+    
+    // Modal viktoria
+    victoria_mensaje: "Pabien, bo a kompletá e nivel ku éksito!",
+    siguiente_nivel: "Siguiente Nivel",
+    
+    // Footer i otronan
+    invitar_cafe: "Invitá mi un kòfi",
+    version: "2026 © | V 2.8",
+    confirmar_borrar: "Bora tur historia i reset skornan?",
+    sin_vidas_titulo: "Bo a keda sin bida!",
+    sin_vidas_mensaje: "Kiko bo ke hasi pa kontinuá?",
+    ver_anuncio: "🎬 Mira anunsio i rekuperá 7 bida (Kontinuá wega)",
+    reiniciar_partida: "🔄 Kuminsá wega di nobo (Pèrdè progreso)",
+    
+    // Tooltips
+    titulo_iniciar: "Kuminsá Wega",
+    titulo_revolver: "Bati Karta",
+    titulo_resetear: "Reset Valornan",
+    titulo_volver: "Bèk",
+    
+    // Teksto dinámiko (funshon)
+    tiempo_record: (tiempo) => `Rèkòrt Nobo! Tempu: ${tiempo}s`,
+    tiempo_victoria: (tiempo, puntos) => `Viktoria! Tempu: ${tiempo}s. Punto: ${puntos}`,
+},
+
+id: { // Indonesio
+    // Menu utama
+    jugar_ahora: "Main Sekarang",
+    como_jugar: "Cara Bermain",
+    ajustes: "Pengaturan",
+    desarrollador: "Pengembang",
+    salir: "Keluar",
+    
+    // Layar permainan
+    iniciar_juego: "Mulai Permainan",
+    pausar: "Jeda",
+    reanudar: "Lanjutkan",
+    revolver_cartas: "Kocok Kartu",
+    resetear_valores: "Atur Ulang Nilai",
+    
+    // Panel statistik
+    tiempo: "Waktu",
+    puntos: "Poin",
+    victorias_label: "Kemenangan",
+    record: "Rekor",
+    score: "Skor",
+    derrotas: "Kekalahan",
+    
+    // Status permainan
+    game_over: "Permainan Selesai!",
+    ganaste: "Kamu Menang!",
+    nuevo_record: "Rekor Baru!",
+    victoria: "Kemenangan!",
+    
+    // Modal Cara Bermain
+    como_jugar_titulo: "Cara Bermain",
+    como_jugar_subtitulo: "Uji ingatanmu, kumpulkan poin, dan jaga nyawamu tetap aman!",
+    como_jugar_paso1: "Balik kartu: Klik dua kartu untuk menemukan ikon tersembunyi di papan.",
+    como_jugar_paso2: "Buat pasangan dan dapatkan nyawa: Setiap kali kamu menemukan pasangan yang benar, kamu akan mendapatkan nyawa sebagai hadiah untuk terus bermain.",
+    como_jugar_paso3: "Hati-hati dengan kesalahan: Jika kartu tidak cocok, kamu akan kehilangan satu nyawa. Kamu mulai dengan 7 nyawa. Jika habis, kamu bisa menonton iklan singkat untuk memulihkannya dan melanjutkan tepat di tempat kamu berhenti.",
+    como_jugar_paso4: "Tujuan: Balik dua kartu sekaligus untuk menemukan pasangan identik sebelum 7 nyawamu habis.",
+    cerrar: "Tutup",
+    
+    // Modal Pengaturan
+    ajustes_titulo: "Pengaturan",
+    sonido: "Suara:",
+    activado: "Aktif",
+    silenciado: "Bisu",
+    modo: "Mode:",
+    dark: "Gelap",
+    light: "Terang",
+    animaciones: "Animasi",
+    animaciones_activadas: "Diaktifkan",
+    animaciones_desactivadas: "Dinonaktifkan",
+    idioma: "Bahasa",
+    
+    // Modal Pengembang
+    desarrollador_titulo: "Pengembang",
+    desarrollador_texto: "Halo, saya Yampiero Mujica. Saya membuat Memoria dengan cinta menggunakan HTML, CSS, dan JavaScript agar kamu bisa bersenang-senang melatih ingatanmu tanpa iklan yang mengganggu. Jika kamu suka proyek ini dan ingin mendukung saya untuk tetap aktif, traktir saya kopi dengan mengklik cangkirnya",
+    
+    // Modal sistem (Game Over)
+    game_over_mensaje: "Sayang sekali! Nyawamu habis.",
+    ir_menu: "Pergi ke menu",
+    reintentar_nivel: "Coba Lagi Level",
+    
+    // Modal kemenangan
+    victoria_mensaje: "Selamat, kamu telah menyelesaikan level dengan sukses!",
+    siguiente_nivel: "Level Berikutnya",
+    
+    // Footer dan lainnya
+    invitar_cafe: "Traktir saya kopi",
+    version: "2026 © | V 2.8",
+    confirmar_borrar: "Hapus semua riwayat dan atur ulang skor?",
+    sin_vidas_titulo: "Nyawamu habis!",
+    sin_vidas_mensaje: "Apa yang ingin kamu lakukan untuk melanjutkan?",
+    ver_anuncio: "🎬 Tonton iklan dan pulihkan 7 nyawa (Lanjutkan permainan)",
+    reiniciar_partida: "🔄 Mulai ulang permainan (Kehilangan kemajuan)",
+    
+    // Tooltips
+    titulo_iniciar: "Mulai Permainan",
+    titulo_revolver: "Kocok Kartu",
+    titulo_resetear: "Atur Ulang Nilai",
+    titulo_volver: "Kembali",
+    
+    // Teks dinamis (fungsi)
+    tiempo_record: (tiempo) => `Rekor Baru! Waktu: ${tiempo}s`,
+    tiempo_victoria: (tiempo, puntos) => `Kemenangan! Waktu: ${tiempo}s. Poin: ${puntos}`,
 }
 };
 

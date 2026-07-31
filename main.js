@@ -300,6 +300,7 @@ const selectIdioma = document.getElementById('btn-toggle-idioma');
 if (selectIdioma) {
     selectIdioma.value = idiomaActual;
     selectIdioma.addEventListener('change', (e) => {
+        reproducirEfectoSonido('clic');
         cambiarIdioma(e.target.value);
     });
 }

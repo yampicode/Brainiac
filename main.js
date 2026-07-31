@@ -160,6 +160,11 @@ if (btnSalir) {
     });
 }
 
+const btnApoyo = document.getElementById('btn-apoyo');
+btnApoyo.addEventListener('click', () => {
+      reproducirEfectoSonido('clic');
+});
+
 // ==========================================
 // CONFIGURACIÓN DE ANIMACIONES
 // ==========================================
